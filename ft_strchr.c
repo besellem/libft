@@ -6,8 +6,21 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:31 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:29:31 by besellem         ###   ########.fr       */
+/*   Updated: 2020/09/13 21:40:21 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_strchr(const char *s, int c)
+{
+	int i;
+
+	if (!(char)c)
+		return (s + (ft_strlen(s) + 1));
+	i = -1;
+	while (s[++i])
+		if (s[i] == (char)c)
+			return (s + i);
+	return (NULL);
+}
