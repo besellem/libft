@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strcasestr_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:28:58 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:28:58 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 13:09:11 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 13:09:13 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strcasestr(const char *haystack, const char *needle)
 {
-	char	*tmp;
-	size_t	i;
+	size_t i;
+	size_t j;
 
-	tmp = (char *)s;
 	i = 0;
-	while (i < n)
+	while (haystack[i])
 	{
-		tmp[i] = '\0';
+		j = 0;
+		while (needle[j] && haystack[i + j] &&
+				ft_tolower(haystack[i + j]) == ft_tolower(needle[j]))
+			if (!needle[++j])
+				return (*haystack + i);
 		++i;
 	}
+	return (NULL);
 }

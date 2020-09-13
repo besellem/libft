@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnlen_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_atol_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 12:40:58 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 12:41:00 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 13:43:56 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 13:44:02 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strnlen(const char *s, size_t maxlen)
+long	ft_atol(const char *str)
 {
-	size_t i;
+	long	nb;
+	int		min;
 
-	i = 0;
-	while (s[i] && i < maxlen)
-		++i;
-	return (i);
+	while (*str && (*str == ' ' || (*str >= '\t' && *str <= '\r')))
+		++str;
+	min = 1;
+	if (*str == '-' || *str == '+')
+		if (*str++ == '-')
+			min = -1;
+	nb = 0;
+	while (*str >= '0' && *str <= '9')
+		nb = nb * 10 + *str++ - 48;
+	return (nb * min);
 }
