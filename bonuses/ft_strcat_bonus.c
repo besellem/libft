@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strcat_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:29:21 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 21:33:39 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 18:54:22 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 18:58:04 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-//	TO CHECK
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+char	*ft_strcat(char *s1, const char *s2)
 {
-	unsigned char *s1;
-	unsigned char *s2;
+	int i;
+	int len;
 
-	s1 = (unsigned char *)dst;
-	s2 = (unsigned char *)src;
-	while (n-- > 0)
-		*s1++ = *s2++;
-	return (dst);
+	len = ft_strlen(s1);
+	i = -1;
+	while (s2[++i])
+		s1[len + i] = s2[i];
+	s1[len + i] = '\0';
+	return (s1);
 }
