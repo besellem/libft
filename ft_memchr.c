@@ -6,8 +6,13 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:14 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:29:15 by besellem         ###   ########.fr       */
+/*   Updated: 2020/09/13 22:46:13 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+void	*ft_memchr(const void *s, int c, size_t n)
+{
+	return (NULL);
+}

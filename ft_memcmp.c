@@ -6,8 +6,13 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:17 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:29:18 by besellem         ###   ########.fr       */
+/*   Updated: 2020/09/13 22:45:50 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	return (0);
+}
