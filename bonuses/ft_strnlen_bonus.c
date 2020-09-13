@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalnum.c                                       :+:      :+:    :+:   */
+/*   ft_strnlen_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:29:02 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:29:03 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 12:40:58 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 12:41:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int c)
+size_t	strnlen(const char *s, size_t maxlen)
 {
-	return ((c >= 'a' && c <= 'z') ||
-			(c >= 'A' && c <= 'Z') ||
-			(c >= '0' && c <= '9'));
+	size_t i;
+
+	i = 0;
+	while (s[i] && i < maxlen)
+		++i;
+	return (i);
 }
