@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-//	TO CHECK
 
 char	*ft_strndup(const char *s1, size_t n)
 {
