@@ -12,7 +12,20 @@
 
 #include "libft.h"
 
-char	*ft_itoa(int n)
+static int	ft_nblen(int nb)
+{
+	int len;
+
+	len = 0;
+	while (nb > 0)
+	{
+		++len;
+		nb /= 10;
+	}
+	return (len);
+}
+
+char		*ft_itoa(int n)
 {
 	char	*s;
 	int		len;

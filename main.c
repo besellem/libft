@@ -15,5 +15,10 @@
 
 int	main(int ac, char **av)
 {
+	char str[] = "";
+
+	printf("bef: %s %lu\n", str, sizeof(str));
+	ft_bzero(str, sizeof(str));
+	printf("aft: %s %lu", str, sizeof(str));
 	return (0);
 }

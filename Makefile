@@ -78,16 +78,18 @@ $(NAME):	$(OBJS)
 
 all:		$(NAME)
 
-bonus:		all
+bonus:		all $(BONUS_OBJS)
+			$(MUTE) $(LIBC) $(NAME) $(OBJS) $(BONUS_OBJS)
 
 test:		all
-			$(MUTE) $(CC) $(CFLAGS) main.c $(NAME) -o $(EXEC)
+			$(MUTE) $(CC) main.c $(NAME) -o $(EXEC)
 
 sanit:		all
 			$(MUTE) $(CC) $(CFLAGS) $(SANIT_FLAG) main.c $(NAME) -o $(EXEC)
 
 clean:
 			$(MUTE) $(RM) $(OBJS)
+			$(MUTE) $(RM) $(BONUS_OBJS)
 
 fclean:		clean
 			$(MUTE) $(RM) $(NAME)
@@ -95,4 +97,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		$(NAME) all test sanit clean fclean re
+.PHONY:		$(NAME) all bonus test sanit clean fclean re
