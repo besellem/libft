@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_nblen_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:01:59 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:02:08 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 22:32:26 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 22:34:26 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	main(int ac, char **av)
+unsigned int	ft_nblen(unsigned int n)
 {
-	char	*str;
+	unsigned int len;
+	unsigned int j;
 
-	(void)ac;
-	printf("%lf\n", atof(av[1]));
-	return (0);
+	len = 1;
+	j = 1;
+	while ((n / len) >= 10)
+	{
+		len *= 10;
+		++j;
+	}
+	return (j);
 }

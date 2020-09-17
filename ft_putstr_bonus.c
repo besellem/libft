@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_putstr_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:01:59 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:02:08 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 22:54:40 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 22:56:16 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	main(int ac, char **av)
+void	ft_putstr(char *s)
 {
-	char	*str;
-
-	(void)ac;
-	printf("%lf\n", atof(av[1]));
-	return (0);
+	ft_putstr_fd(s, 1);
 }

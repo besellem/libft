@@ -3,17 +3,18 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
+#    By: bensellem <bensellem@student.42.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2020/09/13 23:39:54 by besellem         ###   ########.fr        #
+#    Updated: 2020/09/17 14:08:39 by bensellem        ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MUTE		=	@
+MUTE		=	#@
 NAME		=	libft.a
 EXEC		=	libft_test
 
+## Mandatory
 SRCS		+=	ft_atoi.c
 SRCS		+=	ft_bzero.c
 SRCS		+=	ft_calloc.c
@@ -49,6 +50,8 @@ SRCS		+=	ft_substr.c
 SRCS		+=	ft_tolower.c
 SRCS		+=	ft_toupper.c
 
+## Bonus
+# List Bonus
 BONUS_SRCS	+=	ft_lstadd_back.c
 BONUS_SRCS	+=	ft_lstadd_front.c
 BONUS_SRCS	+=	ft_lstclear.c
@@ -59,14 +62,34 @@ BONUS_SRCS	+=	ft_lstmap.c
 BONUS_SRCS	+=	ft_lstnew.c
 BONUS_SRCS	+=	ft_lstsize.c
 
+# Added
+BONUS_SRCS	+=	ft_atol_bonus.c
+BONUS_SRCS	+=	ft_atoll_bonus.c
+BONUS_SRCS	+=	ft_nblen_bonus.c
+BONUS_SRCS	+=	ft_putchar_bonus.c
+BONUS_SRCS	+=	ft_putendl_bonus.c
+BONUS_SRCS	+=	ft_putnbr_bonus.c
+BONUS_SRCS	+=	ft_putstr_bonus.c
+BONUS_SRCS	+=	ft_strcasestr_bonus.c
+BONUS_SRCS	+=	ft_strcat_bonus.c
+BONUS_SRCS	+=	ft_strcmp_bonus.c
+BONUS_SRCS	+=	ft_strcpy_bonus.c
+BONUS_SRCS	+=	ft_strncat_bonus.c
+BONUS_SRCS	+=	ft_strncpy_bonus.c
+BONUS_SRCS	+=	ft_strndup_bonus.c
+BONUS_SRCS	+=	ft_strnlen_bonus.c
+BONUS_SRCS	+=	ft_strstr_bonus.c
+
+## Objects
 OBJS		=	$(SRCS:.c=.o)
 BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
+## Includes
 INC			=	libft.h
 
+## Commands
 CC			=	gcc
 CFLAGS		=	-Wall -Wextra -Werror
-SANIT_FLAG	=	-fsanitize=address
 LIBC		=	ar rc
 RM			=	rm -f
 
@@ -84,9 +107,6 @@ bonus:		all $(BONUS_OBJS)
 test:		all
 			$(MUTE) $(CC) main.c $(NAME) -o $(EXEC)
 
-sanit:		all
-			$(MUTE) $(CC) $(CFLAGS) $(SANIT_FLAG) main.c $(NAME) -o $(EXEC)
-
 clean:
 			$(MUTE) $(RM) $(OBJS)
 			$(MUTE) $(RM) $(BONUS_OBJS)
@@ -97,4 +117,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		$(NAME) all bonus test sanit clean fclean re
+.PHONY:		$(NAME) all bonus test clean fclean re

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_atol_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:01:59 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:02:08 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 13:43:56 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 13:44:02 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	main(int ac, char **av)
+long	ft_atol(const char *str)
 {
-	char	*str;
+	long	nb;
+	int		min;
 
-	(void)ac;
-	printf("%lf\n", atof(av[1]));
-	return (0);
+	while (*str && (*str == ' ' || (*str >= '\t' && *str <= '\r')))
+		++str;
+	min = 1;
+	if (*str == '-' || *str == '+')
+		if (*str++ == '-')
+			min = -1;
+	nb = 0;
+	while (*str >= '0' && *str <= '9')
+		nb = nb * 10 + *str++ - 48;
+	return (nb * min);
 }

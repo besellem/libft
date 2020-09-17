@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strncpy_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:01:59 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:02:08 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 18:13:58 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 18:17:17 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	main(int ac, char **av)
+char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	char	*str;
+	size_t i;
 
-	(void)ac;
-	printf("%lf\n", atof(av[1]));
-	return (0);
+	i = 0;
+	while (src[i] && i < len)
+	{
+		dst[i] = src[i];
+		++i;
+	}
+	while (i < len)
+	{
+		dst[i] = '\0';
+		++i;
+	}
+	return (dst);
 }

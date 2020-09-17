@@ -1,23 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strcasestr_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:01:59 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:02:08 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 13:09:11 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 13:09:13 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	main(int ac, char **av)
+char	*ft_strcasestr(const char *haystack, const char *needle)
 {
-	char	*str;
+	size_t i;
+	size_t j;
 
-	(void)ac;
-	printf("%lf\n", atof(av[1]));
-	return (0);
+	i = 0;
+	while (haystack[i])
+	{
+		j = 0;
+		while (needle[j] && haystack[i + j] &&
+				ft_tolower(haystack[i + j]) == ft_tolower(needle[j]))
+			if (!needle[++j])
+				return ((char *)(haystack + i));
+		++i;
+	}
+	return (NULL);
 }

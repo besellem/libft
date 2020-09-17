@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_strnlen_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:01:59 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:02:08 by besellem         ###   ########.fr       */
+/*   Created: 2020/09/13 12:40:58 by besellem          #+#    #+#             */
+/*   Updated: 2020/09/13 12:41:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
-int	main(int ac, char **av)
+size_t	ft_strnlen(const char *s, size_t maxlen)
 {
-	char	*str;
+	size_t i;
 
-	(void)ac;
-	printf("%lf\n", atof(av[1]));
-	return (0);
+	i = 0;
+	while (s[i] && i < maxlen)
+		++i;
+	return (i);
 }
