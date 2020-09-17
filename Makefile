@@ -65,7 +65,11 @@ BONUS_SRCS	+=	ft_lstsize.c
 # Added
 BONUS_SRCS	+=	ft_atol_bonus.c
 BONUS_SRCS	+=	ft_atoll_bonus.c
+BONUS_SRCS	+=	ft_factorial_bonus.c
+BONUS_SRCS	+=	ft_find_next_prime_bonus.c
+BONUS_SRCS	+=	ft_is_prime_bonus.c
 BONUS_SRCS	+=	ft_nblen_bonus.c
+BONUS_SRCS	+=	ft_power_bonus.c
 BONUS_SRCS	+=	ft_putchar_bonus.c
 BONUS_SRCS	+=	ft_putendl_bonus.c
 BONUS_SRCS	+=	ft_putnbr_bonus.c
