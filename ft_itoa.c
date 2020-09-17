@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_nblen(int nb)
+static int		nblen(unsigned int nb)
 {
 	int len;
 
@@ -25,24 +25,37 @@ static int	ft_nblen(int nb)
 	return (len);
 }
 
-char		*ft_itoa(int n)
+static size_t	power(unsigned int nb)
 {
-	char	*s;
-	int		len;
-	int		div;
-	int		i;
+	unsigned int pow;
 
-	len = n < 0 ? ft_nblen(-n) + 1 : ft_nblen(n);
+	pow = 1;
+	while (nb / pow >= 10)
+		pow *= 10;
+	return (pow);
+}
+
+char			*ft_itoa(int n)
+{
+	char			*s;
+	unsigned int	nb;
+	int				len;
+	int				div;
+	int				i;
+
+	len = n < 0 ? nblen(-n) + 1 : nblen(n);
 	if (!(s = (char *)malloc(sizeof(char) * (len + 1))))
 		return (NULL);
 	i = -1;
-	if (n < 0)
+	if (n < 0 && (nb = (unsigned int)(-n)))
 		s[++i] = '-';
-	div = 1;
-	while (len-- > 0)
+	else
+		nb = (unsigned int)n;
+	div = power(nb);
+	while (div > 0)
 	{
-		s[++i] = n / div % 10 + 48;
-		div *= 10;
+		s[++i] = nb / div % 10 + 48;
+		div /= 10;
 	}
 	s[i + 1] = '\0';
 	return (s);

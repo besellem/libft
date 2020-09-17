@@ -18,12 +18,14 @@ static int	w_count(char const *s, char c)
 	int i;
 
 	len = 0;
-	i = -1;
-	while (s[++i])
+	i = 0;
+	while (s[i])
 	{
-		if (s[i] == c)
-			++len;
 		while (s[i] && s[i] == c)
+			++i;
+		if (s[i] && s[i] != c)
+			++len;
+		while (s[i] && s[i] != c)
 			++i;
 	}
 	return (len);
@@ -40,11 +42,11 @@ char		**ft_split(char const *s, char c)
 		return (NULL);
 	i = 0;
 	j = 0;
-	while (s[i])
+	while (s[i] && j < w_count(s, c))
 	{
-		w_len = 0;
 		while (s[i] && s[i] == c)
 			++i;
+		w_len = 0;
 		while (s[i + w_len] && s[i + w_len] != c)
 			++w_len;
 		if (!(strs[j] = (char *)malloc(sizeof(char) * (w_len + 1))))

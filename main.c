@@ -15,10 +15,11 @@
 
 int	main(int ac, char **av)
 {
-	char str[] = "";
+	(void)ac;
+	char	*str;
 
-	printf("bef: %s %lu\n", str, sizeof(str));
-	ft_bzero(str, sizeof(str));
-	printf("aft: %s %lu", str, sizeof(str));
+	str = ft_substr(av[3], atoi(av[1]), atoi(av[2]));
+	printf("orig: %s\n", av[3]);
+	printf("mine: %s\n", str);
 	return (0);
 }
