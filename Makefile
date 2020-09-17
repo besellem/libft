@@ -10,9 +10,8 @@
 #                                                                              #
 # **************************************************************************** #
 
-MUTE		=	#@
+MUTE		=	@
 NAME		=	libft.a
-EXEC		=	libft_test
 
 ## Mandatory
 SRCS		+=	ft_atoi.c
@@ -108,17 +107,13 @@ all:		$(NAME)
 bonus:		all $(BONUS_OBJS)
 			$(MUTE) $(LIBC) $(NAME) $(OBJS) $(BONUS_OBJS)
 
-test:		all
-			$(MUTE) $(CC) main.c $(NAME) -o $(EXEC)
-
 clean:
 			$(MUTE) $(RM) $(OBJS)
 			$(MUTE) $(RM) $(BONUS_OBJS)
 
 fclean:		clean
 			$(MUTE) $(RM) $(NAME)
-			$(MUTE) $(RM) $(EXEC)
 
 re:			fclean all
 
-.PHONY:		$(NAME) all bonus test clean fclean re
+.PHONY:		$(NAME) all bonus clean fclean re
