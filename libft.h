@@ -84,6 +84,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 */
 long			ft_atol(const char *str);
 long long		ft_atoll(const char *str);
+size_t			ft_nblen(size_t n);
 void			ft_putchar(char c);
 void			ft_putendl(char *s);
 void			ft_putnbr(int n);

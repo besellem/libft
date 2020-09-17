@@ -17,6 +17,8 @@ char	*ft_strcasestr(const char *haystack, const char *needle)
 	size_t i;
 	size_t j;
 
+	if (!*needle)
+		return ((char *)haystack);
 	i = 0;
 	while (haystack[i])
 	{

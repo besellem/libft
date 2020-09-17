@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-unsigned int	ft_nblen(unsigned int n)
+size_t	ft_nblen(size_t n)
 {
-	unsigned int len;
-	unsigned int j;
+	size_t len;
+	size_t j;
 
 	len = 1;
 	j = 1;

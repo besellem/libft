@@ -12,12 +12,14 @@
 
 #include "libft.h"
 #include <stdio.h>
+#include <string.h>
 
 int	main(int ac, char **av)
 {
 	char	*str;
 
 	(void)ac;
-	printf("%lf\n", atof(av[1]));
+	printf("o: %s\n", strcasestr(av[1], av[2]));
+	printf("m: %s\n", ft_strcasestr(av[1], av[2]));
 	return (0);
 }
