@@ -81,6 +81,7 @@ BONUS_SRCS	+=	ft_strncat_bonus.c
 BONUS_SRCS	+=	ft_strncpy_bonus.c
 BONUS_SRCS	+=	ft_strndup_bonus.c
 BONUS_SRCS	+=	ft_strnlen_bonus.c
+BONUS_SRCS	+=	ft_strpbrk_bonus.c
 BONUS_SRCS	+=	ft_strstr_bonus.c
 
 ## Objects

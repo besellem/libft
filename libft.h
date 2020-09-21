@@ -101,6 +101,7 @@ char			*ft_strncpy(char *dst, const char *src, size_t len);
 char			*ft_strndup(const char *s1, size_t n);
 size_t			ft_strnlen(const char *s, size_t maxlen);
 int				ft_strcmp(const char *s1, const char *s2);
+char			*ft_strpbrk(const char *s, const char *charset);
 char			*ft_strstr(const char *haystack, const char *needle);
 
 #endif
