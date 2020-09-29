@@ -89,6 +89,8 @@ int				ft_find_next_prime(int nb);
 int				ft_is_prime(long long nb);
 size_t			ft_nblen(size_t n);
 long long		ft_power(long long nb, int power);
+void			ft_putaddr(void *addr);
+void			ft_putaddr_fd(void *addr, int fd);
 void			ft_putchar(char c);
 void			ft_putendl(char *s);
 void			ft_putnbr(int n);
