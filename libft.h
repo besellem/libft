@@ -6,7 +6,7 @@
 /*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:16:30 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 16:36:41 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/15 16:49:26 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ char			*ft_strndup(const char *s1, size_t n);
 size_t			ft_strnlen(const char *s, size_t maxlen);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strpbrk(const char *s, const char *charset);
+char			**ft_strsplit(char *str, char *charset);
 char			*ft_strstr(const char *haystack, const char *needle);
 
 #endif
