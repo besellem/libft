@@ -6,7 +6,7 @@
 /*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:16:30 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 15:50:40 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/15 16:36:41 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 ** ADDED
 */
 double			ft_atod(const char *str);
+int				ft_atoi_base(char *str, char *base);
 long			ft_atol(const char *str);
 long double		ft_atold(const char *str);
 long long		ft_atoll(const char *str);

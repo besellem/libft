@@ -6,7 +6,7 @@
 #    By: besellem <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2020/11/15 15:51:05 by besellem         ###   ########.fr        #
+#    Updated: 2020/11/15 16:37:14 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -63,6 +63,7 @@ SRCS	+=	ft_lstsize.c
 
 # Added
 SRCS	+=	ft_atod.c
+SRCS	+=	ft_atoi_base.c
 SRCS	+=	ft_atol.c
 SRCS	+=	ft_atold.c
 SRCS	+=	ft_atoll.c
@@ -98,7 +99,7 @@ SRCS	+=	ft_strstr.c
 ## Objects
 OBJS		=	$(SRCS:.c=.o)
 
-## Includes
+## Include
 INC			=	libft.h
 
 ## Commands
