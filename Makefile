@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bensellem <bensellem@student.42.fr>        +#+  +:+       +#+         #
+#    By: besellem <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2020/09/17 14:08:39 by bensellem        ###   ########.fr        #
+#    Updated: 2020/11/15 15:51:05 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,44 +51,52 @@ SRCS		+=	ft_toupper.c
 
 ## Bonus
 # List Bonus
-BONUS_SRCS	+=	ft_lstadd_back.c
-BONUS_SRCS	+=	ft_lstadd_front.c
-BONUS_SRCS	+=	ft_lstclear.c
-BONUS_SRCS	+=	ft_lstdelone.c
-BONUS_SRCS	+=	ft_lstiter.c
-BONUS_SRCS	+=	ft_lstlast.c
-BONUS_SRCS	+=	ft_lstmap.c
-BONUS_SRCS	+=	ft_lstnew.c
-BONUS_SRCS	+=	ft_lstsize.c
+SRCS	+=	ft_lstadd_back.c
+SRCS	+=	ft_lstadd_front.c
+SRCS	+=	ft_lstclear.c
+SRCS	+=	ft_lstdelone.c
+SRCS	+=	ft_lstiter.c
+SRCS	+=	ft_lstlast.c
+SRCS	+=	ft_lstmap.c
+SRCS	+=	ft_lstnew.c
+SRCS	+=	ft_lstsize.c
 
 # Added
-BONUS_SRCS	+=	ft_atol_bonus.c
-BONUS_SRCS	+=	ft_atoll_bonus.c
-BONUS_SRCS	+=	ft_factorial_bonus.c
-BONUS_SRCS	+=	ft_find_next_prime_bonus.c
-BONUS_SRCS	+=	ft_is_prime_bonus.c
-BONUS_SRCS	+=	ft_nblen_bonus.c
-BONUS_SRCS	+=	ft_power_bonus.c
-BONUS_SRCS	+=	ft_putaddr_bonus.c
-BONUS_SRCS	+=	ft_putaddr_fd_bonus.c
-BONUS_SRCS	+=	ft_putchar_bonus.c
-BONUS_SRCS	+=	ft_putendl_bonus.c
-BONUS_SRCS	+=	ft_putnbr_bonus.c
-BONUS_SRCS	+=	ft_putstr_bonus.c
-BONUS_SRCS	+=	ft_strcasestr_bonus.c
-BONUS_SRCS	+=	ft_strcat_bonus.c
-BONUS_SRCS	+=	ft_strcmp_bonus.c
-BONUS_SRCS	+=	ft_strcpy_bonus.c
-BONUS_SRCS	+=	ft_strncat_bonus.c
-BONUS_SRCS	+=	ft_strncpy_bonus.c
-BONUS_SRCS	+=	ft_strndup_bonus.c
-BONUS_SRCS	+=	ft_strnlen_bonus.c
-BONUS_SRCS	+=	ft_strpbrk_bonus.c
-BONUS_SRCS	+=	ft_strstr_bonus.c
+SRCS	+=	ft_atod.c
+SRCS	+=	ft_atol.c
+SRCS	+=	ft_atold.c
+SRCS	+=	ft_atoll.c
+SRCS	+=	ft_strtol.c
+SRCS	+=	ft_strtoll.c
+SRCS	+=	ft_itoa_base.c
+SRCS	+=	ft_factorial.c
+SRCS	+=	ft_find_next_prime.c
+SRCS	+=	ft_is_prime.c
+SRCS	+=	ft_nblen.c
+SRCS	+=	ft_nblen_base.c
+SRCS	+=	ft_power.c
+SRCS	+=	ft_putaddr.c
+SRCS	+=	ft_putaddr_fd.c
+SRCS	+=	ft_putchar.c
+SRCS	+=	ft_putendl.c
+SRCS	+=	ft_putnbr.c
+SRCS	+=	ft_putstr.c
+SRCS	+=	ft_strupcase.c
+SRCS	+=	ft_strlowcase.c
+SRCS	+=	ft_strcapitalize.c
+SRCS	+=	ft_strcasestr.c
+SRCS	+=	ft_strcat.c
+SRCS	+=	ft_strcmp.c
+SRCS	+=	ft_strcpy.c
+SRCS	+=	ft_strncat.c
+SRCS	+=	ft_strncpy.c
+SRCS	+=	ft_strndup.c
+SRCS	+=	ft_strnlen.c
+SRCS	+=	ft_strpbrk.c
+SRCS	+=	ft_strstr.c
 
 ## Objects
 OBJS		=	$(SRCS:.c=.o)
-BONUS_OBJS	=	$(BONUS_SRCS:.c=.o)
 
 ## Includes
 INC			=	libft.h
@@ -107,16 +115,12 @@ $(NAME):	$(OBJS)
 
 all:		$(NAME)
 
-bonus:		all $(BONUS_OBJS)
-			$(MUTE) $(LIBC) $(NAME) $(OBJS) $(BONUS_OBJS)
-
 clean:
 			$(MUTE) $(RM) $(OBJS)
-			$(MUTE) $(RM) $(BONUS_OBJS)
 
 fclean:		clean
 			$(MUTE) $(RM) $(NAME)
 
 re:			fclean all
 
-.PHONY:		$(NAME) all bonus clean fclean re
+.PHONY:		$(NAME) all clean fclean re

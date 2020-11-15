@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:16:30 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 23:40:17 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/15 15:50:40 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+# include <limits.h>
 
 /*
 ** FUNCTIONS PROTOTYPES
@@ -82,12 +83,18 @@ t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
 /*
 ** ADDED
 */
+double			ft_atod(const char *str);
 long			ft_atol(const char *str);
+long double		ft_atold(const char *str);
 long long		ft_atoll(const char *str);
+long			ft_strtol(const char *str, char **endptr, int base);
+long long		ft_strtoll(const char *str, char **endptr, int base);
+char			*ft_itoa_base(long long n, char *base);
 size_t			ft_factorial(size_t nb);
 int				ft_find_next_prime(int nb);
 int				ft_is_prime(long long nb);
-size_t			ft_nblen(size_t n);
+int				ft_nblen(long long n);
+int				ft_nblen_base(long long n, int base);
 long long		ft_power(long long nb, int power);
 void			ft_putaddr(void *addr);
 void			ft_putaddr_fd(void *addr, int fd);
@@ -95,6 +102,9 @@ void			ft_putchar(char c);
 void			ft_putendl(char *s);
 void			ft_putnbr(int n);
 void			ft_putstr(char *s);
+char			*ft_strupcase(char *str);
+char			*ft_strlowcase(char *str);
+char			*ft_strcapitalize(char *str);
 char			*ft_strcasestr(const char *haystack, const char *needle);
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strncat(char *s1, const char *s2, size_t n);

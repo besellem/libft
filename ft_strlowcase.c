@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nblen_bonus.c                                   :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 22:32:26 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 22:34:26 by besellem         ###   ########.fr       */
+/*   Created: 2020/08/05 14:55:49 by besellem          #+#    #+#             */
+/*   Updated: 2020/11/15 12:23:10 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_nblen(size_t n)
+char	*ft_strlowcase(char *str)
 {
-	size_t len;
-	size_t j;
+	int i;
 
-	len = 1;
-	j = 1;
-	while ((n / len) >= 10)
-	{
-		len *= 10;
-		++j;
-	}
-	return (j);
+	i = -1;
+	while (str[++i])
+		if (str[i] >= 'A' && str[i] <= 'Z')
+			str[i] += 32;
+	return (str);
 }

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:29:36 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:32:54 by besellem         ###   ########.fr       */
+/*   Created: 2020/08/05 14:55:35 by besellem          #+#    #+#             */
+/*   Updated: 2020/11/15 12:23:21 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+char	*ft_strupcase(char *str)
 {
-	size_t i;
+	int i;
 
-	if (!s)
-		return (0);
-	i = 0;
-	while (s[i])
-		++i;
-	return (i);
+	i = -1;
+	while (str[++i])
+		if (str[i] >= 'a' && str[i] <= 'z')
+			str[i] -= 32;
+	return (str);
 }

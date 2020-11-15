@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnlen_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_nblen_base.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 12:40:58 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 12:41:00 by besellem         ###   ########.fr       */
+/*   Created: 2020/11/15 13:04:36 by besellem          #+#    #+#             */
+/*   Updated: 2020/11/15 13:04:51 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strnlen(const char *s, size_t maxlen)
+int	ft_nblen_base(long long n, int base)
 {
-	size_t i;
+	int len;
 
-	i = 0;
-	while (s[i] && i < maxlen)
-		++i;
-	return (i);
+	n = n < 0 ? -n : n;
+	len = 1;
+	while (n / base > 0)
+	{
+		n /= base;
+		++len;
+	}
+	return (len);
 }
