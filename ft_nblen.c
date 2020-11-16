@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nblen.c                                         :+:      :+:    :+:   */
+/*   ft_nblen_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 22:32:26 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 13:07:11 by besellem         ###   ########.fr       */
+/*   Updated: 2020/09/13 22:34:26 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_nblen(long long n)
+size_t	ft_nblen(size_t n)
 {
-	int len;
+	size_t len;
+	size_t j;
 
-	n = n < 0 ? -n : n;
 	len = 1;
-	while (n / 10 > 0)
+	j = 1;
+	while ((n / len) >= 10)
 	{
-		n /= 10;
-		++len;
+		len *= 10;
+		++j;
 	}
-	return (len);
+	return (j);
 }
