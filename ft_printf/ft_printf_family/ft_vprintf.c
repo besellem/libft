@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_vprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 23:18:04 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/26 11:02:35 by besellem         ###   ########.fr       */
+/*   Created: 2020/11/14 20:35:24 by besellem          #+#    #+#             */
+/*   Updated: 2020/11/15 12:01:45 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/ft_printf.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+int	ft_vprintf(const char *format, va_list ap)
 {
-	t_list *tmp;
+	int size;
 
-	while (*lst)
-	{
-		(*del)((*lst)->content);
-		tmp = (*lst)->next;
-		free(*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
+	size = ft_vdprintf(1, format, ap);
+	return (size);
 }

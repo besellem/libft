@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_alloc_hex_maj.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 23:18:04 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/26 11:02:35 by besellem         ###   ########.fr       */
+/*   Created: 2020/10/26 16:23:35 by besellem          #+#    #+#             */
+/*   Updated: 2020/11/18 16:06:11 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/ft_printf.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_alloc_hex_maj(t_data **s, t_indicators t, va_list ap)
 {
-	t_list *tmp;
+	char				*data;
+	unsigned long long	n;
 
-	while (*lst)
-	{
-		(*del)((*lst)->content);
-		tmp = (*lst)->next;
-		free(*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
+	n = u_spec(&t, ap);
+	data = conv_x(t, n, 0);
+	ft_strupcase(data);
+	add_lstd(s, data);
+	ft_free(1, data);
 }

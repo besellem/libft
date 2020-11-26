@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_factorial.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 15:01:36 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/16 23:40:26 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/26 10:18:17 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_factorial(size_t nb)
 	size_t res;
 
 	res = 1;
-	if (nb < 0)
-		return (0);
 	while (nb > 0)
 		res *= nb--;
 	return (res);

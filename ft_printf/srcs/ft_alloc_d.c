@@ -1,27 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_alloc_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
+/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 23:18:04 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/26 11:02:35 by besellem         ###   ########.fr       */
+/*   Created: 2020/10/25 19:45:02 by besellem          #+#    #+#             */
+/*   Updated: 2020/11/15 12:02:06 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/ft_printf.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+void	ft_alloc_d(t_data **s, t_indicators t, va_list ap)
 {
-	t_list *tmp;
+	char		*data;
+	long long	n;
 
-	while (*lst)
-	{
-		(*del)((*lst)->content);
-		tmp = (*lst)->next;
-		free(*lst);
-		*lst = tmp;
-	}
-	*lst = NULL;
+	n = d_spec(&t, ap);
+	data = conv_d(t, (n < 0 ? -n : n), (n < 0 ? 1 : 0), "0123456789");
+	add_lstd(s, data);
+	ft_free(1, data);
 }
