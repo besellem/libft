@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_alloc_f.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 02:42:55 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:02:10 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:52:34 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 int		f_prec(char **ret, long double n, int precision, int sign)
 {

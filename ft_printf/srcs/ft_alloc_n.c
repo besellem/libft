@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_alloc_n.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 13:20:09 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:02:26 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:52:49 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 void	*n_spec(t_indicators *t, va_list ap)
 {

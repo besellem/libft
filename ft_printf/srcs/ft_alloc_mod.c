@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_alloc_mod.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:43:58 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:02:24 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:52:47 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 void	ft_alloc_mod(t_data **s, t_indicators t)
 {

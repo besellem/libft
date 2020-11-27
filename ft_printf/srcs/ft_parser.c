@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_parser.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:13:26 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 18:58:51 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:53:26 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 t_data	*ft_parse_format(const char *format, va_list ap)
 {

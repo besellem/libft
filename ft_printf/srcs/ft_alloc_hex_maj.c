@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:23:35 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/18 16:06:11 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:52:38 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 void	ft_alloc_hex_maj(t_data **s, t_indicators t, va_list ap)
 {

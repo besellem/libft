@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:23:26 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/18 16:06:15 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:52:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 static char	*conv_add_xmiz(t_indicators t, char *d, unsigned long long n, int s)
 {

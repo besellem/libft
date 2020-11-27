@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_alloc_b.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 21:49:58 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:02:01 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:52:22 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 void	ft_alloc_b(t_data **s, t_indicators t, va_list ap)
 {

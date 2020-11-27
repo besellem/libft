@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_specifiers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 15:08:33 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:03:12 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:53:29 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 long long	d_spec(t_indicators *t, va_list ap)
 {

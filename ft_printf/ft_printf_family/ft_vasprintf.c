@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vasprintf.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 20:42:18 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:01:42 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 15:04:36 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 static char	*vasprintf_process(const char *format, va_list ap, int *size)
 {

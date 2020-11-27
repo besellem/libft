@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_vdprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 20:37:56 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:01:44 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 15:04:38 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 int	ft_vdprintf(int fd, const char *format, va_list ap)
 {

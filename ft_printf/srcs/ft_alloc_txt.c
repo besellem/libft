@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_alloc_txt.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 21:36:50 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:02:36 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:52:59 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 static int	len_alloc(const char *format)
 {

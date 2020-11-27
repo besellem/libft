@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_common3.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:16:14 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:02:46 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:53:09 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 char	*space_padding(char *data, int padding)
 {

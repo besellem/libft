@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_common.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:11:34 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:02:41 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:53:04 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 char	*ft_mcat(char *dst, char *src)
 {

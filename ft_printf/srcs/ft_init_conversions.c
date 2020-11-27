@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_init_conversions.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 04:07:12 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:02:56 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:53:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 static void	add_conversion(t_types *t, char type, void (*f)())
 {

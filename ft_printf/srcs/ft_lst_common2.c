@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lst_common2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 20:21:20 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:03:01 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:53:23 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 void	add_lstd(t_data **s, char *str)
 {

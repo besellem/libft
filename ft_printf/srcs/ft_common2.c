@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_common2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 20:19:44 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 12:02:44 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/27 14:53:07 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "../inc/ft_printf_internal.h"
 
 void	*ft_malloc_c(size_t size, char c)
 {
