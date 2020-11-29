@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:16:30 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/29 01:43:25 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/29 01:47:29 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@
 
 /*
 ** Useful macros to print a message with a ft_printf or a write for example.
-** Does not pass the norm unfortunately. Use to debug then
+** Does not pass the norm unfortunately. Useful for debugging though.
 **
 ** #define STRINGIFY(x) #x
 ** #define TOSTRING(x) STRINGIFY(x)
