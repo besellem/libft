@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:16:30 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/26 14:01:58 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/29 01:43:25 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,15 @@
 ** Mines
 */
 # include "ft_printf/inc/ft_printf.h"
+
+/*
+** Useful macros to print a message with a ft_printf or a write for example.
+** Does not pass the norm unfortunately. Use to debug then
+**
+** #define STRINGIFY(x) #x
+** #define TOSTRING(x) STRINGIFY(x)
+** #define ERR_MSG(s) "\033[1;31m" __FILE__ ":" TOSTRING(__LINE__) ":\033[0m " s
+*/
 
 /*
 ** -- PROTOTYPES --
