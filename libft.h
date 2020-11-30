@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:16:30 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/29 01:47:29 by besellem         ###   ########.fr       */
+/*   Updated: 2020/11/30 16:24:39 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,9 @@
 */
 # include "ft_printf/inc/ft_printf.h"
 
+/*
+** -- DEFINES --
+*/
 /*
 ** Useful macros to print a message with a ft_printf or a write for example.
 ** Does not pass the norm unfortunately. Useful for debugging though.
@@ -64,6 +67,7 @@ void			ft_putnbr(int n);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putaddr(void *addr);
 void			ft_putaddr_fd(void *addr, int fd);
+int				get_next_line(int fd, char **line);
 
 /*
 ** String

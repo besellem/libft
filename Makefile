@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2020/11/29 01:36:39 by besellem         ###   ########.fr        #
+#    Updated: 2020/11/30 15:42:00 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,6 +91,7 @@ SRCS		+=	ft_strupcase.c
 SRCS		+=	ft_substr.c
 SRCS		+=	ft_tolower.c
 SRCS		+=	ft_toupper.c
+SRCS		+=	get_next_line.c
 
 ## Objects
 OBJS		=	$(SRCS:.c=.o)
