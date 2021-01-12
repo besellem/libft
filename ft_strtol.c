@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 13:02:24 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/12 22:44:00 by besellem         ###   ########.fr       */
+/*   Updated: 2021/01/12 22:54:39 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,15 +80,14 @@ long		ft_strtol(const char *str, char **endptr, int base)
 	while (str[i + j] && in_base(base, str[i + j]) != -1)
 	{
 		nb = nb * base + in_base(base, str[i + j++]);
-		if (nb < 0)
-			return (min == 1 ? LONG_MAX : LONG_MIN);
+		if (nb < 0 && min == 1)
+			return (LONG_MAX);
+		else if (nb < 0)
+			return (LONG_MIN);
 	}
-	if (endptr)
-	{
-		if (j)
-			*endptr = (char *)(&str[i + j]);
-		else
-			*endptr = (char *)(str);
-	}
+	if (endptr && j)
+		*endptr = (char *)(&str[i + j]);
+	else if (endptr)
+		*endptr = (char *)(str);
 	return (nb * min);
 }
