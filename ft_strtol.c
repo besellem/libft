@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtol.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 13:02:24 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/15 15:49:36 by besellem         ###   ########.fr       */
+/*   Updated: 2021/01/12 22:44:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,11 @@ long		ft_strtol(const char *str, char **endptr, int base)
 			return (min == 1 ? LONG_MAX : LONG_MIN);
 	}
 	if (endptr)
-		*endptr = (char *)(j ? &str[i + j] : str);
+	{
+		if (j)
+			*endptr = (char *)(&str[i + j]);
+		else
+			*endptr = (char *)(str);
+	}
 	return (nb * min);
 }
