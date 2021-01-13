@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:07:49 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 15:15:23 by besellem         ###   ########.fr       */
+/*   Updated: 2021/01/13 15:26:38 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,10 @@
 
 /*
 ** Find the index of the first character from needle that is found in haystack
+** If not found, returns -1
 */
 
-size_t	ft_stridx(const char *haystack, const char *needle)
+int	ft_stridx(const char *haystack, const char *needle)
 {
 	size_t i;
 	size_t j;
@@ -32,5 +33,5 @@ size_t	ft_stridx(const char *haystack, const char *needle)
 				return (i);
 		++i;
 	}
-	return (0);
+	return (-1);
 }
