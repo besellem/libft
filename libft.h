@@ -84,6 +84,7 @@ int				ft_strisalpha(char *str);
 int				ft_strisascii(char *str);
 int				ft_strisdigit(char *str);
 int				ft_strisprint(char *str);
+int				ft_incharset(const char *charset, int c);
 void			*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
