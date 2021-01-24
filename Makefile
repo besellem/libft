@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/01/13 15:16:20 by besellem         ###   ########.fr        #
+#    Updated: 2021/01/24 13:04:41 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -53,10 +53,14 @@ SRCS		+=	ft_nblen.c
 SRCS		+=	ft_power.c
 SRCS		+=	ft_putaddr_fd.c
 SRCS		+=	ft_putaddr.c
+SRCS		+=	ft_putc_fd.c
+SRCS		+=	ft_putc.c
 SRCS		+=	ft_putchar_fd.c
 SRCS		+=	ft_putchar.c
 SRCS		+=	ft_putendl_fd.c
 SRCS		+=	ft_putendl.c
+SRCS		+=	ft_putn_fd.c
+SRCS		+=	ft_putn.c
 SRCS		+=	ft_putnbr_fd.c
 SRCS		+=	ft_putnbr.c
 SRCS		+=	ft_putstr_fd.c
