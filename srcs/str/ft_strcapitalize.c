@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 14:56:00 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:17:02 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/08 00:31:46 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,38 +14,35 @@
 
 static int	is_alphanum(char c)
 {
-	if ((c >= 'a' && c <= 'z') ||
-		(c >= 'A' && c <= 'Z') ||
-		(c >= '0' && c <= '9'))
-		return (1);
-	return (0);
+	return ((c >= 'a' && c <= 'z') ||
+			(c >= 'A' && c <= 'Z') ||
+			(c >= '0' && c <= '9'));
 }
 
 static int	is_alpha(char c)
 {
-	if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
-		return (1);
-	return (0);
+	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
 }
 
 static int	is_upper(char c)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (1);
-	return (0);
+	return (c >= 'A' && c <= 'Z');
 }
 
 char		*ft_strcapitalize(char *str)
 {
 	int i;
 
-	i = -1;
-	while (str[++i])
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (str[i])
 	{
 		if (is_upper(str[i]))
 			str[i] += 32;
 		if (!is_alphanum(str[i - 1]) && is_alpha(str[i]))
 			str[i] -= 32;
+		++i;
 	}
 	return (str);
 }

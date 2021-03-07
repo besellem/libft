@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:32:32 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 12:57:48 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/08 00:28:52 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	ft_strisdigit(char *str)
 {
 	size_t i;
 
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i])
 	{

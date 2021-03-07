@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 14:55:49 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:17:19 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/08 00:26:35 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 char	*ft_strlowcase(char *str)
 {
-	int i;
+	size_t i;
 
-	i = -1;
-	while (str[++i])
+	if (!str)
+		return (NULL);
+	i = 0;
+	while (str[i])
+	{
 		if (str[i] >= 'A' && str[i] <= 'Z')
 			str[i] += 32;
+		++i;
+	}
 	return (str);
 }

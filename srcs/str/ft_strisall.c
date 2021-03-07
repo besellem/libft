@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:57:27 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 12:57:41 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/08 00:28:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ int	ft_strisall(char *str, int (*f)(int))
 {
 	size_t i;
 
+	if (!str)
+		return (0);
 	i = 0;
 	while (str[i])
 	{
