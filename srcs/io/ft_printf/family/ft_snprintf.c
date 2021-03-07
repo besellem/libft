@@ -1,24 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_snprintf.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/17 21:02:07 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 15:04:30 by besellem         ###   ########.fr       */
+/*   Created: 2020/11/14 22:10:42 by besellem          #+#    #+#             */
+/*   Updated: 2021/03/08 00:01:40 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf_internal.h"
+#include "ft_printf_internal.h"
 
-int	ft_printf(const char *format, ...)
+int	ft_snprintf(char *str, size_t size, const char *format, ...)
 {
 	va_list	ap;
-	int		size;
+	int		len;
 
 	va_start(ap, format);
-	size = ft_process(format, ap, 1);
+	len = ft_vsnprintf(str, size, format, ap);
 	va_end(ap);
-	return (size);
+	return (len);
 }

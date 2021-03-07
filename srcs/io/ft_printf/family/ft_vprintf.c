@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_asprintf.c                                      :+:      :+:    :+:   */
+/*   ft_vprintf.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/02 21:28:41 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 15:05:52 by besellem         ###   ########.fr       */
+/*   Created: 2020/11/14 20:35:24 by besellem          #+#    #+#             */
+/*   Updated: 2021/03/08 00:01:16 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf.h"
+#include "ft_printf_internal.h"
 
-int	ft_asprintf(char **ret, const char *format, ...)
+int	ft_vprintf(const char *format, va_list ap)
 {
-	va_list	ap;
-	int		size;
+	int size;
 
-	va_start(ap, format);
-	size = ft_vasprintf(ret, format, ap);
-	va_end(ap);
+	size = ft_vdprintf(1, format, ap);
 	return (size);
 }

@@ -6,15 +6,15 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 21:02:45 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 15:30:47 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:58:25 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_INTERNAL_H
 # define FT_PRINTF_INTERNAL_H
 
-# include "../inc/ft_printf.h"
-# include "../../libft.h"
+# include "ft_printf.h"
+# include "libft.h"
 
 /*
 ** -- STRUCTURES & TYPEDEFS --

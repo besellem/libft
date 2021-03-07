@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 22:13:14 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 15:06:15 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/08 00:01:50 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf_internal.h"
+#include "ft_printf_internal.h"
 
 static void	fill_buffer(t_data **s, char **ret, size_t size)
 {

@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 20:37:56 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 15:04:38 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/08 00:01:01 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../inc/ft_printf_internal.h"
+#include "ft_printf_internal.h"
 
 int	ft_vdprintf(int fd, const char *format, va_list ap)
 {

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:16:30 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/24 13:04:42 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/07 23:47:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 /*
 ** Mines
 */
-# include "ft_printf/inc/ft_printf.h"
+# include "ft_printf.h"
 
 /*
 ** -- DEFINES --
