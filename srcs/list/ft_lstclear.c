@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 23:18:04 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/26 11:02:35 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/15 16:00:55 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 
 	while (*lst)
 	{
-		(*del)((*lst)->content);
+		if ((*del))
+			(*del)((*lst)->content);
 		tmp = (*lst)->next;
 		free(*lst);
 		*lst = tmp;
