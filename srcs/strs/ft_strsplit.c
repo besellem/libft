@@ -6,15 +6,15 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 15:51:25 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:17:33 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:28:09 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int			is_charset(char c, char *charset)
+static int	is_charset(char c, char *charset)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (charset[++i])
@@ -23,10 +23,10 @@ static int			is_charset(char c, char *charset)
 	return (0);
 }
 
-static int			ft_len(char *str, char *charset)
+static int	ft_len(char *str, char *charset)
 {
-	int i;
-	int len;
+	int	i;
+	int	len;
 
 	len = 0;
 	i = -1;
@@ -40,10 +40,10 @@ static int			ft_len(char *str, char *charset)
 	return (len);
 }
 
-static int			ft_word_len(char *str, char *charset)
+static int	ft_word_len(char *str, char *charset)
 {
-	int len;
-	int i;
+	int	len;
+	int	i;
 
 	len = 0;
 	i = -1;
@@ -52,7 +52,7 @@ static int			ft_word_len(char *str, char *charset)
 	return (len);
 }
 
-char				**ft_strsplit(char *str, char *charset)
+char		**ft_strsplit(char *str, char *charset)
 {
 	char	**strs;
 	int		len;

@@ -6,22 +6,22 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 09:17:00 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:16:01 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:12:08 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 static int	ft_check_base(char *base)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	if (!*base)
 		return (0);
 	i = -1;
 	while (base[++i])
 	{
-		if (base[i] == '+' || base[i] == '-' ||
-			base[i] == ' ' || (base[i] >= '\t' && base[i] <= '\r'))
+		if (base[i] == '+' || base[i] == '-' || base[i] == ' '
+			|| (base[i] >= '\t' && base[i] <= '\r'))
 			return (0);
 		j = -1;
 		while (++j < i)
@@ -35,7 +35,7 @@ static int	ft_check_base(char *base)
 
 static int	ft_is_in_base(char c, char *base)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (base[++i])
@@ -46,8 +46,8 @@ static int	ft_is_in_base(char c, char *base)
 
 static int	ft_alt(char *str, char *base)
 {
-	int i;
-	int res;
+	int	i;
+	int	res;
 
 	i = -1;
 	res = 0;
@@ -58,7 +58,7 @@ static int	ft_alt(char *str, char *base)
 
 int			ft_atoi_base(char *str, char *base)
 {
-	int min;
+	int	min;
 
 	if (!ft_check_base(base))
 		return (0);

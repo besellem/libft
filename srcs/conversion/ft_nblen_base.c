@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 13:04:36 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/12 22:37:04 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:08:34 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_nblen_base(long long n, int base)
 {
-	int len;
+	int	len;
 
 	if (n < 0)
 		n = -n;

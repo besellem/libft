@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:28:53 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:16:02 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:12:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	ft_atoi(const char *str)
 {
-	int nb;
-	int min;
+	int	nb;
+	int	min;
 
 	while (*str && (*str == ' ' || (*str >= '\t' && *str <= '\r')))
 		++str;

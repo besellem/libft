@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 14:56:00 by besellem          #+#    #+#             */
-/*   Updated: 2021/03/08 00:31:46 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:20:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 static int	is_alphanum(char c)
 {
-	return ((c >= 'a' && c <= 'z') ||
-			(c >= 'A' && c <= 'Z') ||
-			(c >= '0' && c <= '9'));
+	return ((c >= 'a' && c <= 'z')
+		|| (c >= 'A' && c <= 'Z')
+		|| (c >= '0' && c <= '9'));
 }
 
 static int	is_alpha(char c)
@@ -31,7 +31,7 @@ static int	is_upper(char c)
 
 char		*ft_strcapitalize(char *str)
 {
-	int i;
+	int	i;
 
 	if (!str)
 		return (NULL);

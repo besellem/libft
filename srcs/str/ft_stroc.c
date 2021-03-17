@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:08:04 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 15:10:17 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:23:56 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 size_t	ft_stroc(const char *haystack, char c)
 {
-	size_t i;
-	size_t oc;
+	size_t	i;
+	size_t	oc;
 
 	if (!haystack)
 		return (0);

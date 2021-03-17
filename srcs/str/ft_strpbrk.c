@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/21 23:46:15 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:17:32 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:23:59 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 char	*ft_strpbrk(const char *s, const char *charset)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (s[i])

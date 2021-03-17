@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:26 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 21:25:52 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:19:59 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	unsigned char *tmp;
+	unsigned char	*tmp;
 
 	tmp = (unsigned char *)b;
 	while (len-- > 0)

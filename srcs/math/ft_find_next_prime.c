@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 16:02:15 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:16:12 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:19:33 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_find_next_prime(int nb)
 {
-	int f;
+	int	f;
 
 	if (ft_is_prime(nb))
 		return (nb);

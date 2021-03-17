@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 13:02:24 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/12 22:54:39 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:10:56 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static int	alpha_check(char c, char cmp)
 {
-	if (c == cmp ||
-		(ft_isalpha(c) && ft_isalpha(cmp) && ft_tolower(c) == ft_tolower(cmp)))
+	if ((ft_isalpha(c) && ft_isalpha(cmp) && ft_tolower(c) == ft_tolower(cmp))
+		|| c == cmp)
 		return (1);
 	return (0);
 }
@@ -35,8 +35,8 @@ static int	in_base(int base, char c)
 
 static int	special_cases(const char *str, int *base)
 {
-	if ((*base == 0 || *base == 16) && *str && *str == '0' && *(str + 1) &&
-		(*(str + 1) == 'x' || *(str + 1) == 'X'))
+	if ((*base == 0 || *base == 16) && *str && *str == '0' && *(str + 1)
+		&& (*(str + 1) == 'x' || *(str + 1) == 'X'))
 	{
 		*base = 16;
 		return (2);
@@ -53,7 +53,7 @@ static int	special_cases(const char *str, int *base)
 
 static int	get_head(const char *str, int *base, int *min)
 {
-	int i;
+	int	i;
 
 	i = 0;
 	while (str[i] && (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r')))

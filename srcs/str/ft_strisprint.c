@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:41:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/03/08 00:28:56 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:21:29 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 int	ft_strisprint(char *str)
 {
-	size_t i;
+	size_t	i;
 
 	if (!str)
 		return (0);

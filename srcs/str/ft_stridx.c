@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 15:07:49 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 15:26:38 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:21:13 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 
 int	ft_stridx(const char *haystack, const char *needle)
 {
-	size_t i;
-	size_t j;
+	size_t	i;
+	size_t	j;
 
 	if (!haystack || !needle)
 		return (-1);

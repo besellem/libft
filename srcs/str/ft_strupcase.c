@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/05 14:55:35 by besellem          #+#    #+#             */
-/*   Updated: 2021/03/08 00:26:58 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:24:04 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strupcase(char *str)
 {
-	size_t i;
+	size_t	i;
 
 	if (!str)
 		return (NULL);

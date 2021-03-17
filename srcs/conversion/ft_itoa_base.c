@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 12:51:37 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/12 22:35:56 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:53:45 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ char	*ft_itoa_base(long long n, char *base)
 	int			i;
 	int			len;
 
-	len = ft_nblen_base(n, ft_strlen(base)) + (n < 0) + 1;
-	if (!(data = (char *)malloc(sizeof(char) * len)))
+	data = (char *)malloc(ft_nblen_base(n, ft_strlen(base)) + (n < 0) + 1);
+	if (!data)
 		return (NULL);
-	len = ft_strlen(base);
 	i = -1;
-	if (n < 0 && (n = -n))
+	if (n < 0)
+	{
 		data[++i] = '-';
+		n = -n;
+	}
+	len = ft_strlen(base);
 	div = 1;
 	while (n / div >= len)
 		div *= len;

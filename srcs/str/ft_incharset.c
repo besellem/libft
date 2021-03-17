@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_incharset.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: besellem <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 21:48:38 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 21:48:44 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:20:31 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 int	ft_incharset(const char *charset, int c)
 {
-	size_t i;
+	size_t	i;
 
 	if (!charset)
 		return (0);

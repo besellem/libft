@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 21:53:35 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:17:42 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:24:24 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static unsigned int	is_set(char c, char const *set)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (set[i])
@@ -25,7 +25,7 @@ static unsigned int	is_set(char c, char const *set)
 
 static unsigned int	head_index(char const *str, char const *set)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = 0;
 	while (str[i] && is_set(str[i], set))
@@ -35,7 +35,7 @@ static unsigned int	head_index(char const *str, char const *set)
 
 static unsigned int	tail_index(char const *str, char const *set)
 {
-	unsigned int i;
+	unsigned int	i;
 
 	i = ft_strlen(str);
 	while (i-- > 0)
@@ -59,7 +59,8 @@ char				*ft_strtrim(char const *s1, char const *set)
 	if (!s1[head])
 		return (ft_strdup("\0"));
 	tail = tail_index(s1, set);
-	if (!(new = (char *)malloc(sizeof(char) * (tail - head + 2))))
+	new = (char *)malloc(sizeof(char) * (tail - head + 2));
+	if (!new)
 		return (NULL);
 	i = 0;
 	while (i < tail - head + 1)

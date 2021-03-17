@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 00:14:36 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/30 13:46:49 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:18:19 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ static char	*ft_mcat(char *s1, char *s2)
 	int		i;
 	int		j;
 
-	if (!(new = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1)))
+	new = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
+	if (!new)
 		return (NULL);
 	i = -1;
 	while (s1[++i])
@@ -61,8 +62,12 @@ static char	*ft_read_line(int fd, char *str, char **line, int *check)
 	char	*tmp;
 	int		r;
 
-	while ((r = read(fd, buffer, BUFFER_SIZE)) > 0)
+	r = 1;
+	while (r > 0)
 	{
+		r = read(fd, buffer, BUFFER_SIZE);
+		if (r <= 0)
+			break ;
 		buffer[r] = '\0';
 		tmp = str;
 		str = ft_mcat(str, buffer);
@@ -78,8 +83,8 @@ int			get_next_line(int fd, char **line)
 	static char	*strs[FD_LIMIT];
 	int			check;
 
-	if (fd < 0 || fd >= FD_LIMIT || read(fd, strs[fd], 0) ||
-		BUFFER_SIZE <= 0 || !line)
+	if (fd < 0 || fd >= FD_LIMIT || read(fd, strs[fd], 0)
+		|| BUFFER_SIZE <= 0 || !line)
 		return (-1);
 	check = 0;
 	if (strs[fd] && ft_strchr(strs[fd], '\n'))
@@ -87,8 +92,12 @@ int			get_next_line(int fd, char **line)
 		strs[fd] = ft_realloc_str(strs[fd], line, &check);
 		return (check);
 	}
-	if (!strs[fd] && !(strs[fd] = ft_strdup("")))
-		return (-1);
+	if (!strs[fd])
+	{
+		strs[fd] = ft_strdup("");
+		if (!strs[fd])
+			return (-1);
+	}
 	strs[fd] = ft_read_line(fd, strs[fd], line, &check);
 	return (check);
 }

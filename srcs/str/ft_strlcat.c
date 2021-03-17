@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:33 by besellem          #+#    #+#             */
-/*   Updated: 2020/09/13 02:29:33 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/17 19:22:53 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t res;
-	size_t i;
-	size_t j;
+	size_t	res;
+	size_t	i;
+	size_t	j;
 
 	i = ft_strlen(dst);
 	if (dstsize == 0)
