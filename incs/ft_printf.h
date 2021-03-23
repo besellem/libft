@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/27 14:54:51 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/28 19:51:47 by besellem         ###   ########.fr       */
+/*   Updated: 2021/03/23 14:21:49 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,6 @@ int	ft_vdprintf(int fd, const char *format, va_list ap);
 */
 # define CLR_COLOR "\033[0m"
 # define CLR_LINE "\033[2K\r"
+# define CLR_SCREEN "\033[2J\033[H"
 
 #endif
