@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 17:04:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/16 17:04:57 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/16 17:18:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../incs/ft_math.h"
+#include "../../incs/ft_math.h"
 
 int			ft_abs(int i)
 {

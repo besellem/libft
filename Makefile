@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/04/16 17:03:48 by besellem         ###   ########.fr        #
+#    Updated: 2021/04/16 17:18:32 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,8 @@ SRCS		+=	$(SRCS_FOLDER)/list/ft_lstadd_back.c \
 				$(SRCS_FOLDER)/list/ft_lstsize.c
 
 # math
-SRCS		+=	$(SRCS_FOLDER)/math/ft_factorial.c \
+SRCS		+=	$(SRCS_FOLDER)/math/ft_abs.c \
+				$(SRCS_FOLDER)/math/ft_factorial.c \
 				$(SRCS_FOLDER)/math/ft_fdim.c \
 				$(SRCS_FOLDER)/math/ft_find_next_prime.c \
 				$(SRCS_FOLDER)/math/ft_fma.c \
