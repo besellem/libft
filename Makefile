@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/03/08 00:40:11 by besellem         ###   ########.fr        #
+#    Updated: 2021/04/16 15:08:54 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ SRCS		+=	$(SRCS_FOLDER)/list/ft_lstadd_back.c \
 SRCS		+=	$(SRCS_FOLDER)/math/ft_factorial.c \
 				$(SRCS_FOLDER)/math/ft_find_next_prime.c \
 				$(SRCS_FOLDER)/math/ft_is_prime.c \
+				$(SRCS_FOLDER)/math/ft_pow.c \
 				$(SRCS_FOLDER)/math/ft_power.c
 
 # memory
