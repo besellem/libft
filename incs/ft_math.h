@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/16 15:03:55 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/16 17:06:13 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <math.h>
+# include <stdint.h>
 
 /*
 ** -- DEFINES --
@@ -84,7 +85,36 @@ long long	ft_power(long long nb, int power);
 
 /*
 ** Almost real ones
+** (with their type variants)
 */
+int			ft_isnanf(float x);
+int			ft_isnan(double x);
+int			ft_isnanl(long double x);
+
+int			ft_signbitf(float x);
+int			ft_signbit(double x);
+
+float		ft_fdimf(float x, float y);
+double		ft_fdim(double x, double y);
+long double	ft_fdiml(long double x, long double y);
+
+float		ft_fmaxf(float x, float y);
+double		ft_fmax(double x, double y);
+long double	ft_fmaxl(long double x, long double y);
+
+float		ft_fminf(float x, float y);
+double		ft_fmin(double x, double y);
+long double	ft_fminl(long double x, long double y);
+
+float		ft_fmaf(float x, float y, float z);
+double		ft_fma(double x, double y, double z);
+long double	ft_fmal(long double x, long double y, long double z);
+
+int			ft_abs(int i);
+float		ft_fabsf(float x);
+double		ft_fabs(double x);
+long double	ft_fabsl(long double x);
+
 double		ft_pow(double nb, int power);
 
 #endif

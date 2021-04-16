@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 13:38:31 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/16 15:05:42 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/16 17:12:50 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../../incs/ft_math.h"
 
 static int	edge_cases(double nb, int power, double *res)
 {
