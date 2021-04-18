@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 15:46:45 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 15:52:29 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 21:16:10 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_math.h"
+#include "ft_math.h"
 
 /*
 ** This implementation is not correctly rounded like the real round() function.

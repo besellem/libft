@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 17:24:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 21:03:07 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -142,15 +142,17 @@ int			ft_isnan(double x);
 int			ft_isnanl(long double x);
 
 int			ft_isinff(float x);
-int			ft_isinfd(double x);
+int			ft_isinf(double x);
 int			ft_isinfl(long double x);
-int			ft_isinf(long double x, size_t size);
+// int			ft_isinf(long double x, size_t size);
 
 int			ft_signbitf(float x);
 int			ft_signbit(double x);
+int			ft_signbitl(long double x);
 
 float		ft_copysignf(float x, float y);
 double		ft_copysign(double x, double y);
+long double	ft_copysignl(long double x, long double y);
 
 float		ft_ceilf(float f);
 double		ft_ceil(double f);

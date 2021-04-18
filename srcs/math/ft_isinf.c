@@ -6,11 +6,12 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 14:06:27 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 17:23:18 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 21:17:11 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_math.h"
 
 int	ft_isinff(float x)
 {
@@ -20,7 +21,7 @@ int	ft_isinff(float x)
 	return (input == 0x7F800000 || input == 0xFF800000);
 }
 
-int	ft_isinfd(double x)
+int	ft_isinf(double x)
 {
 	uint64_t	input;
 
@@ -35,14 +36,4 @@ int	ft_isinfl(long double x)
 	u.ld = x;
 	return ((u.exp == 0x7FFF || u.exp == 0xFFFF)
 			&& u.m == 0x8000000000000000);
-}
-
-int	ft_isinf(long double x, size_t size)
-{
-	if (sizeof(float) == size)
-		return (ft_isinff((float)x));
-	else if (sizeof(double) == size)
-		return (ft_isinfd((double)x));
-	else
-		return (ft_isinfl((long double)x));
 }

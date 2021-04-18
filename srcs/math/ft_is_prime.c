@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 16:02:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/03/17 19:19:34 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 21:16:10 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_math.h"
 
 int	ft_is_prime(long long nb)
 {

@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:22:45 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/16 17:12:38 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 21:16:10 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_math.h"
+#include "ft_math.h"
 
 float		ft_fmaxf(float x, float y)
 {
