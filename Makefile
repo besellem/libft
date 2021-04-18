@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/04/18 21:14:58 by besellem         ###   ########.fr        #
+#    Updated: 2021/04/18 21:43:38 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -85,6 +85,7 @@ SRCS		+=	$(SRCS_FOLDER)/math/ft_abs.c \
 				$(SRCS_FOLDER)/math/ft_is_prime.c \
 				$(SRCS_FOLDER)/math/ft_isinf.c \
 				$(SRCS_FOLDER)/math/ft_isnan.c \
+				$(SRCS_FOLDER)/math/ft_ldexp.c \
 				$(SRCS_FOLDER)/math/ft_lround.c \
 				$(SRCS_FOLDER)/math/ft_modf.c \
 				$(SRCS_FOLDER)/math/ft_pow.c \

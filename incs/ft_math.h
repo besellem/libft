@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:03:07 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 21:44:17 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,6 @@ int			ft_isnanl(long double x);
 int			ft_isinff(float x);
 int			ft_isinf(double x);
 int			ft_isinfl(long double x);
-// int			ft_isinf(long double x, size_t size);
 
 int			ft_signbitf(float x);
 int			ft_signbit(double x);
@@ -175,8 +174,14 @@ long int	ft_lroundf(float x);
 float		ft_truncf(float x);
 double		ft_trunc(double x);
 
+/*
+** ft_fmod is imprecise with very large numbers
+*/
 float		ft_fmodf(float x, float y);
 double		ft_fmod(double x, double y);
+/*
+** END ft_fmod is imprecise with very large numbers
+*/
 
 float		ft_fdimf(float x, float y);
 double		ft_fdim(double x, double y);
@@ -201,6 +206,12 @@ long double	ft_fabsl(long double x);
 
 float		ft_modff(float value, float *iptr);
 double		ft_modf(double value, double *iptr);
+
+float		ft_frexpf(float value, int *exp);
+double		ft_frexp(double value, int *exp);
+long double	ft_frexpl(long double value, int *exp);
+
+double		ft_ldexp(double x, int n);
 
 double		ft_pow(double nb, int power);
 
