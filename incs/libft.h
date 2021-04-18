@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:16:30 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/16 15:16:22 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 10:31:35 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,8 @@ void			ft_putendl(char *s);
 void			ft_putendl_fd(char *s, int fd);
 void			ft_putnbr(int n);
 void			ft_putnbr_fd(int n, int fd);
+void			ft_putnstr(char *s, size_t n);
+void			ft_putnstr_fd(char *s, int fd, size_t n);
 void			ft_putaddr(void *addr);
 void			ft_putaddr_fd(void *addr, int fd);
 int				get_next_line(int fd, char **line);

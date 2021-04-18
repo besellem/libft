@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/29 17:28:34 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:16:49 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 10:32:25 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putaddr(void *addr)
 {
-	ft_putaddr_fd(addr, 1);
+	ft_putaddr_fd(addr, STDOUT_FILENO);
 }

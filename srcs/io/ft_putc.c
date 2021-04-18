@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/24 11:03:51 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/24 13:01:31 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 10:32:22 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,5 @@
 
 void	ft_putc(int c)
 {
-	ft_putc_fd(c, 1);
+	ft_putc_fd(c, STDOUT_FILENO);
 }

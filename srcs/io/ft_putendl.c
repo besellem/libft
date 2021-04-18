@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 22:58:03 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/13 14:16:53 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 10:32:13 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putendl(char *s)
 {
-	ft_putendl_fd(s, 1);
+	ft_putendl_fd(s, STDOUT_FILENO);
 }
