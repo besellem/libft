@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 14:06:27 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 15:21:45 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 17:23:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	ft_isinfl(long double x)
 	union u_dbl80	u;
 
 	u.ld = x;
-	return ((u.xtract.exp == 0x7FFF || u.xtract.exp == 0xFFFF)
-			&& u.xtract.m == 0x8000000000000000);
+	return ((u.exp == 0x7FFF || u.exp == 0xFFFF)
+			&& u.m == 0x8000000000000000);
 }
 
 int	ft_isinf(long double x, size_t size)

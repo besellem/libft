@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/04/16 17:18:32 by besellem         ###   ########.fr        #
+#    Updated: 2021/04/18 17:30:52 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,6 +52,8 @@ SRCS		+=	$(SRCS_FOLDER)/io/ft_putaddr_fd.c \
 				$(SRCS_FOLDER)/io/ft_putn.c \
 				$(SRCS_FOLDER)/io/ft_putnbr_fd.c \
 				$(SRCS_FOLDER)/io/ft_putnbr.c \
+				$(SRCS_FOLDER)/io/ft_putnstr_fd.c \
+				$(SRCS_FOLDER)/io/ft_putnstr.c \
 				$(SRCS_FOLDER)/io/ft_putstr_fd.c \
 				$(SRCS_FOLDER)/io/ft_putstr.c \
 				$(SRCS_FOLDER)/io/get_next_line.c
@@ -69,17 +71,25 @@ SRCS		+=	$(SRCS_FOLDER)/list/ft_lstadd_back.c \
 
 # math
 SRCS		+=	$(SRCS_FOLDER)/math/ft_abs.c \
+				$(SRCS_FOLDER)/math/ft_ceil.c \
+				$(SRCS_FOLDER)/math/ft_copysign.c \
 				$(SRCS_FOLDER)/math/ft_factorial.c \
 				$(SRCS_FOLDER)/math/ft_fdim.c \
 				$(SRCS_FOLDER)/math/ft_find_next_prime.c \
+				$(SRCS_FOLDER)/math/ft_floor.c \
 				$(SRCS_FOLDER)/math/ft_fma.c \
 				$(SRCS_FOLDER)/math/ft_fmax.c \
 				$(SRCS_FOLDER)/math/ft_fmin.c \
+				$(SRCS_FOLDER)/math/ft_fmod.c \
 				$(SRCS_FOLDER)/math/ft_is_prime.c \
+				$(SRCS_FOLDER)/math/ft_isinf.c \
 				$(SRCS_FOLDER)/math/ft_isnan.c \
+				$(SRCS_FOLDER)/math/ft_lround.c \
+				$(SRCS_FOLDER)/math/ft_modf.c \
 				$(SRCS_FOLDER)/math/ft_pow.c \
-				$(SRCS_FOLDER)/math/ft_power.c \
-				$(SRCS_FOLDER)/math/ft_signbit.c
+				$(SRCS_FOLDER)/math/ft_round.c \
+				$(SRCS_FOLDER)/math/ft_signbit.c \
+				$(SRCS_FOLDER)/math/ft_trunc.c
 
 # memory
 SRCS		+=	$(SRCS_FOLDER)/memory/ft_bzero.c \

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 16:09:46 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 17:24:10 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@
 
 /*
 ** -- DEFINES --
+** math constants
 **
-** PI constant and its variables
+** pi constant and its variables
 ** Scheme:
 **
 **        T_PI_2
@@ -33,39 +34,54 @@
 */
 
 /*
-** PI/4
+** pi/4
 */
 # define T_PI_4 0.785398163397448309615660845819875721
 
 /*
-** PI/2
+** pi/2
 */
 # define T_PI_2 1.57079632679489661923132169163975144
 
 /*
-** PI
+** pi
 */
 # define T_PI 3.14159265358979323846264338327950288
 
 /*
-** (3*PI)/2 or PI+(PI/2)
+** (3*pi)/2 or pi+(pi/2)
 */
 # define T_3PI_2 4.71238898038468967399694520281627774
 
 /*
-** 2*PI
+** 2*pi
 */
 # define T_2PI 6.28318530717958623199592693708837032
 
 /*
-** 1/PI
+** 1/pi
 */
 # define T_1_PI 0.318309886183790671537767526745028724
 
 /*
-** 2/PI
+** 2/pi
 */
 # define T_2_PI 0.636619772367581343075535053490057448
+
+/*
+** 2/sqrt(pi)
+*/
+# define T_2_SQRTPI 1.12837916709551257389615890312154517
+
+/*
+** sqrt(2)
+*/
+# define T_SQRT2 1.41421356237309504880168872420969808
+
+/*
+** 1/sqrt(2)
+*/
+# define T_SQRT1_2 0.707106781186547524400844362104849039
 
 /*
 ** E constant
@@ -73,7 +89,28 @@
 # define T_E 2.71828182845904523536028747135266250
 
 /*
+** log2(e)
+*/
+# define T_LOG2E 1.44269504088896340735992468100189214
+
+/*
+** log10(e)
+*/
+# define T_LOG10E 0.434294481903251827651128918916605082
+
+/*
+** loge(2)
+*/
+# define T_LN2 0.693147180559945309417232121458176568
+
+/*
+** loge(10)
+*/
+# define T_LN10 2.30258509299404568401799145468436421
+
+/*
 ** -- TYPEDEFS & DATA STRUCTURES --
+** u_dbl80 is used to extract data from a `long double' variable
 */
 union	u_dbl80
 {
@@ -82,23 +119,23 @@ union	u_dbl80
 	{
 		uint64_t	m;
 		uint16_t	exp;
-	}	xtract;
+	};
 };
 
 /*
 ** -- PROTOTYPES --
-** Piscine
+** done during the 'piscine' @42school (consider them to be false)
 */
 size_t		ft_factorial(size_t nb);
 int			ft_find_next_prime(int nb);
 int			ft_is_prime(long long nb);
+
 int			ft_nblen(long long n);
 int			ft_nblen_base(long long n, int base);
-long long	ft_power(long long nb, int power);
 
 /*
-** Almost real ones
-** (with their type variants)
+** (almost) real ones
+** with their types variants
 */
 int			ft_isnanf(float x);
 int			ft_isnan(double x);
@@ -121,11 +158,17 @@ double		ft_ceil(double f);
 float		ft_floorf(float x);
 double		ft_floor(double x);
 
+/*
+** ft_*round* functions are false in certain cases
+*/
 float		ft_roundf(float x);
 double		ft_round(double x);
 
 long int	ft_lround(double x);
 long int	ft_lroundf(float x);
+/*
+** END ft_*round* functions are false in certain cases
+*/
 
 float		ft_truncf(float x);
 double		ft_trunc(double x);
