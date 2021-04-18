@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/04/18 21:43:38 by besellem         ###   ########.fr        #
+#    Updated: 2021/04/18 23:09:48 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,6 +91,7 @@ SRCS		+=	$(SRCS_FOLDER)/math/ft_abs.c \
 				$(SRCS_FOLDER)/math/ft_pow.c \
 				$(SRCS_FOLDER)/math/ft_round.c \
 				$(SRCS_FOLDER)/math/ft_signbit.c \
+				$(SRCS_FOLDER)/math/ft_sqrt.c \
 				$(SRCS_FOLDER)/math/ft_trunc.c
 
 # memory

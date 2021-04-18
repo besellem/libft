@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:44:17 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 23:05:04 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <math.h>
+# include <float.h>
 # include <stdint.h>
 
 /*
@@ -203,6 +204,10 @@ int			ft_abs(int i);
 float		ft_fabsf(float x);
 double		ft_fabs(double x);
 long double	ft_fabsl(long double x);
+
+float		ft_sqrtf(float x);
+double		ft_sqrt(double x);
+long double	ft_sqrtl(long double x);
 
 float		ft_modff(float value, float *iptr);
 double		ft_modf(double value, double *iptr);
