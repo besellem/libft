@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 17:04:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/16 17:18:43 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 14:14:23 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ float		ft_fabsf(float x)
 {
 	if (x == 0.0)
 		return (0.0F);
-	if (x == -INFINITY)
+	if (ft_isinff(x))
 		return (INFINITY);
 	if (x < 0.0)
 		return (-x);
@@ -35,7 +35,7 @@ double		ft_fabs(double x)
 {
 	if (x == 0.0)
 		return (0.0);
-	if (x == -INFINITY)
+	if (ft_isinfd(x))
 		return (INFINITY);
 	if (x < 0.0)
 		return (-x);
@@ -46,7 +46,7 @@ long double	ft_fabsl(long double x)
 {
 	if (x == 0.0)
 		return (0.0L);
-	if (x == -INFINITY)
+	if (ft_isinfl(x))
 		return (INFINITY);
 	if (x < 0.0)
 		return (-x);

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/16 17:06:13 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 16:09:46 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,19 @@
 # define T_E 2.71828182845904523536028747135266250
 
 /*
+** -- TYPEDEFS & DATA STRUCTURES --
+*/
+union	u_dbl80
+{
+	long double		ld;
+	struct
+	{
+		uint64_t	m;
+		uint16_t	exp;
+	}	xtract;
+};
+
+/*
 ** -- PROTOTYPES --
 ** Piscine
 */
@@ -91,8 +104,34 @@ int			ft_isnanf(float x);
 int			ft_isnan(double x);
 int			ft_isnanl(long double x);
 
+int			ft_isinff(float x);
+int			ft_isinfd(double x);
+int			ft_isinfl(long double x);
+int			ft_isinf(long double x, size_t size);
+
 int			ft_signbitf(float x);
 int			ft_signbit(double x);
+
+float		ft_copysignf(float x, float y);
+double		ft_copysign(double x, double y);
+
+float		ft_ceilf(float f);
+double		ft_ceil(double f);
+
+float		ft_floorf(float x);
+double		ft_floor(double x);
+
+float		ft_roundf(float x);
+double		ft_round(double x);
+
+long int	ft_lround(double x);
+long int	ft_lroundf(float x);
+
+float		ft_truncf(float x);
+double		ft_trunc(double x);
+
+float		ft_fmodf(float x, float y);
+double		ft_fmod(double x, double y);
 
 float		ft_fdimf(float x, float y);
 double		ft_fdim(double x, double y);
@@ -114,6 +153,9 @@ int			ft_abs(int i);
 float		ft_fabsf(float x);
 double		ft_fabs(double x);
 long double	ft_fabsl(long double x);
+
+float		ft_modff(float value, float *iptr);
+double		ft_modf(double value, double *iptr);
 
 double		ft_pow(double nb, int power);
 
