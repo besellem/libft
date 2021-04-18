@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 23:05:04 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/18 23:35:34 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -208,6 +208,10 @@ long double	ft_fabsl(long double x);
 float		ft_sqrtf(float x);
 double		ft_sqrt(double x);
 long double	ft_sqrtl(long double x);
+
+float		ft_hypotf(float x, float y);
+double		ft_hypot(double x, double y);
+long double	ft_hypotl(long double x, long double y);
 
 float		ft_modff(float value, float *iptr);
 double		ft_modf(double value, double *iptr);
