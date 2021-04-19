@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 13:38:31 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:16:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:38:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ static int	common_cases(double nb, int power, double *res)
 	return (1);
 }
 
-double		ft_pow(double nb, int power)
+double	ft_pow(double nb, int power)
 {
 	double	res;
 	double	tmp;

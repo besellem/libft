@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 21:32:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/03/08 00:01:26 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:42:57 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ static int	vsprintf_process(char *str, const char *fmt, va_list ap)
 	return (size);
 }
 
-int			ft_vsprintf(char *str, const char *format, va_list ap)
+int	ft_vsprintf(char *str, const char *format, va_list ap)
 {
-	int size;
+	int	size;
 
 	size = vsprintf_process(str, format, ap);
 	return (size);

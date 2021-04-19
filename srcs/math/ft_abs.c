@@ -6,13 +6,13 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 17:04:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:16:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:36:06 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-int			ft_abs(int i)
+int	ft_abs(int i)
 {
 	if (i < 0)
 		return (-i);
@@ -20,7 +20,7 @@ int			ft_abs(int i)
 		return (i);
 }
 
-float		ft_fabsf(float x)
+float	ft_fabsf(float x)
 {
 	if (x == 0.0)
 		return (0.0F);
@@ -31,7 +31,7 @@ float		ft_fabsf(float x)
 	return (x);
 }
 
-double		ft_fabs(double x)
+double	ft_fabs(double x)
 {
 	if (x == 0.0)
 		return (0.0);

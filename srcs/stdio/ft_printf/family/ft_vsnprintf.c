@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/14 22:13:14 by besellem          #+#    #+#             */
-/*   Updated: 2021/03/08 00:01:50 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:43:06 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	fill_buffer(t_data **s, char **ret, size_t size)
 {
-	t_data **tracer;
-	size_t len;
+	t_data	**tracer;
+	size_t	len;
 
 	tracer = s;
 	len = size;
@@ -48,9 +48,9 @@ static int	vsnprintf_process(char *str, size_t s, const char *fmt, va_list ap)
 	return (size);
 }
 
-int			ft_vsnprintf(char *str, size_t size, const char *format, va_list ap)
+int	ft_vsnprintf(char *str, size_t size, const char *format, va_list ap)
 {
-	int len;
+	int	len;
 
 	len = vsnprintf_process(str, size, format, ap);
 	return (len);

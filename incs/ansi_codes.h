@@ -6,12 +6,12 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:08:23 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:03:27 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:34:07 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_ANSI_CODES_H
-# define FT_ANSI_CODES_H
+#ifndef ANSI_CODES_H
+# define ANSI_CODES_H
 
 /*
 ** -- COLORS --

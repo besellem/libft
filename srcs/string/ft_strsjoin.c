@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/12 13:58:36 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:16:23 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:40:02 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	ft_len(size_t size, char **strs, char *sep)
 	return (len);
 }
 
-char		*ft_strsjoin(size_t size, char **strs, char *sep)
+char	*ft_strsjoin(size_t size, char **strs, char *sep)
 {
 	char	*s;
 	size_t	i;

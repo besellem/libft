@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 09:17:00 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:13:11 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:39:09 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ static int	ft_alt(char *str, char *base)
 	return (res);
 }
 
-int			ft_atoi_base(char *str, char *base)
+int	ft_atoi_base(char *str, char *base)
 {
 	int	min;
 

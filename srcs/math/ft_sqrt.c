@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 23:02:47 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 23:35:07 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:38:07 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 ** For the record, I started to see some differences with ft_sqrtl(x), where
 ** x = LDBL_MAX - (LDBL_MAX / 1.e+20);
 */
-float		ft_sqrtf(float x)
+float	ft_sqrtf(float x)
 {
 	return ((float)ft_sqrt((double)x));
 }
 
-double		ft_sqrt(double x)
+double	ft_sqrt(double x)
 {
 	return ((double)ft_sqrtl((long double)x));
 }

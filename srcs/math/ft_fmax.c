@@ -6,13 +6,13 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:22:45 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:16:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:36:48 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-float		ft_fmaxf(float x, float y)
+float	ft_fmaxf(float x, float y)
 {
 	if (ft_isnanf(x) && ft_isnanf(y))
 		return (NAN);
@@ -26,7 +26,7 @@ float		ft_fmaxf(float x, float y)
 		return (y);
 }
 
-double		ft_fmax(double x, double y)
+double	ft_fmax(double x, double y)
 {
 	if (ft_isnan(x) && ft_isnan(y))
 		return (NAN);

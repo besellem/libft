@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 10:52:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:23:05 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:39:29 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ long	ft_random(void)
 	long	buf[__RAND_BUF__ + 1];
 	size_t	i;
 
-	if ((fd = open("/dev/urandom", O_RDONLY)) == -1)
+	fd = open("/dev/urandom", O_RDONLY);
+	if (fd == -1)
 		return (1);
 	rbyte = 1;
 	if (read(fd, buf, __RAND_BUF__) > 0)

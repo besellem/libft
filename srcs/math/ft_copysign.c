@@ -6,14 +6,14 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 11:03:04 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:40:43 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:36:16 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 #include "ft_string.h"
 
-float		ft_copysignf(float x, float y)
+float	ft_copysignf(float x, float y)
 {
 	uint32_t	x_input;
 	uint32_t	y_input;
@@ -26,7 +26,7 @@ float		ft_copysignf(float x, float y)
 		return (-x);
 }
 
-double		ft_copysign(double x, double y)
+double	ft_copysign(double x, double y)
 {
 	uint64_t	x_input;
 	uint64_t	y_input;

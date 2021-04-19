@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/13 15:08:33 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:53:29 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:47:35 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 long long	d_spec(t_indicators *t, va_list ap)
 {
-	long long n;
+	long long	n;
 
 	if (t->hh)
 		n = (char)va_arg(ap, int);
@@ -29,9 +29,9 @@ long long	d_spec(t_indicators *t, va_list ap)
 	return (n);
 }
 
-t_ull		u_spec(t_indicators *t, va_list ap)
+t_ull	u_spec(t_indicators *t, va_list ap)
 {
-	unsigned long long n;
+	unsigned long long	n;
 
 	if (t->hh)
 		n = (unsigned char)va_arg(ap, unsigned int);
@@ -48,7 +48,7 @@ t_ull		u_spec(t_indicators *t, va_list ap)
 
 long double	f_spec(t_indicators *t, va_list ap)
 {
-	long double n;
+	long double	n;
 
 	if (t->lf)
 		n = va_arg(ap, long double);

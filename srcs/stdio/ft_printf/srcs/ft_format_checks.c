@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 11:51:03 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:53:12 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:54:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ int	check_zero(const char *format, va_list ap, t_indicators *table)
 
 int	check_prec(const char *format, va_list ap, t_indicators *table)
 {
-	int i;
+	int	i;
 
 	table->dot = 0;
 	if (*format && *format == '*')

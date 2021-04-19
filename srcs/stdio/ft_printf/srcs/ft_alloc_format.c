@@ -6,15 +6,15 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 22:18:36 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:52:36 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:59:17 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf_internal.h"
 
-int		is_conversion(const char *s, t_types *t)
+int	is_conversion(const char *s, t_types *t)
 {
-	int i;
+	int	i;
 
 	i = -1;
 	while (t[++i].type)
@@ -23,9 +23,9 @@ int		is_conversion(const char *s, t_types *t)
 	return (-1);
 }
 
-int		is_specifier(const char *format, t_indicators *t)
+int	is_specifier(const char *format, t_indicators *t)
 {
-	int ret;
+	int	ret;
 
 	ret = 1;
 	if (t->is_specifier != 0)
@@ -63,9 +63,9 @@ void	init_indicators(t_indicators *table)
 	table->lf = 0;
 }
 
-int		fill_indicators(const char *format, va_list ap, t_indicators *table)
+int	fill_indicators(const char *format, va_list ap, t_indicators *table)
 {
-	int index;
+	int	index;
 
 	if (*format == '-')
 		index = 1 + check_min(table);
@@ -88,7 +88,7 @@ int		fill_indicators(const char *format, va_list ap, t_indicators *table)
 	return (index);
 }
 
-int		ft_alloc_format(const char *format, va_list ap, t_data **s, t_types *t)
+int	ft_alloc_format(const char *format, va_list ap, t_data **s, t_types *t)
 {
 	t_indicators	table;
 	int				index;

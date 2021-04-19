@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 16:20:39 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:52:54 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:57:31 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ static char	*convert_p(long long ptr)
 	return (data);
 }
 
-void		ft_alloc_p(t_data **s, t_indicators t, va_list ap)
+void	ft_alloc_p(t_data **s, t_indicators t, va_list ap)
 {
 	char			*data;
 	char			*sp;

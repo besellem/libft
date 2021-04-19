@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 17:43:58 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/12 22:46:08 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:58:28 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_alloc_mod(t_data **s, t_indicators t)
 {
-	char *data;
-	char *sp;
+	char	*data;
+	char	*sp;
 
 	data = "%";
 	sp = NULL;

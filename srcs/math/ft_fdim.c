@@ -6,13 +6,13 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:37:39 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:16:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:36:22 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-float		ft_fdimf(float x, float y)
+float	ft_fdimf(float x, float y)
 {
 	float	r;
 
@@ -24,7 +24,7 @@ float		ft_fdimf(float x, float y)
 	return (r);
 }
 
-double		ft_fdim(double x, double y)
+double	ft_fdim(double x, double y)
 {
 	double	r;
 

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 13:02:24 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:14:46 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:39:42 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ static int	get_head(const char *str, int *base, int *min)
 	return (i + special_cases(str, base));
 }
 
-long		ft_strtol(const char *str, char **endptr, int base)
+long	ft_strtol(const char *str, char **endptr, int base)
 {
 	long	nb;
 	int		min;

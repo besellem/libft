@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:23:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/12 23:04:02 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:58:53 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ static char	*conv_add_xmiz(t_indicators t, char *d, unsigned long long n, int s)
 	return (z);
 }
 
-char		*conv_x(t_indicators t, unsigned long long n, int sign)
+char	*conv_x(t_indicators t, unsigned long long n, int sign)
 {
-	char *r;
-	char *sp;
+	char	*r;
+	char	*sp;
 
 	r = NULL;
 	if (!(n == 0 && t.dot == 0))
@@ -55,7 +55,7 @@ char		*conv_x(t_indicators t, unsigned long long n, int sign)
 	return (r);
 }
 
-void		ft_alloc_hex_min(t_data **s, t_indicators t, va_list ap)
+void	ft_alloc_hex_min(t_data **s, t_indicators t, va_list ap)
 {
 	char				*data;
 	unsigned long long	n;
@@ -66,7 +66,7 @@ void		ft_alloc_hex_min(t_data **s, t_indicators t, va_list ap)
 	ft_free(1, data);
 }
 
-void		ft_alloc_hex_maj(t_data **s, t_indicators t, va_list ap)
+void	ft_alloc_hex_maj(t_data **s, t_indicators t, va_list ap)
 {
 	char				*data;
 	unsigned long long	n;

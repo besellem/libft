@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 22:07:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:54:04 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:40:11 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static int	w_count(char const *s, char c)
 	return (len);
 }
 
-char		**ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
 	char	**strs;
 	int		w_len;

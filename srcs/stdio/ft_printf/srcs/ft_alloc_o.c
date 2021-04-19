@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/02 10:58:50 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:52:52 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:57:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,8 @@ char	*conv_add_oz(t_indicators t, char *d, unsigned long long n, int s)
 
 char	*conv_o(t_indicators t, unsigned long long n, int sign)
 {
-	char *r;
-	char *sp;
+	char	*r;
+	char	*sp;
 
 	r = NULL;
 	if (!(n == 0 && t.dot == 0))

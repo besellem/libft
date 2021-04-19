@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 21:53:35 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:50:31 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:40:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static unsigned int	tail_index(char const *str, char const *set)
 	return (0);
 }
 
-char				*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	char			*new;
 	unsigned int	head;

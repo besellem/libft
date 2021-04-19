@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 20:19:44 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:53:07 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:55:29 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	*ft_malloc_c(size_t size, char c)
 	char	*str;
 	size_t	i;
 
-	if (size <= 0 || !(str = (char *)malloc(sizeof(char) * (size + 1))))
+	if (size <= 0)
+		return (NULL);
+	str = (char *)malloc(sizeof(char) * (size + 1));
+	if (!str)
 		return (NULL);
 	i = 0;
 	while (i < size)
@@ -68,7 +71,7 @@ char	*conv_add_z(t_indicators t, char *data, t_ull n, int s)
 
 char	*conv_add_sign(t_indicators t, int sign)
 {
-	char *sgn;
+	char	*sgn;
 
 	sgn = NULL;
 	if (sign == 0 && t.plus)
@@ -82,8 +85,8 @@ char	*conv_add_sign(t_indicators t, int sign)
 
 char	*conv_d(t_indicators t, t_ull n, int sign, char *base)
 {
-	char *r;
-	char *sp;
+	char	*r;
+	char	*sp;
 
 	r = NULL;
 	if (!(n == 0 && t.dot == 0))

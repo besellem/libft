@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/10 13:20:09 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:52:49 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:58:12 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*n_spec(t_indicators *t, va_list ap)
 {
-	void *n;
+	void	*n;
 
 	if (t->hh)
 		n = (char *)va_arg(ap, int *);

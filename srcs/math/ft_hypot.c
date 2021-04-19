@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 23:31:01 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 23:35:52 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:36:54 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** In the same way as the ft_sqrtl() function,
 ** ft_hypotl() is not accurate for VERY large numbers
 */
-float		ft_hypotf(float x, float y)
+float	ft_hypotf(float x, float y)
 {
 	const double	_x = (double)x;
 	const double	_y = (double)y;
@@ -28,7 +28,7 @@ float		ft_hypotf(float x, float y)
 	return ((float)ft_sqrt(((_x * _x) + (_y * _y))));
 }
 
-double		ft_hypot(double x, double y)
+double	ft_hypot(double x, double y)
 {
 	const long double	_x = (long double)x;
 	const long double	_y = (long double)y;

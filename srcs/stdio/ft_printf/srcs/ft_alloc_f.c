@@ -6,13 +6,13 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/09 02:42:55 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:52:34 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 15:00:08 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf_internal.h"
 
-int		f_prec(char **ret, long double n, int precision, int sign)
+int	f_prec(char **ret, long double n, int precision, int sign)
 {
 	char	*data;
 	int		i;
@@ -79,8 +79,8 @@ char	*conv_add_zf(t_indicators t, char *data, int s)
 
 char	*conv_f(t_indicators t, long double n, int sign)
 {
-	char *r;
-	char *sp;
+	char	*r;
+	char	*sp;
 
 	r = convert_f(n, t.dot, t.htag, sign);
 	r = ft_mcat(conv_add_zf(t, r, sign), r);

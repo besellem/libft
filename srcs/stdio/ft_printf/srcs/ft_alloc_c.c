@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 19:37:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/01/12 22:40:28 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:59:29 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	ft_alloc_c(t_data **s, t_indicators t, va_list ap)
 {
-	char data[2];
-	char *sp;
+	char	data[2];
+	char	*sp;
 
 	data[0] = va_arg(ap, int);
 	data[1] = '\0';

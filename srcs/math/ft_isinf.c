@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 14:06:27 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:40:58 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:37:45 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,5 @@ int	ft_isinfl(long double x)
 
 	u.ld = x;
 	return ((u.s_xtr.exp == 0x7FFF || u.s_xtr.exp == 0xFFFF)
-			&& u.s_xtr.m == 0x8000000000000000);
+		&& u.s_xtr.m == 0x8000000000000000);
 }

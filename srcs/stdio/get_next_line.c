@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/19 00:14:36 by besellem          #+#    #+#             */
-/*   Updated: 2021/03/17 19:18:19 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:38:44 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,7 @@ static char	*ft_read_line(int fd, char *str, char **line, int *check)
 	return (ft_realloc_str(str, line, check));
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	static char	*strs[FD_LIMIT];
 	int			check;

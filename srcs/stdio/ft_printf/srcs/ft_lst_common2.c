@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 20:21:20 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:53:23 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:49:06 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 void	add_lstd(t_data **s, char *str)
 {
-	size_t size;
+	const size_t	size = ft_strlen(str);
 
-	if (!str || ((size = ft_strlen(str)) == 0))
+	if (!str || size == 0)
 		return ;
 	ft_lstd_add(s, ft_lstd_new(str, size));
 }

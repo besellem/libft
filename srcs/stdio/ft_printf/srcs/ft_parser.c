@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:13:26 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:53:26 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 14:48:19 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,8 @@ t_data	*ft_parse_format(const char *format, va_list ap)
 	{
 		if (format[i] == '%' && ++i)
 		{
-			if ((check = ft_alloc_format(format + i, ap, &data, t)) == -1)
+			check = ft_alloc_format(format + i, ap, &data, t);
+			if (check == -1)
 			{
 				ft_lstd_clear(&data);
 				return (NULL);
@@ -40,7 +41,7 @@ t_data	*ft_parse_format(const char *format, va_list ap)
 	return (data);
 }
 
-int		ft_process(const char *format, va_list ap, int fd)
+int	ft_process(const char *format, va_list ap, int fd)
 {
 	int		size;
 	t_data	*data;
