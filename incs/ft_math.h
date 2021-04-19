@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:40:02 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 15:41:50 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -200,7 +200,7 @@ float				ft_fmaf(float x, float y, float z);
 double				ft_fma(double x, double y, double z);
 long double			ft_fmal(long double x, long double y, long double z);
 
-int					ft_abs(int i);
+int					ft_abs(int i) __attribute__((const));
 float				ft_fabsf(float x);
 double				ft_fabs(double x);
 long double			ft_fabsl(long double x);
