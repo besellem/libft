@@ -6,12 +6,12 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 14:06:27 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:17:11 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:40:58 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_math.h"
+#include "ft_string.h"
 
 int	ft_isinff(float x)
 {
@@ -34,6 +34,6 @@ int	ft_isinfl(long double x)
 	union u_dbl80	u;
 
 	u.ld = x;
-	return ((u.exp == 0x7FFF || u.exp == 0xFFFF)
-			&& u.m == 0x8000000000000000);
+	return ((u.s_xtr.exp == 0x7FFF || u.s_xtr.exp == 0xFFFF)
+			&& u.s_xtr.m == 0x8000000000000000);
 }

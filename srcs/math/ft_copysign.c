@@ -6,12 +6,12 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 11:03:04 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:16:43 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:40:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_math.h"
+#include "ft_string.h"
 
 float		ft_copysignf(float x, float y)
 {
@@ -46,7 +46,7 @@ long double	ft_copysignl(long double x, long double y)
 
 	x_u.ld = x;
 	y_u.ld = y;
-	if ((x_u.exp >> 15) == (y_u.exp >> 15))
+	if ((x_u.s_xtr.exp >> 15) == (y_u.s_xtr.exp >> 15))
 		return (x);
 	else
 		return (-x);

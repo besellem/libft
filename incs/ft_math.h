@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 23:35:34 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:40:02 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,115 +113,115 @@
 ** -- TYPEDEFS & DATA STRUCTURES --
 ** u_dbl80 is used to extract data from a `long double' variable
 */
-union	u_dbl80
+union				u_dbl80
 {
 	long double		ld;
 	struct
 	{
 		uint64_t	m;
 		uint16_t	exp;
-	};
+	}				s_xtr;
 };
 
 /*
 ** -- PROTOTYPES --
 ** done during the 'piscine' @42school (consider them to be false)
 */
-size_t		ft_factorial(size_t nb);
-int			ft_find_next_prime(int nb);
-int			ft_is_prime(long long nb);
+size_t				ft_factorial(size_t nb);
+int					ft_find_next_prime(int nb);
+int					ft_is_prime(long long nb);
 
-int			ft_nblen(long long n);
-int			ft_nblen_base(long long n, int base);
+int					ft_nblen(long long n);
+int					ft_nblen_base(long long n, int base);
 
 /*
 ** (almost) real ones
 ** with their types variants
 */
-int			ft_isnanf(float x);
-int			ft_isnan(double x);
-int			ft_isnanl(long double x);
+int					ft_isnanf(float x);
+int					ft_isnan(double x);
+int					ft_isnanl(long double x);
 
-int			ft_isinff(float x);
-int			ft_isinf(double x);
-int			ft_isinfl(long double x);
+int					ft_isinff(float x);
+int					ft_isinf(double x);
+int					ft_isinfl(long double x);
 
-int			ft_signbitf(float x);
-int			ft_signbit(double x);
-int			ft_signbitl(long double x);
+int					ft_signbitf(float x);
+int					ft_signbit(double x);
+int					ft_signbitl(long double x);
 
-float		ft_copysignf(float x, float y);
-double		ft_copysign(double x, double y);
-long double	ft_copysignl(long double x, long double y);
+float				ft_copysignf(float x, float y);
+double				ft_copysign(double x, double y);
+long double			ft_copysignl(long double x, long double y);
 
-float		ft_ceilf(float f);
-double		ft_ceil(double f);
+float				ft_ceilf(float f);
+double				ft_ceil(double f);
 
-float		ft_floorf(float x);
-double		ft_floor(double x);
+float				ft_floorf(float x);
+double				ft_floor(double x);
 
 /*
 ** ft_*round* functions are false in certain cases
 */
-float		ft_roundf(float x);
-double		ft_round(double x);
+float				ft_roundf(float x);
+double				ft_round(double x);
 
-long int	ft_lround(double x);
-long int	ft_lroundf(float x);
+long int			ft_lround(double x);
+long int			ft_lroundf(float x);
 /*
 ** END ft_*round* functions are false in certain cases
 */
 
-float		ft_truncf(float x);
-double		ft_trunc(double x);
+float				ft_truncf(float x);
+double				ft_trunc(double x);
 
 /*
 ** ft_fmod is imprecise with very large numbers
 */
-float		ft_fmodf(float x, float y);
-double		ft_fmod(double x, double y);
+float				ft_fmodf(float x, float y);
+double				ft_fmod(double x, double y);
 /*
 ** END ft_fmod is imprecise with very large numbers
 */
 
-float		ft_fdimf(float x, float y);
-double		ft_fdim(double x, double y);
-long double	ft_fdiml(long double x, long double y);
+float				ft_fdimf(float x, float y);
+double				ft_fdim(double x, double y);
+long double			ft_fdiml(long double x, long double y);
 
-float		ft_fmaxf(float x, float y);
-double		ft_fmax(double x, double y);
-long double	ft_fmaxl(long double x, long double y);
+float				ft_fmaxf(float x, float y);
+double				ft_fmax(double x, double y);
+long double			ft_fmaxl(long double x, long double y);
 
-float		ft_fminf(float x, float y);
-double		ft_fmin(double x, double y);
-long double	ft_fminl(long double x, long double y);
+float				ft_fminf(float x, float y);
+double				ft_fmin(double x, double y);
+long double			ft_fminl(long double x, long double y);
 
-float		ft_fmaf(float x, float y, float z);
-double		ft_fma(double x, double y, double z);
-long double	ft_fmal(long double x, long double y, long double z);
+float				ft_fmaf(float x, float y, float z);
+double				ft_fma(double x, double y, double z);
+long double			ft_fmal(long double x, long double y, long double z);
 
-int			ft_abs(int i);
-float		ft_fabsf(float x);
-double		ft_fabs(double x);
-long double	ft_fabsl(long double x);
+int					ft_abs(int i);
+float				ft_fabsf(float x);
+double				ft_fabs(double x);
+long double			ft_fabsl(long double x);
 
-float		ft_sqrtf(float x);
-double		ft_sqrt(double x);
-long double	ft_sqrtl(long double x);
+float				ft_sqrtf(float x);
+double				ft_sqrt(double x);
+long double			ft_sqrtl(long double x);
 
-float		ft_hypotf(float x, float y);
-double		ft_hypot(double x, double y);
-long double	ft_hypotl(long double x, long double y);
+float				ft_hypotf(float x, float y);
+double				ft_hypot(double x, double y);
+long double			ft_hypotl(long double x, long double y);
 
-float		ft_modff(float value, float *iptr);
-double		ft_modf(double value, double *iptr);
+float				ft_modff(float value, float *iptr);
+double				ft_modf(double value, double *iptr);
 
-float		ft_frexpf(float value, int *exp);
-double		ft_frexp(double value, int *exp);
-long double	ft_frexpl(long double value, int *exp);
+float				ft_frexpf(float value, int *exp);
+double				ft_frexp(double value, int *exp);
+long double			ft_frexpl(long double value, int *exp);
 
-double		ft_ldexp(double x, int n);
+double				ft_ldexp(double x, int n);
 
-double		ft_pow(double nb, int power);
+double				ft_pow(double nb, int power);
 
 #endif

@@ -6,12 +6,12 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 11:32:30 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:17:05 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:34:21 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_math.h"
+#include "ft_string.h"
 
 float	ft_floorf(float x)
 {

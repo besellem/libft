@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 16:08:43 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:16:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:35:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ long int	ft_lroundf(float x)
 {
 	const float	ceil_val = ft_ceilf(x);
 
-	if (x >= __INT64_MAX__)
-		return (__INT64_MAX__);
+	if (x >= INT64_MAX)
+		return (INT64_MAX);
 	if ((ceil_val - x) <= 0.5f)
 		return ((long int)ceil_val);
 	else
@@ -51,8 +51,8 @@ long int	ft_lround(double x)
 {
 	const double	ceil_val = ft_ceil(x);
 
-	if (x >= __INT64_MAX__)
-		return (__INT64_MAX__);
+	if (x >= INT64_MAX)
+		return (INT64_MAX);
 	if ((ceil_val - x) <= 0.5)
 		return ((long int)ceil_val);
 	else

@@ -6,11 +6,11 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 23:18:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/03/17 19:19:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/19 13:30:22 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_list.h"
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
