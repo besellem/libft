@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/04/19 13:24:47 by besellem         ###   ########.fr        #
+#    Updated: 2021/04/24 23:01:51 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,8 +20,15 @@ SRCS_FOLDER	:=	srcs
 SRCS		+=	$(SRCS_FOLDER)/ctype/ft_isalnum.c \
 				$(SRCS_FOLDER)/ctype/ft_isalpha.c \
 				$(SRCS_FOLDER)/ctype/ft_isascii.c \
+				$(SRCS_FOLDER)/ctype/ft_iscntrl.c \
 				$(SRCS_FOLDER)/ctype/ft_isdigit.c \
+				$(SRCS_FOLDER)/ctype/ft_isgraph.c \
+				$(SRCS_FOLDER)/ctype/ft_islower.c \
 				$(SRCS_FOLDER)/ctype/ft_isprint.c \
+				$(SRCS_FOLDER)/ctype/ft_ispunct.c \
+				$(SRCS_FOLDER)/ctype/ft_isspace.c \
+				$(SRCS_FOLDER)/ctype/ft_isupper.c \
+				$(SRCS_FOLDER)/ctype/ft_isxdigit.c \
 				$(SRCS_FOLDER)/ctype/ft_tolower.c \
 				$(SRCS_FOLDER)/ctype/ft_toupper.c
 
