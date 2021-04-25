@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 15:00:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 15:41:50 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/25 18:36:15 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,11 +128,15 @@ union				u_dbl80
 ** done during the 'piscine' @42school (consider them to be false)
 */
 size_t				ft_factorial(size_t nb);
-int					ft_find_next_prime(int nb);
-int					ft_is_prime(long long nb);
 
 int					ft_nblen(long long n);
 int					ft_nblen_base(long long n, int base);
+
+/*
+** pretty good implementations of custom functions
+*/
+int					ft_isprime(unsigned long long nb);
+unsigned long long	ft_find_next_prime(unsigned long long nb);
 
 /*
 ** (almost) real ones

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_is_prime.c                                      :+:      :+:    :+:   */
+/*   ft_isprime.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/17 16:02:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 21:16:10 by besellem         ###   ########.fr       */
+/*   Updated: 2021/04/25 18:40:21 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-int	ft_is_prime(long long nb)
+int	ft_isprime(unsigned long long nb)
 {
-	int	f;
+	unsigned long long	_sqrt;
+	unsigned long long	f;
 
 	if (nb < 2)
 		return (0);
-	f = 1;
-	while (++f <= 46341 && f < nb)
+	if (nb % 2 == 0)
+		return (nb == 2);
+	_sqrt = (unsigned long long)ft_sqrt(nb);
+	f = 3;
+	while (f <= _sqrt)
 	{
 		if (nb % f == 0)
 			return (0);
+		f += 2;
 	}
 	return (1);
 }
