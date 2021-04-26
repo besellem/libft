@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_bcmp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 02:28:58 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/26 22:02:26 by besellem         ###   ########.fr       */
+/*   Created: 2021/04/26 21:59:26 by besellem          #+#    #+#             */
+/*   Updated: 2021/04/26 22:00:38 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 
-void	ft_bzero(void *s, size_t n)
+int	ft_bcmp(const void *b1, const void *b2, size_t len)
 {
-	ft_memset(s, 0, n);
+	return (ft_memcmp(b1, b2, len));
 }

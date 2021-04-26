@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/04/25 18:30:28 by besellem         ###   ########.fr        #
+#    Updated: 2021/04/26 22:33:31 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,14 +107,18 @@ SRCS		+=	$(SRCS_FOLDER)/stdlib/ft_atod.c \
 				$(SRCS_FOLDER)/stdlib/ft_strtoll.c
 
 # string
-SRCS		+=	$(SRCS_FOLDER)/string/ft_bzero.c \
+SRCS		+=	$(SRCS_FOLDER)/string/ft_bcmp.c \
+				$(SRCS_FOLDER)/string/ft_bcopy.c \
+				$(SRCS_FOLDER)/string/ft_bzero.c \
 				$(SRCS_FOLDER)/string/ft_incharset.c \
+				$(SRCS_FOLDER)/string/ft_index.c \
 				$(SRCS_FOLDER)/string/ft_memccpy.c \
 				$(SRCS_FOLDER)/string/ft_memchr.c \
 				$(SRCS_FOLDER)/string/ft_memcmp.c \
 				$(SRCS_FOLDER)/string/ft_memcpy.c \
 				$(SRCS_FOLDER)/string/ft_memmove.c \
 				$(SRCS_FOLDER)/string/ft_memset.c \
+				$(SRCS_FOLDER)/string/ft_rindex.c \
 				$(SRCS_FOLDER)/string/ft_split.c \
 				$(SRCS_FOLDER)/string/ft_strcapitalize.c \
 				$(SRCS_FOLDER)/string/ft_strcasestr.c \
@@ -150,7 +154,10 @@ SRCS		+=	$(SRCS_FOLDER)/string/ft_bzero.c \
 				$(SRCS_FOLDER)/string/ft_strstr.c \
 				$(SRCS_FOLDER)/string/ft_strtrim.c \
 				$(SRCS_FOLDER)/string/ft_strupcase.c \
-				$(SRCS_FOLDER)/string/ft_substr.c
+				$(SRCS_FOLDER)/string/ft_substr.c \
+				$(SRCS_FOLDER)/string/ft_trn.c \
+				$(SRCS_FOLDER)/string/ft_trni.c \
+				$(SRCS_FOLDER)/string/ft_trnu.c
 
 ## Objects
 PRINTF_OBJS	=	$(PRINTF_SRCS:.c=.o)
