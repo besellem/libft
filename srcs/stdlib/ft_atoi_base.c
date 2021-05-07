@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/10 09:17:00 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:39:09 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/07 13:02:48 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ static int	ft_alt(char *str, char *base)
 	int	i;
 	int	res;
 
-	i = -1;
 	res = 0;
+	i = -1;
 	while (ft_is_in_base(str[++i], base) != -1)
 		res = res * ft_check_base(base) + ft_is_in_base(str[i], base);
 	return (res);

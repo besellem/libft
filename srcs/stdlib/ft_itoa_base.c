@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 12:51:37 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:14:02 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/07 13:03:51 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ char	*ft_itoa_base(long long n, char *base)
 	}
 	len = ft_strlen(base);
 	div = 1;
-	while (n / div >= len)
+	while ((n / div) >= len)
 		div *= len;
 	while (div > 0)
 	{

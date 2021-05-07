@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 10:28:35 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/18 10:30:26 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/07 13:08:45 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 void	ft_putnstr_fd(char *s, int fd, size_t n)
 {
-	size_t	len;
+	const size_t	len = ft_strlen(s);
 
-	len = ft_strlen(s);
-	if (len > n)
-		len = n;
-	write(fd, s, len);
+	write(fd, s, ft_trnul((len > n), n, len));
 }

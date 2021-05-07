@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 18:54:22 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:48:04 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/07 12:58:54 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 
 char	*ft_strcat(char *s1, const char *s2)
 {
-	size_t	len;
-	size_t	i;
+	const size_t	len = ft_strlen(s1);
+	size_t			i;
 
-	len = ft_strlen(s1);
 	i = 0;
 	while (s2[i])
 	{
