@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/04/26 22:33:31 by besellem         ###   ########.fr        #
+#    Updated: 2021/05/09 23:20:00 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -116,6 +116,7 @@ SRCS		+=	$(SRCS_FOLDER)/string/ft_bcmp.c \
 				$(SRCS_FOLDER)/string/ft_memchr.c \
 				$(SRCS_FOLDER)/string/ft_memcmp.c \
 				$(SRCS_FOLDER)/string/ft_memcpy.c \
+				$(SRCS_FOLDER)/string/ft_memdel.c \
 				$(SRCS_FOLDER)/string/ft_memmove.c \
 				$(SRCS_FOLDER)/string/ft_memset.c \
 				$(SRCS_FOLDER)/string/ft_rindex.c \
@@ -174,6 +175,7 @@ RM			=	rm -f
 
 .c.o:
 			$(MUTE) $(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INCS)
+# $(MUTE) $(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INCS) -D LIBC_NO_CRASH_ON_NULL=0
 
 $(NAME):	$(OBJS)
 			$(MUTE) $(MAKE) -C $(SRCS_FOLDER)/stdio/ft_printf

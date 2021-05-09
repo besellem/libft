@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 13:02:24 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/21 23:43:37 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/09 20:17:39 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,10 @@
 
 static int	in_base(int base, char c)
 {
-	const char	b[] = "0123456789abcdefghijklmnopqrstuvwxyz";
-	int			i;
+	char	*b;
+	int		i;
 
+	b = "0123456789abcdefghijklmnopqrstuvwxyz";
 	i = 0;
 	while (b[i] && i < base)
 	{
@@ -64,7 +65,7 @@ static int	get_head(const char *str, int *base, int *min)
 	return (i + special_cases(str, base));
 }
 
-#include <stdio.h>
+// #include <stdio.h>
 static long	get_ret_val(long nb, int min, int flag)
 {
 	if (flag == 1)

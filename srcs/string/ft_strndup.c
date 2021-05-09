@@ -6,32 +6,23 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 18:20:21 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:49:54 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/09 21:33:13 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "defs.h"
 
 char	*ft_strndup(const char *s1, size_t n)
 {
-	char	*cpy;
-	size_t	len;
-	size_t	i;
+	const size_t	_sz = ft_strnlen(s1, n);
+	char			*cpy;
 
-	if (!s1)
+	if (LIBC_NO_CRASH_ON_NULL && !s1)
 		return (NULL);
-	len = ft_strlen(s1);
-	if (len > n)
-		len = n;
-	cpy = (char *)malloc(sizeof(char) * (len + 1));
+	cpy = (char *)malloc(sizeof(char) * (_sz + 1));
 	if (!cpy)
 		return (NULL);
-	i = 0;
-	while (i < len)
-	{
-		cpy[i] = s1[i];
-		++i;
-	}
-	cpy[i] = '\0';
-	return (cpy);
+	cpy[_sz] = '\0';
+	return ((char *)ft_memcpy(cpy, s1, _sz));
 }
