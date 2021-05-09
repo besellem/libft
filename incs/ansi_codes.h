@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:08:23 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:34:07 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/10 00:26:33 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,5 +56,12 @@
 # define CLR_COLOR "\033[0m"
 # define CLR_LINE "\033[2K\r"
 # define CLR_SCREEN "\033[2J\033[H"
+
+/*
+** -- OTHERS --
+*/
+# define BELL "\a"					// play terminal's bell sound
+# define INVISIBLE_CURSOR "\e[?25l"	// make the cursor invisible
+# define VISIBLE_CURSOR "\e[?25h"	// make the cursor visible (again)
 
 #endif
