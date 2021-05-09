@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/05/10 00:58:08 by besellem         ###   ########.fr        #
+#    Updated: 2021/05/10 01:07:18 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -183,6 +183,8 @@ $(NAME):	$(OBJS)
 
 all:		$(NAME)
 
+bonus:		all
+
 clean:
 			$(MUTE) $(MAKE) -C $(SRCS_FOLDER)/stdio/ft_printf clean
 			$(MUTE) $(RM) $(OBJS)
@@ -193,4 +195,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		$(NAME) all clean fclean re
+.PHONY:		$(NAME) all bonus clean fclean re
