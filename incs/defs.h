@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 21:09:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/09 21:32:31 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/10 00:35:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,15 @@
 # else
 #  define LIBC_NO_CRASH_ON_NULL 0
 # endif
+
+/*
+** Useful macros to print out a message with a ft_printf or a write for example.
+** Does not pass the norm unfortunately. Useful for debugging though.
+**
+** #define STRINGIFY(x) #x
+** #define TOSTRING(x) STRINGIFY(x)
+** #define PRINT_ERR(s)	printf("\e[1;31m" __FILE__ ":" TOSTRING(__LINE__) \
+						":\e[0m " s "\n");
+*/
 
 #endif
