@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:15:52 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/09 19:07:32 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/10 22:30:42 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,9 +68,11 @@ char		*ft_strndup(const char *s1, size_t n);
 char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 char		**ft_split(char const *s, char c);
-char		**ft_strsplit(char *str, char *charset);
+char		**ft_strsplit(const char *str, const char *charset);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strsjoin(size_t size, char **strs, char *sep);
+
+void		*ft_strsfree(size_t size, char **s);
 
 // Ternary operations
 void		*ft_trn(int condition, void *if_true, void *if_false);

@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split.c                                         :+:      :+:    :+:   */
+/*   ft_strslen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 22:07:09 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/10 22:44:15 by besellem         ###   ########.fr       */
+/*   Created: 2021/05/10 22:48:40 by besellem          #+#    #+#             */
+/*   Updated: 2021/05/10 22:55:15 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "defs.h"
 
-char	**ft_split(char const *s, char c)
+size_t	ft_strslen(char **s)
 {
-	const char	charset[2] = {c, '\0'};
+	size_t	i;
 
-	return (ft_strsplit(s, charset));
+	if (LIBC_NO_CRASH_ON_NULL && (!s || !*s))
+		return (0);
+	i = 0;
+	while (s[i])
+		++i;
+	return (i);
 }

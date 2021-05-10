@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/05/10 02:56:35 by besellem         ###   ########.fr        #
+#    Updated: 2021/05/10 22:51:48 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -150,7 +150,9 @@ SRCS		+=	$(SRCS_FOLDER)/string/ft_bcmp.c \
 				$(SRCS_FOLDER)/string/ft_stroc.c \
 				$(SRCS_FOLDER)/string/ft_strpbrk.c \
 				$(SRCS_FOLDER)/string/ft_strrchr.c \
+				$(SRCS_FOLDER)/string/ft_strsfree.c \
 				$(SRCS_FOLDER)/string/ft_strsjoin.c \
+				$(SRCS_FOLDER)/string/ft_strslen.c \
 				$(SRCS_FOLDER)/string/ft_strsplit.c \
 				$(SRCS_FOLDER)/string/ft_strstr.c \
 				$(SRCS_FOLDER)/string/ft_strtrim.c \

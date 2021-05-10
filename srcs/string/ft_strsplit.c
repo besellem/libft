@@ -6,13 +6,14 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 15:51:25 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:54:18 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/10 22:41:57 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "ft_stdlib.h"
 
-static int	is_charset(char c, char *charset)
+static int	is_charset(char c, const char *charset)
 {
 	int	i;
 
@@ -23,58 +24,61 @@ static int	is_charset(char c, char *charset)
 	return (0);
 }
 
-static int	ft_len(char *str, char *charset)
+static size_t	words_len(const char *str, const char *charset)
 {
-	int	i;
-	int	len;
+	char	*ptr;
+	size_t	len;
 
+	if (!str || !charset)
+		return (0);
+	ptr = (char *)str;
 	len = 0;
-	i = -1;
-	while (str[++i])
+	while (*ptr)
 	{
-		if (str[i] && !is_charset(str[i], charset))
+		while (*ptr && is_charset(*ptr, charset))
+			++ptr;
+		if (*ptr)
 			++len;
-		while (str[i] && !is_charset(str[i], charset))
-			++i;
+		while (*ptr && !is_charset(*ptr, charset))
+			++ptr;
 	}
 	return (len);
 }
 
-static int	ft_word_len(char *str, char *charset)
+static size_t	w_len(char *str, const char *charset)
 {
-	int	len;
-	int	i;
+	size_t	i;
 
-	len = 0;
-	i = -1;
-	while (str[++i] && !is_charset(str[i], charset))
-		++len;
-	return (len);
+	i = 0;
+	while (str[i] && !is_charset(str[i], charset))
+		++i;
+	return (i);
 }
 
-char		**ft_strsplit(char *str, char *charset)
+char	**ft_strsplit(const char *str, const char *charset)
 {
-	char	**strs;
-	int		len;
-	int		i;
-	int		j;
+	const size_t	words = words_len(str, charset);
+	size_t			len;
+	size_t			i;
+	char			*ptr;
+	char			**s;
 
-	if (!str)
-		return (NULL);
-	if (!(strs = (char **)malloc(sizeof(char *) * (ft_len(str, charset) + 1))))
+	s = (char **)malloc(sizeof(char *) * (words + 1));
+	if (!s || !str || !charset)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (str[i] && j < ft_len(str, charset))
+	ptr = (char *)str;
+	while (*ptr && i < words)
 	{
-		while (str[i] && is_charset(str[i], charset))
-			++i;
-		len = ft_word_len(str + i, charset);
-		if (!(strs[j] = (char *)malloc(sizeof(char) * len + 1)))
-			return (NULL);
-		ft_strlcpy(strs[j++], str + i, len + 1);
-		i += len;
+		while (*ptr && is_charset(*ptr, charset))
+			++ptr;
+		len = w_len(ptr, charset);
+		s[i] = ft_calloc(len + 1, sizeof(char));
+		if (!s[i])
+			return (ft_strsfree(words + 1, s));
+		ft_memcpy(s[i++], ptr, len);
+		ptr += len;
 	}
-	strs[j] = NULL;
-	return (strs);
+	s[i] = NULL;
+	return (s);
 }
