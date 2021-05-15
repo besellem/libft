@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/09 23:18:36 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/16 01:20:23 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	*ft_memset(void *b, int c, size_t len)
 
 	c = (unsigned char)c;
 	l_size = sizeof(unsigned long);
-	if (c == 0UL)
-		c_long_aligned = 0UL;
+	if (c == 0)
+		c_long_aligned = 0;
 	else
 		c_long_aligned = get_c_long_aligned(c, l_size);
 	l_ptr = (unsigned long *)b;

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 10:54:31 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/21 22:13:54 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/16 01:02:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,9 @@ long long	ft_strtoll(const char *str, char **endptr, int base);
 
 char		*ft_itoa(int n);
 char		*ft_itoa_base(long long n, char *base);
+
+int			ft_nblen(long long n);
+int			ft_nblen_base(long long n, int base);
 
 /*
 ** Random number generation

@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nblen.c                                         :+:      :+:    :+:   */
+/*   ft_gcd.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 22:32:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/16 01:04:04 by besellem         ###   ########.fr       */
+/*   Created: 2021/05/16 00:52:03 by besellem          #+#    #+#             */
+/*   Updated: 2021/05/16 00:56:39 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stdlib.h"
+#include "ft_math.h"
 
-int	ft_nblen(long long n)
+/*
+** Euclidean division (greatest common divisor)
+** Better way to write it (does not pass the norm):
+**
+** return ((i % j) == 0 ? j : ft_gcd(j, i % j));
+*/
+
+int	ft_gcd(int i, int j)
 {
-	return (ft_nblen_base(n, 10));
+	if ((i % j) == 0)
+		return (j);
+	return (ft_gcd(j, i % j));
 }
