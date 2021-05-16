@@ -6,12 +6,24 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/08/14 15:51:25 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/10 22:41:57 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/16 02:33:57 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 #include "ft_stdlib.h"
+
+static char	**malloc_ptr(const char *str, const char *charset, const size_t len)
+{
+	char	**s;
+
+	if (!str || !charset)
+		return (NULL);
+	s = (char **)malloc(sizeof(char *) * (len + 1));
+	if (!s)
+		return (NULL);
+	return (s);
+}
 
 static int	is_charset(char c, const char *charset)
 {
@@ -63,8 +75,8 @@ char	**ft_strsplit(const char *str, const char *charset)
 	char			*ptr;
 	char			**s;
 
-	s = (char **)malloc(sizeof(char *) * (words + 1));
-	if (!s || !str || !charset)
+	s = malloc_ptr(str, charset, words);
+	if (!s)
 		return (NULL);
 	i = 0;
 	ptr = (char *)str;
