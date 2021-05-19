@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:16:14 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/19 15:42:30 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 22:15:26 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ char	*space_padding(char *data, int padding)
 	len = ft_trni((data_len > padding), 0, padding - data_len);
 	spaces = ft_malloc_c(ft_trni((len < 0), 0, len), ' ');
 	return (spaces);
-}
-
-int	ft_signbit_f(long double x)
-{
-	return ((1.0 / x) != (1.0 / (x < 0)));
 }
 
 char	*convert_to_float(long long n, int sign)

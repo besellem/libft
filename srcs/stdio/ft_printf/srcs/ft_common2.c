@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 20:19:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/19 15:54:47 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 21:44:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ char	*conv_add_z(t_indicators t, char *data, t_ull n, int s)
 	}
 	else if (t.zero > 0)
 	{
-		len = t.zero + ft_trni((s > (int)len), t.zero - len - sign_len, 0);
+		len = ft_trni((t.zero + s > (int)len), t.zero - len - sign_len, 0);
 		z = ft_malloc_c(ft_trni((len < 0), 0, len), '0');
 	}
 	return (z);

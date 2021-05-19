@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/17 21:13:07 by besellem          #+#    #+#              #
-#    Updated: 2021/03/07 23:58:55 by besellem         ###   ########.fr        #
+#    Updated: 2021/05/19 21:33:51 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,4 +76,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		$(NAME) all clean fclean re
+.PHONY:		all clean fclean re

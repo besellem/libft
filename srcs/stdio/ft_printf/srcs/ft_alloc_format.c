@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 22:18:36 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/19 15:35:57 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 22:40:05 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,31 +25,22 @@ int	is_conversion(const char *s, t_types *t)
 
 int	is_specifier(const char *format, t_indicators *t)
 {
-	int	ret;
-
-	ret = 1;
 	if (t->is_specifier != 0)
 		return (-1);
 	t->is_specifier = 1;
 	if (ft_strncmp("hh", format, 2) == 0)
-	{
-		ret = 2;
 		t->hh = 1;
-	}
 	else if (ft_strncmp("h", format, 1) == 0)
 		t->h = 1;
 	else if (ft_strncmp("ll", format, 2) == 0)
-	{
-		ret = 2;
 		t->ll = 1;
-	}
 	else if (ft_strncmp("l", format, 1) == 0)
 		t->l = 1;
 	else if (ft_strncmp("L", format, 1) == 0)
 		t->lf = 1;
 	else
 		return (-1);
-	return (ret);
+	return (0);
 }
 
 void	init_indicators(t_indicators *table)
@@ -87,8 +78,8 @@ int	fill_indicators(const char *format, va_list ap, t_indicators *table)
 		index = check_spce(table);
 	else if (*format == '+')
 		index = check_plus(table);
-	else if ((index = is_specifier(format, table)) != -1)
-		return (index);
+	else if (is_specifier(format, table) != -1)
+		return (1 + (table->hh || table->ll || table->lf));
 	else
 		return (-1);
 	return (index);

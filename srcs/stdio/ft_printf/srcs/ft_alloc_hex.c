@@ -6,12 +6,12 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/26 16:23:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/19 15:43:11 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 21:43:33 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/ft_printf_internal.h"
-
+#include <stdio.h>
 static char	*conv_add_xmiz(t_indicators t, char *d, unsigned long long n, int s)
 {
 	char	*z;
@@ -28,7 +28,7 @@ static char	*conv_add_xmiz(t_indicators t, char *d, unsigned long long n, int s)
 	}
 	else if (t.zero > 0)
 	{
-		len = t.zero + ft_trni((s > (int)len), t.zero - len - sign_len, 0);
+		len = ft_trni((t.zero + s > (int)len), t.zero - len - sign_len, 0);
 		len -= ft_trni((t.htag && n > 0), 2, 0);
 		z = ft_mcat(z, ft_malloc_c(ft_trni((len < 0), 0, len), '0'));
 	}
