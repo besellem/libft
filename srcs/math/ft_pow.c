@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 13:38:31 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:38:00 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 15:52:49 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ static int	edge_cases(double nb, int power, double *res)
 	}
 	else if (nb == -INFINITY)
 	{
-		if (power < 0 && -power % 2 == 1)
+		if (power < 0 && (-power % 2) == 1)
 			*res = -0.0;
-		else if (power < 0 && -power % 2 == 0)
-			*res = +0.0;
-		else if (power > 0 && power % 2 == 1)
+		else if (power < 0 && (-power % 2) == 0)
+			*res = 0.0;
+		else if (power > 0 && (power % 2) == 1)
 			*res = -INFINITY;
-		else if (power > 0 && power % 2 == 0)
+		else if (power > 0 && (power % 2) == 0)
 			*res = INFINITY;
 	}
 	else

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 22:16:14 by besellem          #+#    #+#             */
-/*   Updated: 2020/11/27 14:53:09 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 15:42:30 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,15 @@ char	*space_padding(char *data, int padding)
 
 	if (padding <= 0)
 		return (NULL);
-	data_len = data ? ft_strlen(data) : 0;
-	len = data_len > padding ? 0 : padding - data_len;
-	spaces = ft_malloc_c((len < 0 ? 0 : len), ' ');
+	data_len = ft_trnul((data != NULL), ft_strlen(data), 0);
+	len = ft_trni((data_len > padding), 0, padding - data_len);
+	spaces = ft_malloc_c(ft_trni((len < 0), 0, len), ' ');
 	return (spaces);
 }
 
-int		ft_signbit_f(long double x)
+int	ft_signbit_f(long double x)
 {
-	return ((1.0 / x) != (1.0 / (x < 0 ? 1 : 0)));
+	return ((1.0 / x) != (1.0 / (x < 0)));
 }
 
 char	*convert_to_float(long long n, int sign)
@@ -39,7 +39,8 @@ char	*convert_to_float(long long n, int sign)
 	int			len;
 
 	len = ft_len_base(n, 10) + 1;
-	if (!(data = (char *)malloc(sizeof(char) * len)))
+	data = (char *)malloc(sizeof(char) * len);
+	if (!data)
 		return (NULL);
 	i = -1;
 	if (sign == 1)

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/12 20:19:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:55:29 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 15:54:47 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,17 +54,17 @@ char	*conv_add_z(t_indicators t, char *data, t_ull n, int s)
 	int		sign_len;
 
 	z = NULL;
-	len = data ? ft_strlen(data) : 0;
-	sign_len = (s || t.plus || t.space) ? 1 : 0;
+	len = ft_trnul((data != NULL), ft_strlen(data), 0);
+	sign_len = (s || t.plus || t.space);
 	if (t.dot >= 0)
 	{
-		len = (int)len > t.dot ? 0 : t.dot - len;
-		z = ft_malloc_c((n == 0 && t.dot == 0 ? 0 : len), '0');
+		len = ft_trni(((int)len > t.dot), 0, t.dot - len);
+		z = ft_malloc_c(ft_trni((n == 0 && t.dot == 0), 0, len), '0');
 	}
 	else if (t.zero > 0)
 	{
-		len = t.zero + s > (int)len ? t.zero - len - sign_len : 0;
-		z = ft_malloc_c((len < 0 ? 0 : len), '0');
+		len = t.zero + ft_trni((s > (int)len), t.zero - len - sign_len, 0);
+		z = ft_malloc_c(ft_trni((len < 0), 0, len), '0');
 	}
 	return (z);
 }
@@ -95,7 +95,7 @@ char	*conv_d(t_indicators t, t_ull n, int sign, char *base)
 	r = ft_mcat(conv_add_sign(t, sign), r);
 	sp = NULL;
 	if ((t.dot >= 0 && t.zero >= 0) || t.width >= 0)
-		sp = space_padding(r, t.width >= 0 ? t.width : t.zero);
+		sp = space_padding(r, ft_trni((t.width >= 0), t.width, t.zero));
 	if (t.minus == -1)
 		r = ft_mcat(sp, r);
 	else if (t.minus == 1)

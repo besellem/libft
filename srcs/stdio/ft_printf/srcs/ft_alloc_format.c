@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/17 22:18:36 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:59:17 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 15:35:57 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,18 @@ int	is_specifier(const char *format, t_indicators *t)
 	if (t->is_specifier != 0)
 		return (-1);
 	t->is_specifier = 1;
-	if (ft_strncmp("hh", format, 2) == 0 && (ret = 2))
+	if (ft_strncmp("hh", format, 2) == 0)
+	{
+		ret = 2;
 		t->hh = 1;
+	}
 	else if (ft_strncmp("h", format, 1) == 0)
 		t->h = 1;
-	else if (ft_strncmp("ll", format, 2) == 0 && (ret = 2))
+	else if (ft_strncmp("ll", format, 2) == 0)
+	{
+		ret = 2;
 		t->ll = 1;
+	}
 	else if (ft_strncmp("l", format, 1) == 0)
 		t->l = 1;
 	else if (ft_strncmp("L", format, 1) == 0)
@@ -97,9 +103,13 @@ int	ft_alloc_format(const char *format, va_list ap, t_data **s, t_types *t)
 
 	init_indicators(&table);
 	i = 0;
-	while (format[i] && (index = is_conversion(format + i, t)) == -1)
+	while (format[i])
 	{
-		if ((check = fill_indicators(format + i, ap, &table)) == -1)
+		index = is_conversion(format + i, t);
+		if (index != -1)
+			break ;
+		check = fill_indicators(format + i, ap, &table);
+		if (check == -1)
 			return (-1);
 		i += check;
 	}

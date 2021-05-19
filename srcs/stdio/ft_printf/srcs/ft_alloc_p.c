@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/25 16:20:39 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:57:31 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 15:27:38 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,8 @@ static char	*convert_p(long long ptr)
 	hex = "0123456789abcdef";
 	while (ptr / div >= 16)
 		div *= 16;
-	if (!(data = (char *)malloc(sizeof(char) * (ft_len_base(ptr, 16) + 3))))
+	data = (char *)malloc(sizeof(char) * (ft_len_base(ptr, 16) + 3));
+	if (!data)
 		return (NULL);
 	i = -1;
 	data[++i] = '0';
@@ -45,14 +46,18 @@ void	ft_alloc_p(t_data **s, t_indicators t, va_list ap)
 	unsigned int	len;
 
 	tmp = va_arg(ap, unsigned long);
-	data = tmp ? convert_p(tmp) : ft_strdup("0x");
+	data = ft_trns((tmp != 0), convert_p(tmp), ft_strdup("0x"));
 	sp = NULL;
-	len = (t.width >= 0 ? t.width : t.zero) - (!tmp && t.dot < 0 ? 1 : 0);
+	len = ft_trni(t.width >= 0, t.width, t.zero) - (!tmp && t.dot < 0);
 	if ((t.dot >= 0 && t.zero >= 0) || t.width >= 0)
 		sp = space_padding(data, len);
-	(t.minus == -1) ? add_lstd(s, sp) : 0;
-	data ? add_lstd(s, data) : 0;
-	!tmp && t.dot < 0 ? add_lstd(s, "0") : 0;
-	(t.minus == 1) ? add_lstd(s, sp) : 0;
+	if (t.minus == -1)
+		add_lstd(s, sp);
+	if (data)
+		add_lstd(s, data);
+	if (!tmp && t.dot < 0)
+		add_lstd(s, "0");
+	if (t.minus == 1)
+		add_lstd(s, sp);
 	ft_free(2, sp, data);
 }

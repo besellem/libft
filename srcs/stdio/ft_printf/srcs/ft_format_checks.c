@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/01 11:51:03 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:54:18 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 15:23:17 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ int	check_prec(const char *format, va_list ap, t_indicators *table)
 				++i;
 		if (ft_atoi(format + i) == 0)
 			return (i);
-		table->dot = ft_atoi(format + i) < 0 ? -1 : ft_atoi(format + i);
+		table->dot = ft_trni(ft_atoi(format + i) < 0, -1, ft_atoi(format + i));
 		return (i + ft_len_base(table->dot, 10));
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/18 01:11:34 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:56:45 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 15:15:20 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ char	*ft_mcat(char *dst, char *src)
 	char	*new;
 	size_t	len;
 
-	len = (dst ? ft_strlen(dst) : 0) + (src ? ft_strlen(src) : 0);
-	if (!(new = (char *)ft_calloc(len + 1, sizeof(char))))
+	len = ft_trnul((dst != NULL), ft_strlen(dst), 0);
+	len += ft_trnul((src != NULL), ft_strlen(src), 0);
+	new = (char *)ft_calloc(len + 1, sizeof(char));
+	if (!new)
 		return (NULL);
 	if (dst)
 		ft_strcat(new, dst);
@@ -33,7 +35,7 @@ int	ft_len_base(long long n, int base)
 	long long	i;
 	int			len;
 
-	n = n < 0 ? -n : n;
+	n = ft_trnll((n < 0), -n, n);
 	len = 1;
 	i = base;
 	while (n / i > 0)
@@ -59,26 +61,27 @@ int	ft_ulen_base(unsigned long long n, int base)
 
 char	*convert_base(long long n, char *base)
 {
+	const int	b_len = ft_strlen(base);
 	char		*data;
 	long long	div;
 	int			i;
-	int			len;
 
-	len = ft_len_base(n, ft_strlen(base)) + (n < 0 ? 1 : 0) + 1;
-	data = (char *)malloc(sizeof(char) * len);
+	data = (char *)malloc(sizeof(char) * ft_len_base(n, b_len) + (n < 0) + 1);
 	if (!data)
 		return (NULL);
-	len = ft_strlen(base);
 	i = -1;
-	if (n < 0 && (n = -n))
+	if (n < 0)
+	{
+		n = -n;
 		data[++i] = '-';
+	}
 	div = 1;
-	while (n / div >= len)
-		div *= len;
+	while (n / div >= b_len)
+		div *= b_len;
 	while (div > 0)
 	{
-		data[++i] = base[n / div % len];
-		div /= len;
+		data[++i] = base[n / div % b_len];
+		div /= b_len;
 	}
 	data[++i] = '\0';
 	return (data);
