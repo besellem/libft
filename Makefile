@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/05/16 02:48:53 by besellem         ###   ########.fr        #
+#    Updated: 2021/05/19 10:59:18 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -198,4 +198,4 @@ fclean:		clean
 
 re:			fclean all
 
-.PHONY:		$(NAME) all bonus clean fclean re
+.PHONY:		all bonus clean fclean re

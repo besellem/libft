@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:15:52 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/10 22:30:42 by besellem         ###   ########.fr       */
+/*   Updated: 2021/05/19 10:58:08 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_stdint.h"
 
 int			ft_bcmp(const void *b1, const void *b2, size_t len);
 void		ft_bcopy(const void *src, void *dst, size_t len);
