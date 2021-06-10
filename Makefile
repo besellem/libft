@@ -6,196 +6,235 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/05/19 22:43:23 by besellem         ###   ########.fr        #
+#    Updated: 2021/06/10 22:43:05 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MUTE		=	
-NAME		=	libft.a
+NAME		:=	libft.a
+
+## Main directories
+BUILD_DIR	:=	.build
+SRCS_DIR	:=	srcs
+INCS		:=	-I incs
+SUB_DIR		:=	ctype \
+				list \
+				math \
+				stdio \
+				stdlib \
+				string
+OBJ_DIR 	:=	$(BUILD_DIR)/obj
+DIRS		:=	$(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
+
 
 ## Main srcs
-SRCS_FOLDER	:=	srcs
-
 # ctype
-SRCS		+=	$(SRCS_FOLDER)/ctype/ft_isalnum.c \
-				$(SRCS_FOLDER)/ctype/ft_isalpha.c \
-				$(SRCS_FOLDER)/ctype/ft_isascii.c \
-				$(SRCS_FOLDER)/ctype/ft_iscntrl.c \
-				$(SRCS_FOLDER)/ctype/ft_isdigit.c \
-				$(SRCS_FOLDER)/ctype/ft_isgraph.c \
-				$(SRCS_FOLDER)/ctype/ft_islower.c \
-				$(SRCS_FOLDER)/ctype/ft_isprint.c \
-				$(SRCS_FOLDER)/ctype/ft_ispunct.c \
-				$(SRCS_FOLDER)/ctype/ft_isspace.c \
-				$(SRCS_FOLDER)/ctype/ft_isupper.c \
-				$(SRCS_FOLDER)/ctype/ft_isxdigit.c \
-				$(SRCS_FOLDER)/ctype/ft_tolower.c \
-				$(SRCS_FOLDER)/ctype/ft_toupper.c
+SUB_SRCS	:=	ft_isalnum.c \
+				ft_isalpha.c \
+				ft_isascii.c \
+				ft_iscntrl.c \
+				ft_isdigit.c \
+				ft_isgraph.c \
+				ft_islower.c \
+				ft_isprint.c \
+				ft_ispunct.c \
+				ft_isspace.c \
+				ft_isupper.c \
+				ft_isxdigit.c \
+				ft_tolower.c \
+				ft_toupper.c
+SRCS		:=	$(addprefix ctype/, $(SUB_SRCS))
 
 # list
-SRCS		+=	$(SRCS_FOLDER)/list/ft_lstadd_back.c \
-				$(SRCS_FOLDER)/list/ft_lstadd_front.c \
-				$(SRCS_FOLDER)/list/ft_lstclear.c \
-				$(SRCS_FOLDER)/list/ft_lstdelone.c \
-				$(SRCS_FOLDER)/list/ft_lstiter.c \
-				$(SRCS_FOLDER)/list/ft_lstlast.c \
-				$(SRCS_FOLDER)/list/ft_lstmap.c \
-				$(SRCS_FOLDER)/list/ft_lstnew.c \
-				$(SRCS_FOLDER)/list/ft_lstsize.c
+SUB_SRCS	:=	ft_lstadd_back.c \
+				ft_lstadd_front.c \
+				ft_lstclear.c \
+				ft_lstdelone.c \
+				ft_lstiter.c \
+				ft_lstlast.c \
+				ft_lstmap.c \
+				ft_lstnew.c \
+				ft_lstsize.c
+SRCS		+=	$(addprefix list/, $(SUB_SRCS))
 
 # math
-SRCS		+=	$(SRCS_FOLDER)/math/ft_abs.c \
-				$(SRCS_FOLDER)/math/ft_ceil.c \
-				$(SRCS_FOLDER)/math/ft_copysign.c \
-				$(SRCS_FOLDER)/math/ft_factorial.c \
-				$(SRCS_FOLDER)/math/ft_fdim.c \
-				$(SRCS_FOLDER)/math/ft_find_next_prime.c \
-				$(SRCS_FOLDER)/math/ft_floor.c \
-				$(SRCS_FOLDER)/math/ft_fma.c \
-				$(SRCS_FOLDER)/math/ft_fmax.c \
-				$(SRCS_FOLDER)/math/ft_fmin.c \
-				$(SRCS_FOLDER)/math/ft_fmod.c \
-				$(SRCS_FOLDER)/math/ft_gcd.c \
-				$(SRCS_FOLDER)/math/ft_frexp.c \
-				$(SRCS_FOLDER)/math/ft_hypot.c \
-				$(SRCS_FOLDER)/math/ft_isinf.c \
-				$(SRCS_FOLDER)/math/ft_isnan.c \
-				$(SRCS_FOLDER)/math/ft_isprime.c \
-				$(SRCS_FOLDER)/math/ft_ldexp.c \
-				$(SRCS_FOLDER)/math/ft_lround.c \
-				$(SRCS_FOLDER)/math/ft_modf.c \
-				$(SRCS_FOLDER)/math/ft_pow.c \
-				$(SRCS_FOLDER)/math/ft_round.c \
-				$(SRCS_FOLDER)/math/ft_signbit.c \
-				$(SRCS_FOLDER)/math/ft_sqrt.c \
-				$(SRCS_FOLDER)/math/ft_trunc.c
+SUB_SRCS	:=	ft_abs.c \
+				ft_ceil.c \
+				ft_copysign.c \
+				ft_factorial.c \
+				ft_fdim.c \
+				ft_find_next_prime.c \
+				ft_floor.c \
+				ft_fma.c \
+				ft_fmax.c \
+				ft_fmin.c \
+				ft_fmod.c \
+				ft_gcd.c \
+				ft_frexp.c \
+				ft_hypot.c \
+				ft_isinf.c \
+				ft_isnan.c \
+				ft_isprime.c \
+				ft_ldexp.c \
+				ft_lround.c \
+				ft_modf.c \
+				ft_pow.c \
+				ft_round.c \
+				ft_signbit.c \
+				ft_sqrt.c \
+				ft_trunc.c
+SRCS		+=	$(addprefix math/, $(SUB_SRCS))
 
 # stdio
-SRCS		+=	$(SRCS_FOLDER)/stdio/ft_putaddr_fd.c \
-				$(SRCS_FOLDER)/stdio/ft_putaddr.c \
-				$(SRCS_FOLDER)/stdio/ft_putc_fd.c \
-				$(SRCS_FOLDER)/stdio/ft_putc.c \
-				$(SRCS_FOLDER)/stdio/ft_putchar_fd.c \
-				$(SRCS_FOLDER)/stdio/ft_putchar.c \
-				$(SRCS_FOLDER)/stdio/ft_putendl_fd.c \
-				$(SRCS_FOLDER)/stdio/ft_putendl.c \
-				$(SRCS_FOLDER)/stdio/ft_putn_fd.c \
-				$(SRCS_FOLDER)/stdio/ft_putn.c \
-				$(SRCS_FOLDER)/stdio/ft_putnbr_fd.c \
-				$(SRCS_FOLDER)/stdio/ft_putnbr.c \
-				$(SRCS_FOLDER)/stdio/ft_putnstr_fd.c \
-				$(SRCS_FOLDER)/stdio/ft_putnstr.c \
-				$(SRCS_FOLDER)/stdio/ft_putstr_fd.c \
-				$(SRCS_FOLDER)/stdio/ft_putstr.c \
-				$(SRCS_FOLDER)/stdio/get_next_line.c
+SUB_SRCS	:=	ft_putaddr_fd.c \
+				ft_putaddr.c \
+				ft_putc_fd.c \
+				ft_putc.c \
+				ft_putchar_fd.c \
+				ft_putchar.c \
+				ft_putendl_fd.c \
+				ft_putendl.c \
+				ft_putn_fd.c \
+				ft_putn.c \
+				ft_putnbr_fd.c \
+				ft_putnbr.c \
+				ft_putnstr_fd.c \
+				ft_putnstr.c \
+				ft_putstr_fd.c \
+				ft_putstr.c \
+				get_next_line.c
+SRCS		+=	$(addprefix stdio/, $(SUB_SRCS))
 
-PRINTF_SRCS	=	$(SRCS_FOLDER)/stdio/ft_printf/*/*.c
+# printf
+PRINTF_SRCS	=	$(SRCS_DIR)/stdio/ft_printf/*/*.c
 
 # stdlib
-SRCS		+=	$(SRCS_FOLDER)/stdlib/ft_atod.c \
-				$(SRCS_FOLDER)/stdlib/ft_atoi_base.c \
-				$(SRCS_FOLDER)/stdlib/ft_atoi.c \
-				$(SRCS_FOLDER)/stdlib/ft_atol.c \
-				$(SRCS_FOLDER)/stdlib/ft_atold.c \
-				$(SRCS_FOLDER)/stdlib/ft_atoll.c \
-				$(SRCS_FOLDER)/stdlib/ft_calloc.c \
-				$(SRCS_FOLDER)/stdlib/ft_itoa_base.c \
-				$(SRCS_FOLDER)/stdlib/ft_itoa.c \
-				$(SRCS_FOLDER)/stdlib/ft_nblen_base.c \
-				$(SRCS_FOLDER)/stdlib/ft_nblen.c \
-				$(SRCS_FOLDER)/stdlib/ft_random.c \
-				$(SRCS_FOLDER)/stdlib/ft_strtol.c \
-				$(SRCS_FOLDER)/stdlib/ft_strtoll.c
+SUB_SRCS	:=	ft_atod.c \
+				ft_atoi_base.c \
+				ft_atoi.c \
+				ft_atol.c \
+				ft_atold.c \
+				ft_atoll.c \
+				ft_calloc.c \
+				ft_itoa_base.c \
+				ft_itoa.c \
+				ft_nblen_base.c \
+				ft_nblen.c \
+				ft_random.c \
+				ft_strtol.c \
+				ft_strtoll.c
+SRCS		+=	$(addprefix stdlib/, $(SUB_SRCS))
 
 # string
-SRCS		+=	$(SRCS_FOLDER)/string/ft_bcmp.c \
-				$(SRCS_FOLDER)/string/ft_bcopy.c \
-				$(SRCS_FOLDER)/string/ft_bzero.c \
-				$(SRCS_FOLDER)/string/ft_incharset.c \
-				$(SRCS_FOLDER)/string/ft_index.c \
-				$(SRCS_FOLDER)/string/ft_memccpy.c \
-				$(SRCS_FOLDER)/string/ft_memchr.c \
-				$(SRCS_FOLDER)/string/ft_memcmp.c \
-				$(SRCS_FOLDER)/string/ft_memcpy.c \
-				$(SRCS_FOLDER)/string/ft_memdel.c \
-				$(SRCS_FOLDER)/string/ft_memmove.c \
-				$(SRCS_FOLDER)/string/ft_memset.c \
-				$(SRCS_FOLDER)/string/ft_rindex.c \
-				$(SRCS_FOLDER)/string/ft_split.c \
-				$(SRCS_FOLDER)/string/ft_strcapitalize.c \
-				$(SRCS_FOLDER)/string/ft_strcasestr.c \
-				$(SRCS_FOLDER)/string/ft_strcat.c \
-				$(SRCS_FOLDER)/string/ft_strchr.c \
-				$(SRCS_FOLDER)/string/ft_strcmp.c \
-				$(SRCS_FOLDER)/string/ft_strcpy.c \
-				$(SRCS_FOLDER)/string/ft_strdup.c \
-				$(SRCS_FOLDER)/string/ft_stridx.c \
-				$(SRCS_FOLDER)/string/ft_strisall.c \
-				$(SRCS_FOLDER)/string/ft_strisalnum.c \
-				$(SRCS_FOLDER)/string/ft_strisalpha.c \
-				$(SRCS_FOLDER)/string/ft_strisascii.c \
-				$(SRCS_FOLDER)/string/ft_strisdigit.c \
-				$(SRCS_FOLDER)/string/ft_strisprint.c \
-				$(SRCS_FOLDER)/string/ft_strjoin.c \
-				$(SRCS_FOLDER)/string/ft_strlcat.c \
-				$(SRCS_FOLDER)/string/ft_strlcpy.c \
-				$(SRCS_FOLDER)/string/ft_strlen.c \
-				$(SRCS_FOLDER)/string/ft_strlowcase.c \
-				$(SRCS_FOLDER)/string/ft_strmapi.c \
-				$(SRCS_FOLDER)/string/ft_strncat.c \
-				$(SRCS_FOLDER)/string/ft_strncmp.c \
-				$(SRCS_FOLDER)/string/ft_strncpy.c \
-				$(SRCS_FOLDER)/string/ft_strndup.c \
-				$(SRCS_FOLDER)/string/ft_strnlen.c \
-				$(SRCS_FOLDER)/string/ft_strnstr.c \
-				$(SRCS_FOLDER)/string/ft_stroc.c \
-				$(SRCS_FOLDER)/string/ft_strpbrk.c \
-				$(SRCS_FOLDER)/string/ft_strrchr.c \
-				$(SRCS_FOLDER)/string/ft_strsfree.c \
-				$(SRCS_FOLDER)/string/ft_strsjoin.c \
-				$(SRCS_FOLDER)/string/ft_strslen.c \
-				$(SRCS_FOLDER)/string/ft_strsplit.c \
-				$(SRCS_FOLDER)/string/ft_strstr.c \
-				$(SRCS_FOLDER)/string/ft_strtrim.c \
-				$(SRCS_FOLDER)/string/ft_strupcase.c \
-				$(SRCS_FOLDER)/string/ft_substr.c \
-				$(SRCS_FOLDER)/string/ft_trn.c \
-				$(SRCS_FOLDER)/string/ft_trni.c \
-				$(SRCS_FOLDER)/string/ft_trnu.c
+SUB_SRCS	:=	ft_bcmp.c \
+				ft_bcopy.c \
+				ft_bzero.c \
+				ft_incharset.c \
+				ft_index.c \
+				ft_memccpy.c \
+				ft_memchr.c \
+				ft_memcmp.c \
+				ft_memcpy.c \
+				ft_memdel.c \
+				ft_memmove.c \
+				ft_memset.c \
+				ft_rindex.c \
+				ft_split.c \
+				ft_strcapitalize.c \
+				ft_strcasestr.c \
+				ft_strcat.c \
+				ft_strchr.c \
+				ft_strcmp.c \
+				ft_strcpy.c \
+				ft_strdup.c \
+				ft_stridx.c \
+				ft_strisall.c \
+				ft_strisalnum.c \
+				ft_strisalpha.c \
+				ft_strisascii.c \
+				ft_strisdigit.c \
+				ft_strisprint.c \
+				ft_strjoin.c \
+				ft_strlcat.c \
+				ft_strlcpy.c \
+				ft_strlen.c \
+				ft_strlowcase.c \
+				ft_strmapi.c \
+				ft_strncat.c \
+				ft_strncmp.c \
+				ft_strncpy.c \
+				ft_strndup.c \
+				ft_strnlen.c \
+				ft_strnstr.c \
+				ft_stroc.c \
+				ft_strpbrk.c \
+				ft_strrchr.c \
+				ft_strsfree.c \
+				ft_strsjoin.c \
+				ft_strslen.c \
+				ft_strsplit.c \
+				ft_strstr.c \
+				ft_strtrim.c \
+				ft_strupcase.c \
+				ft_substr.c \
+				ft_trn.c \
+				ft_trni.c \
+				ft_trnu.c
+SRCS		+=	$(addprefix string/, $(SUB_SRCS))
+
 
 ## Objects
-PRINTF_OBJS	=	$(PRINTF_SRCS:.c=.o)
-OBJS		=	$(SRCS:.c=.o)
+PRINTF_OBJS	:=	$(PRINTF_SRCS:.c=.o)
+OBJS 		:=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
 
-## Include
-INCS		=	incs
 
 ## Commands
-CC			=	clang
-CFLAGS		=	-Wall -Wextra -Werror
-LIBC		=	ar rc
-RM			=	rm -f
+CC			:=	clang
+CFLAGS		:=	-Wall -Wextra -Werror
+LIBC		:=	ar rc
+RM			:=	rm -f
 
-.c.o:
-			$(MUTE) $(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INCS)
-# $(MUTE) $(CC) $(CFLAGS) -c $< -o $(<:.c=.o) -I $(INCS) -D LIBC_NO_CRASH_ON_NULL=0
 
+# Colors
+CLR_COLOR	:= \033[0m
+RED			:= \033[1;31m
+GREEN		:= \033[1;32m
+YELLOW		:= \033[1;33m
+BLUE		:= \033[1;34m
+CYAN 		:= \033[1;36m
+
+
+## Compilation
 $(NAME):	$(OBJS)
-			$(MUTE) $(MAKE) -C $(SRCS_FOLDER)/stdio/ft_printf
-			$(MUTE) $(LIBC) $(NAME) $(OBJS) $(PRINTF_OBJS)
+			@ echo "Compiling $(RED)ft_printf $(CLR_COLOR)..."
+			@ $(MAKE) -C $(SRCS_DIR)/stdio/ft_printf >/dev/null
+			@ echo "Creating $(RED)$(NAME) $(CLR_COLOR)..."
+			@ $(LIBC) $(NAME) $(OBJS) $(PRINTF_OBJS)
+			@ echo "$(GREEN)Compilation $(YELLOW)of $(RED)$@ $(BLUE)done$(CLR_COLOR)"
 
 all:		$(NAME)
 
 bonus:		all
 
 clean:
-			$(MUTE) $(MAKE) -C $(SRCS_FOLDER)/stdio/ft_printf clean
-			$(MUTE) $(RM) $(OBJS)
+			@ echo "Deleting $(CYAN)libft's $(CLR_COLOR)objs ..."
+			@ $(MAKE) -C $(SRCS_DIR)/stdio/ft_printf clean >/dev/null
+			@ $(RM) $(OBJS)
+			@ rm -rf $(BUILD_DIR)
 
 fclean:		clean
-			$(MUTE) $(MAKE) -C $(SRCS_FOLDER)/stdio/ft_printf fclean
-			$(MUTE) $(RM) $(NAME)
+			@ echo "Deleting $(CYAN)libft $(CLR_COLOR)library ..."
+			@ $(MAKE) -C $(SRCS_DIR)/stdio/ft_printf fclean >/dev/null
+			@ $(RM) $(NAME)
 
 re:			fclean all
+
+$(BUILD_DIR):
+			@ echo "Creating $(RED)$@ $(CLR_COLOR)..."
+			@ mkdir $@ $(DIRS)
+
+$(OBJ_DIR)/%.o:$(SRCS_DIR)/%.c | $(BUILD_DIR)
+			@ echo "Compiling $(YELLOW)$< $(CLR_COLOR)..."
+			@ $(CC) $(CFLAGS) -c $< -o $@ $(INCS)
+# @ $(CC) $(CFLAGS) -c $< -o $@ $(INCS) -D LIBC_NO_CRASH_ON_NULL=0
 
 .PHONY:		all bonus clean fclean re
