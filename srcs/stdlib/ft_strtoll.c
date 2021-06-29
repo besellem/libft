@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/15 15:49:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:14:51 by besellem         ###   ########.fr       */
+/*   Updated: 2021/06/29 18:06:55 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static int	get_head(const char *str, int *base, int *min)
 	while (str[i] && (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r')))
 		++i;
 	*min = 1;
-	if (str[i] == '-' || str[i] == '+')
+	if (str[i] && (str[i] == '-' || str[i] == '+'))
 		if (str[i++] == '-')
 			*min = -1;
 	return (i + special_cases(str, base));

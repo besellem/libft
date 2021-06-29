@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:15:52 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/20 00:29:16 by besellem         ###   ########.fr       */
+/*   Updated: 2021/06/29 18:12:30 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,9 @@ char		*ft_strstr(const char *haystack, const char *needle);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strpbrk(const char *s, const char *charset);
 char		*ft_strcasestr(const char *haystack, const char *needle);
+
+char		*ft_strclean(char *s, const char *charset);
+char		*ft_strnclean(char *s, const char *charset, size_t n);
 
 char		*ft_strcat(char *s1, const char *s2);
 char		*ft_strncat(char *s1, const char *s2, size_t n);

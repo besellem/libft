@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 21:09:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/10 00:35:18 by besellem         ###   ########.fr       */
+/*   Updated: 2021/06/29 17:40:19 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,24 @@
 ** #define PRINT_ERR(s)	printf("\e[1;31m" __FILE__ ":" TOSTRING(__LINE__) \
 						":\e[0m " s "\n");
 */
+
+/*
+** Define TRUE and FALSE macros
+*/
+# ifndef TRUE
+#  define TRUE      1
+# endif
+# if defined(TRUE) && (1 != TRUE)		/* set but not the good value */
+#  undef TRUE
+#  define TRUE      1
+# endif
+
+# ifndef FALSE
+#  define FALSE     0
+# endif
+# if defined(FALSE) && (0 != FALSE)		/* set but not the good value */
+#  undef FALSE
+#  define FALSE     0
+# endif
 
 #endif

@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/06/10 22:43:05 by besellem         ###   ########.fr        #
+#    Updated: 2021/06/29 18:21:04 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,10 +45,14 @@ SUB_SRCS	:=	ft_isalnum.c \
 SRCS		:=	$(addprefix ctype/, $(SUB_SRCS))
 
 # list
-SUB_SRCS	:=	ft_lstadd_back.c \
+SUB_SRCS	:=	ft_lst_qsort.c \
+				ft_lst_sort.c \
+				ft_lst2strs.c \
+				ft_lstadd_back.c \
 				ft_lstadd_front.c \
 				ft_lstclear.c \
 				ft_lstdelone.c \
+				ft_lstindex.c \
 				ft_lstiter.c \
 				ft_lstlast.c \
 				ft_lstmap.c \
@@ -143,6 +147,7 @@ SUB_SRCS	:=	ft_bcmp.c \
 				ft_strcasestr.c \
 				ft_strcat.c \
 				ft_strchr.c \
+				ft_strclean.c \
 				ft_strcmp.c \
 				ft_strcpy.c \
 				ft_strdup.c \
@@ -160,6 +165,7 @@ SUB_SRCS	:=	ft_bcmp.c \
 				ft_strlowcase.c \
 				ft_strmapi.c \
 				ft_strncat.c \
+				ft_strnclean.c \
 				ft_strncmp.c \
 				ft_strncpy.c \
 				ft_strndup.c \
