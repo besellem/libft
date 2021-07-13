@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 21:09:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/06/29 17:40:19 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/13 17:01:25 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,32 +30,31 @@
 # endif
 
 /*
-** Useful macros to print out a message with a ft_printf or a write for example.
-** Does not pass the norm unfortunately. Useful for debugging though.
+** Useful macro to print out a message with a ft_printf or a write for example.
+** Does not pass the norm unfortunately. Useful in the debugging process though.
 **
-** #define STRINGIFY(x) #x
-** #define TOSTRING(x) STRINGIFY(x)
-** #define PRINT_ERR(s)	printf("\e[1;31m" __FILE__ ":" TOSTRING(__LINE__) \
-						":\e[0m " s "\n");
+** # define ERR() printf("\e[1;31m%s:%d:\e[0m Here\n", __FILE__, __LINE__);
 */
 
 /*
 ** Define TRUE and FALSE macros
 */
 # ifndef TRUE
-#  define TRUE      1
+#  define TRUE        1
 # endif
 # if defined(TRUE) && (1 != TRUE)		/* set but not the good value */
 #  undef TRUE
-#  define TRUE      1
+#  define TRUE        1
 # endif
 
 # ifndef FALSE
-#  define FALSE     0
+#  define FALSE       0
 # endif
 # if defined(FALSE) && (0 != FALSE)		/* set but not the good value */
 #  undef FALSE
-#  define FALSE     0
+#  define FALSE       0
 # endif
+
+# define SYSCALL_ERR  (-1)
 
 #endif

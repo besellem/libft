@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/06/29 18:21:04 by besellem         ###   ########.fr        #
+#    Updated: 2021/07/13 17:30:17 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -89,7 +89,8 @@ SUB_SRCS	:=	ft_abs.c \
 SRCS		+=	$(addprefix math/, $(SUB_SRCS))
 
 # stdio
-SUB_SRCS	:=	ft_putaddr_fd.c \
+SUB_SRCS	:=	ft_buffer.c \
+				ft_putaddr_fd.c \
 				ft_putaddr.c \
 				ft_putc_fd.c \
 				ft_putc.c \
