@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 00:54:06 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/13 17:30:51 by besellem         ###   ########.fr       */
+/*   Updated: 2021/07/13 17:48:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_buffer	*ft_init_buff(const t_buffer_attr *attr)
 
 void	ft_destroy_buff(void)
 {
-	const t_buffer_attr	attr = {.fd = -1, .oflag = BUF_INIT};
+	const t_buffer_attr	attr = {.fd = SYSCALL_ERR, .oflag = BUF_INIT};
 
 	ft_init_buff(&attr);
 }
@@ -88,8 +88,6 @@ int	ft_flush_buff(void)
 		return (SYSCALL_ERR);
 	if (SYSCALL_ERR == write(buffer->__fd, buffer->__buff, buffer->__index))
 		return (SYSCALL_ERR);
-	buffer->__index = 0;
-	ft_memset(buffer->__buff, 0, sizeof(buffer->__buff));
 	ft_destroy_buff();
 	return (0);
 }
