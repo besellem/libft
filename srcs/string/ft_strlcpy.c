@@ -6,17 +6,18 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:35 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/10 00:46:23 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/24 00:54:27 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "defs.h"
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	len;
 
-	if (!src)
+	if (LIBC_NO_CRASH_ON_NULL && !src)
 		return (0);
 	len = ft_strlen(src);
 	if (dstsize == 0)
