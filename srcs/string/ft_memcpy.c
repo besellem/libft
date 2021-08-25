@@ -6,24 +6,25 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:21 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/09 12:43:05 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/25 04:52:51 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "ft_stdint.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	const size_t	_sz = sizeof(long);
-	long			*l_src;
-	long			*l_dst;
+	const size_t	_sz = sizeof(t_wide_int__);
+	t_wide_int__	*l_src;
+	t_wide_int__	*l_dst;
 	char			*c_src;
 	char			*c_dst;
 
 	if (dst == src)
 		return (dst);
-	l_src = (long *)src;
-	l_dst = (long *)dst;
+	l_src = (t_wide_int__ *)src;
+	l_dst = (t_wide_int__ *)dst;
 	while (n >= _sz)
 	{
 		*l_dst++ = *l_src++;

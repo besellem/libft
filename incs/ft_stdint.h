@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 13:42:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:33:22 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/26 00:29:58 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,16 @@ typedef uint16_t				t_uint16;
 typedef uint32_t				t_uint32;
 typedef uint64_t				t_uint64;
 
+# endif
+
+/*
+** t_wide_int__ is a 16 bytes type, wider than an unsigned long long that is
+** defined by gcc or clang on certain versions.
+*/
+# if defined(__SIZEOF_INT128__)
+typedef __int128_t				t_wide_int__;
+# else
+typedef unsigned long long		t_wide_int__;
 # endif
 
 #endif
