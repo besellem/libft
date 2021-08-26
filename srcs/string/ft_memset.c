@@ -6,17 +6,19 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/16 01:20:23 by besellem         ###   ########.fr       */
+/*   Updated: 2021/08/27 00:48:07 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 #define __BYTE 8
 
-static unsigned long	get_c_long_aligned(unsigned char c, size_t l_size)
+typedef unsigned long long		t_ullong;
+
+static t_ullong	get_c_long_aligned(unsigned char c, size_t l_size)
 {
-	const unsigned long	c_ = (unsigned long)c;
-	unsigned long		c_ret;
+	const t_ullong	c_ = (t_ullong)c;
+	t_ullong		c_ret;
 
 	c_ret = 0;
 	while (l_size > 0)
@@ -29,18 +31,17 @@ static unsigned long	get_c_long_aligned(unsigned char c, size_t l_size)
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	size_t			l_size;
-	unsigned long	c_long_aligned;
-	unsigned long	*l_ptr;
+	const size_t	l_size = sizeof(t_ullong);
+	t_ullong		c_long_aligned;
+	t_ullong		*l_ptr;
 	unsigned char	*c_ptr;
 
 	c = (unsigned char)c;
-	l_size = sizeof(unsigned long);
-	if (c == 0)
+	if (0 == c)
 		c_long_aligned = 0;
 	else
 		c_long_aligned = get_c_long_aligned(c, l_size);
-	l_ptr = (unsigned long *)b;
+	l_ptr = (t_ullong *)b;
 	while (len >= l_size)
 	{
 		*l_ptr++ = c_long_aligned;
