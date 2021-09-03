@@ -5,75 +5,115 @@
 #                                                     +:+ +:+         +:+      #
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/10/17 21:13:07 by besellem          #+#    #+#              #
-#    Updated: 2021/05/19 21:33:51 by besellem         ###   ########.fr        #
+#    Created: 2021/01/26 00:10:57 by besellem          #+#    #+#              #
+#    Updated: 2021/09/03 19:38:41 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-MUTE		=	
-NAME		=	libftprintf.a
+NAME		:=	libftprintf.a
 
-## Mandatory
-INCS		=	-I inc -I ../../../incs
+## Main directories
+BUILD_DIR	:=	.build
+INCS		:=	-I incs -I ../../../incs
+SRCS_DIR	:=	srcs
+SUB_DIR		:=	conversions \
+				family \
+				other \
+				parser
+OBJ_DIR 	:=	$(BUILD_DIR)/obj
+DIRS		:=	$(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
 
-SRCS		+=	srcs/ft_common.c \
-				srcs/ft_common2.c \
-				srcs/ft_common3.c \
-				srcs/ft_lst_common.c \
-				srcs/ft_lst_common2.c \
-				srcs/ft_init_conversions.c \
-				srcs/ft_parser.c \
-				srcs/ft_specifiers.c \
-				srcs/ft_alloc_txt.c \
-				srcs/ft_alloc_format.c \
-				srcs/ft_format_checks.c \
-				srcs/ft_format_checks2.c \
-				srcs/ft_alloc_mod.c \
-				srcs/ft_alloc_c.c \
-				srcs/ft_alloc_s.c \
-				srcs/ft_alloc_p.c \
-				srcs/ft_alloc_idu.c \
-				srcs/ft_alloc_hex.c \
-				srcs/ft_alloc_f.c \
-				srcs/ft_alloc_f_utils.c \
-				srcs/ft_alloc_n.c \
-				srcs/ft_alloc_o.c \
-				srcs/ft_alloc_b.c
 
-SRCS		+=	family/ft_printf.c \
-				family/ft_sprintf.c \
-				family/ft_snprintf.c \
-				family/ft_asprintf.c \
-				family/ft_dprintf.c \
-				family/ft_vprintf.c \
-				family/ft_vsprintf.c \
-				family/ft_vsnprintf.c \
-				family/ft_vasprintf.c \
-				family/ft_vdprintf.c
+## Main srcs
+# SRCS		:=		main.c
+SUB_SRC		:=	conv_a.c \
+				conv_c.c \
+				conv_d.c \
+				conv_f.c \
+				conv_f_utils.c \
+				conv_i.c \
+				conv_n.c \
+				conv_o.c \
+				conv_p.c \
+				conv_perc.c \
+				conv_s.c \
+				conv_u.c \
+				conv_x.c
+SRCS		:=	$(addprefix conversions/, $(SUB_SRC))
+SUB_SRC		:=	ft_asprintf.c \
+				ft_dprintf.c \
+				ft_printf.c \
+				ft_snprintf.c \
+				ft_sprintf.c \
+				ft_vasprintf.c \
+				ft_vasprintf_internal.c \
+				ft_vdprintf.c \
+				ft_vdprintf_internal.c \
+				ft_vprintf.c \
+				ft_vsnprintf.c \
+				ft_vsprintf.c
+SRCS		+=	$(addprefix family/, $(SUB_SRC))
+SUB_SRC		:=	common.c \
+				common2.c \
+				padding.c
+SRCS		+=	$(addprefix other/, $(SUB_SRC))
+SUB_SRC		:=	ft_get_conversion.c \
+				ft_printf_process.c \
+				ft_specifiers.c \
+				parser_checks1.c \
+				parser_checks2.c
+SRCS		+=	$(addprefix parser/, $(SUB_SRC))
+
 
 ## Objects
-OBJS		=	$(SRCS:.c=.o)
+OBJS 		:=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
+
 
 ## Commands
-CC			=	clang
-CFLAGS		=	-Wall -Wextra -Werror
-LIBC		=	ar rc
-RM			=	rm -f
+CC			:=	clang
+CFLAGS		:=	-Wall -Wextra -Werror
+LIBC		:=	ar rc
+RM			:=	rm -f
 
-.c.o:
-			$(MUTE) $(CC) $(CFLAGS) -c $< -o $(<:.c=.o) $(INCS)
 
+# Colors
+CLR_COLOR	:= \033[0m
+RED			:= \033[1;31m
+GREEN		:= \033[1;32m
+YELLOW		:= \033[1;33m
+BLUE		:= \033[1;34m
+CYAN 		:= \033[1;36m
+
+
+## Compilation
 $(NAME):	$(OBJS)
-			$(MUTE) $(LIBC) $(NAME) $(OBJS)
+			@echo "Creating $(RED_COLOR)$@ $(CLR_COLOR)..."
+			@$(LIBC) $(NAME) $(OBJS)
+			@echo "$(GREEN)Compilation $(YELLOW)of $(RED)$@ $(BLUE)done$(CLR_COLOR)"
 
 all:		$(NAME)
 
+bonus:		all
+
 clean:
-			$(MUTE) $(RM) $(OBJS)
+			@ echo "Deleting $(CYAN)ft_printf $(CLR_COLOR)objs ..."
+			@ $(RM) $(OBJS)
+			@ $(RM) a.out
+			@ $(RM) -rf a.out.dSYM
+			@ rm -rf $(BUILD_DIR)
 
 fclean:		clean
-			$(MUTE) $(RM) $(NAME)
+			@ echo "Deleting $(CYAN)ft_printf $(CLR_COLOR)library ..."
+			@ $(RM) $(NAME)
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+$(BUILD_DIR):
+			@ echo "Creating $(RED)$@ $(CLR_COLOR)..."
+			@ mkdir $@ $(DIRS)
+
+$(OBJ_DIR)/%.o:$(SRCS_DIR)/%.c | $(BUILD_DIR)
+			@ echo "Compiling $(YELLOW)$< $(CLR_COLOR)..."
+			@ $(CC) $(CFLAGS) -c $< -o $@ $(INCS)
+
+.PHONY:		all bonus clean fclean re

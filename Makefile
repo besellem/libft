@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/09/01 03:17:56 by besellem         ###   ########.fr        #
+#    Updated: 2021/09/03 19:39:25 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -190,7 +190,7 @@ SRCS		+=	$(addprefix string/, $(SUB_SRCS))
 
 
 ## Objects
-PRINTF_OBJS	:=	$(PRINTF_SRCS:.c=.o)
+# PRINTF_OBJS	:=	$(PRINTF_SRCS:.c=.o)
 OBJS 		:=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
 
 
@@ -215,7 +215,7 @@ $(NAME):	$(OBJS)
 			@ echo "Compiling $(RED)ft_printf $(CLR_COLOR)..."
 			@ $(MAKE) -C $(SRCS_DIR)/stdio/ft_printf >/dev/null
 			@ echo "Creating $(RED)$(NAME) $(CLR_COLOR)..."
-			@ $(LIBC) $(NAME) $(OBJS) $(PRINTF_OBJS)
+			@ $(LIBC) $(NAME) $(OBJS) $(SRCS_DIR)/stdio/ft_printf/.build/obj/*/*.o
 			@ echo "$(GREEN)Compilation $(YELLOW)of $(RED)$@ $(BLUE)done$(CLR_COLOR)"
 
 all:		$(NAME)
