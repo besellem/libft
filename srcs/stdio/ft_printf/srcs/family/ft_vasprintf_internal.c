@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 23:40:13 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/03 03:56:11 by besellem         ###   ########.fr       */
+/*   Updated: 2021/10/07 21:44:27 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ static int	write2buf_str_vasprintf(t_pft *pft, const char *str)
 		new[pft->global_size + _size] = '\0';
 		ft_bzero(pft->buffer, sizeof(char) * (PFT_BUFSIZ + 1));
 		pft->size = 0;
-		free(pft->ret), (pft->ret = new);
+		(free(pft->ret), (pft->ret = new));
 	}
 	return ((pft->global_size += _size), TRUE);
 }

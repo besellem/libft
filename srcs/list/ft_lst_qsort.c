@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 22:27:10 by besellem          #+#    #+#             */
-/*   Updated: 2021/06/29 18:17:08 by besellem         ###   ########.fr       */
+/*   Updated: 2021/10/07 21:43:09 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ struct	s_list_qsort
 };
 
 static void	__deref_ptrs__(t_list **cur, t_list **tail, t_list **tmp,
-						   t_list **prev)
+							t_list **prev)
 {
 	if (*prev)
 		(*prev)->next = (*cur)->next;

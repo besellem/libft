@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:43:49 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/03 18:45:07 by besellem         ###   ########.fr       */
+/*   Updated: 2021/10/07 21:43:34 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	conv_a(t_pft *pft, const char *hex_prec, const char *charset,
 		pft->write2buf_s(pft, "-");
 	else
 		pft->write2buf_s(pft, ft_trns(isflag(pft, FLAG_PLUS), "+",
-			ft_trns(isflag(pft, FLAG_SPACE), " ", NULL)));
+				ft_trns(isflag(pft, FLAG_SPACE), " ", NULL)));
 	pft->write2buf_s(pft, hex_prec);
 	ft_put_int(pft, 1, charset);
 	nb = ft_copysign(nb, 0.);
