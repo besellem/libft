@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:25:41 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/13 17:39:16 by besellem         ###   ########.fr       */
+/*   Updated: 2021/10/29 01:31:30 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include <unistd.h>
 
-# include "ft_printf.h"
+# include "../srcs/stdio/ft_printf/incs/ft_printf.h"
 
 void			ft_putn(int c, int bytes);
 void			ft_putn_fd(int fd, int c, int bytes);
@@ -39,9 +39,11 @@ int				get_next_line(int fd, char **line);
 
 /* -- FT_BUFFER -- */
 
-# define __BUFF_SIZE__ 1024 /* size to bufferize in ft_buff* functions */
+/* size to bufferize in `ft_buff*' functions */
+# define __BUFF_SIZE__ 1024
 
-# define BUF_INIT      0x1  /* flag used in `ft_init_buff' to reinit the buff */
+/* flag used in `ft_init_buff' to reinit the buffer */
+# define BUF_INIT      0x1
 
 typedef struct s_buffer
 {
@@ -57,41 +59,41 @@ typedef struct s_buffer_attr
 }	t_buffer_attr;
 
 /*
-** ft_init_buff
+** -- ft_init_buff
 **
 ** Initialize the static buffer. You can pass some attributes:
-**     - file descriptor
-**     - a flag to reinit the buffer
+**   - fd :    a file descriptor
+**   - oflag : a flag to reinitialize the buffer
 ** May be called with `NULL'.
 ** You're not obligated to call this function before using any of the ft_buff*
 ** functions, they will for you.
 ** By default, the buffer is printed in STDOUT (file descriptor == 1).
 */
-struct s_buffer	*ft_init_buff(const struct s_buffer_attr *attr);
+t_buffer		*ft_init_buff(const t_buffer_attr *attr);
 
 /*
-** ft_destroy_buff
+** -- ft_destroy_buff
 **
 ** Reinit the buffer and free its memory.
 */
 void			ft_destroy_buff(void);
 
 /*
-** ft_buffaddc
+** -- ft_buffaddc
 **
 ** Add a single character to the buffer and print the latter if it's full.
 */
 int				ft_buffaddc(char c);
 
 /*
-** ft_buffadd
+** -- ft_buffadd
 **
 ** Add a string to the buffer (calling `ft_buffaddc' under the hood).
 */
 int				ft_buffadd(char *s);
 
 /*
-** ft_flush_buff
+** -- ft_flush_buff
 **
 ** Flush (print) the buffer even if it's not full and release its memory
 ** (calls `ft_destroy_buff').

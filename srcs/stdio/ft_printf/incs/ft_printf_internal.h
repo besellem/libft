@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 00:10:51 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/03 18:46:01 by besellem         ###   ########.fr       */
+/*   Updated: 2021/10/29 01:26:17 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 /*
 ** -- INCLUDES --
 */
-# include <stdio.h> // To remove
 # include <stdarg.h>
 # include <stdlib.h>
 # include <stdint.h>
@@ -33,7 +32,7 @@
 # ifdef BUFSIZ
 #  define PFT_BUFSIZ    BUFSIZ
 # else
-#  define PFT_BUFSIZ    1024 // 32768 // 16384 // 8192 // 4096 // 1024
+#  define PFT_BUFSIZ    1024
 # endif
 
 # define PFT_NULL       "(null)"
@@ -92,8 +91,11 @@ typedef struct s_padding
 	int		_prec;
 }				t_padding;
 
-# define POS        1    /* positive number - used in `t_padding' _sign */
-# define NEG        (-1) /* negative number - used in `t_padding' _sign */
+/* positive number - used in `t_padding' _sign */
+# define POS        1
+
+/* negative number - used in `t_padding' _sign */
+# define NEG        (-1)
 
 /*
 ** `flags' and `specifiers' are used with `e_flag' and `e_specifiers' flags

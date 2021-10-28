@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 13:42:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/10/07 21:41:37 by besellem         ###   ########.fr       */
+/*   Updated: 2021/10/29 01:28:02 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,11 +39,11 @@ typedef uint16_t				t_uint16;
 typedef uint32_t				t_uint32;
 typedef uint64_t				t_uint64;
 
-# endif /* !defined(__CLANG_STDINT_H) */
+# endif
 
 /*
-** __int128_t is a 16 bytes type, wider than an `unsigned long long', it is
-** defined by gcc or clang on certain versions.
+** __int128_t is a 16 bytes type, wider than an `unsigned long long' (8 bytes),
+** it is defined by gcc or clang on certain versions.
 */
 # if defined(__SIZEOF_INT128__)
 
@@ -53,6 +53,6 @@ typedef __int128_t				t_wide_int__;
 
 typedef unsigned long long		t_wide_int__;
 
-# endif /* defined(__SIZEOF_INT128__) */
+# endif
 
 #endif

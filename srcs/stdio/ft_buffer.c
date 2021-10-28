@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 00:54:06 by besellem          #+#    #+#             */
-/*   Updated: 2021/07/13 17:48:18 by besellem         ###   ########.fr       */
+/*   Updated: 2021/10/29 01:01:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_buffer	*ft_init_buff(const t_buffer_attr *attr)
 	}
 	else if (!buffer)
 	{
-		buffer = (struct s_buffer *)ft_calloc(1, sizeof(t_buffer));
+		buffer = (t_buffer *)ft_calloc(1, sizeof(t_buffer));
 		if (!buffer)
 			return (NULL);
 		if (attr)
