@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:24 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/25 19:47:36 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/05 14:28:18 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	const size_t	l_size = sizeof(t_wide_int__);
-	t_wide_int__	*l_src;
-	t_wide_int__	*l_dst;
+	const size_t	l_size = sizeof(t_uwide_int);
+	t_uwide_int		*l_src;
+	t_uwide_int		*l_dst;
 	unsigned char	*c_src;
 	unsigned char	*c_dst;
 
@@ -25,8 +25,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		return (dst);
 	if (dst > src)
 	{
-		l_src = (t_wide_int__ *)(src + len);
-		l_dst = (t_wide_int__ *)(dst + len);
+		l_src = (t_uwide_int *)(src + len);
+		l_dst = (t_uwide_int *)(dst + len);
 		while (len >= l_size)
 		{
 			*--l_dst = *--l_src;

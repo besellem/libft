@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 13:42:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/10/29 01:28:02 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/05 14:28:01 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,11 +47,13 @@ typedef uint64_t				t_uint64;
 */
 # if defined(__SIZEOF_INT128__)
 
-typedef __int128_t				t_wide_int__;
+typedef __int128_t				t_wide_int;
+typedef __uint128_t				t_uwide_int;
 
 # else
 
-typedef unsigned long long		t_wide_int__;
+typedef intmax_t				t_wide_int;
+typedef uintmax_t				t_uwide_int;
 
 # endif
 

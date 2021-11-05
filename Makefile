@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/10/29 01:17:06 by besellem         ###   ########.fr        #
+#    Updated: 2021/11/05 15:05:40 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -110,7 +110,7 @@ SUB_SRCS	:=	ft_buffer.c \
 SRCS		+=	$(addprefix stdio/, $(SUB_SRCS))
 
 # printf
-PRINTF_SRCS	=	$(SRCS_DIR)/stdio/ft_printf/*/*.c
+# PRINTF_SRCS	=	$(SRCS_DIR)/stdio/ft_printf/*/*.c
 
 # stdlib
 SUB_SRCS	:=	ft_atod.c \
