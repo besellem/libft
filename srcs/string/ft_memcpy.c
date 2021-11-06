@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:21 by besellem          #+#    #+#             */
-/*   Updated: 2021/11/05 14:52:23 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/06 23:09:35 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 */
 void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	const size_t	_sz = sizeof(t_uwide_int);
 	t_uwide_int		*l_src;
 	t_uwide_int		*l_dst;
 	unsigned char	*c_src;
@@ -32,10 +31,10 @@ void	*ft_memcpy(void *dst, const void *src, size_t n)
 		return (dst);
 	l_src = (t_uwide_int *)src;
 	l_dst = (t_uwide_int *)dst;
-	while (n >= _sz)
+	while (n >= sizeof(t_uwide_int))
 	{
 		*l_dst++ = *l_src++;
-		n -= _sz;
+		n -= sizeof(t_uwide_int);
 	}
 	if (n > 0)
 	{

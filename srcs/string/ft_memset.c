@@ -6,46 +6,41 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:26 by besellem          #+#    #+#             */
-/*   Updated: 2021/08/27 00:48:07 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/06 23:11:55 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
-#define __BYTE 8
+#include "defs.h"
 
-typedef unsigned long long		t_ullong;
-
-static t_ullong	get_c_long_aligned(unsigned char c, size_t l_size)
+__INLINE static t_uwide_int	__get_aligned_char__(unsigned char _c)
 {
-	const t_ullong	c_ = (t_ullong)c;
-	t_ullong		c_ret;
+	t_uwide_int	c;
 
-	c_ret = 0;
-	while (l_size > 0)
-	{
-		--l_size;
-		c_ret |= (c_ << (__BYTE * l_size));
-	}
-	return (c_ret);
+	if (0 == _c)
+		return (0);
+	c = _c;
+	c = (c << 8) | c;
+	c = (c << 16) | c;
+	if (sizeof(t_uwide_int) > 4)
+		c = (c << 32) | c;
+	if (sizeof(t_uwide_int) > 8)
+		c = (c << 64) | c;
+	return (c);
 }
 
 void	*ft_memset(void *b, int c, size_t len)
 {
-	const size_t	l_size = sizeof(t_ullong);
-	t_ullong		c_long_aligned;
-	t_ullong		*l_ptr;
-	unsigned char	*c_ptr;
+	const t_uwide_int	val_aligned = __get_aligned_char__(c);
+	t_uwide_int			*l_ptr;
+	unsigned char		*c_ptr;
 
 	c = (unsigned char)c;
-	if (0 == c)
-		c_long_aligned = 0;
-	else
-		c_long_aligned = get_c_long_aligned(c, l_size);
-	l_ptr = (t_ullong *)b;
-	while (len >= l_size)
+	l_ptr = (t_uwide_int *)b;
+	while (len >= sizeof(t_uwide_int))
 	{
-		*l_ptr++ = c_long_aligned;
-		len -= l_size;
+		*l_ptr++ = val_aligned;
+		len -= sizeof(t_uwide_int);
 	}
 	if (len > 0)
 	{

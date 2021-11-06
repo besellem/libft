@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:38 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:49:40 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/06 23:34:30 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,10 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	const size_t	len_s1 = ft_strlen(s1);
-	const size_t	len_s2 = ft_strlen(s2);
-
-	if (n > len_s1)
-		n = len_s1 + 1;
-	if (n > len_s2)
-		n = len_s2 + 1;
-	return (ft_memcmp(s1, s2, n));
+	while (--n != 0 && *s1 && *s2)
+	{
+		if ((unsigned char)*s1++ != (unsigned char)*s2++)
+			return ((unsigned char)*--s1 - (unsigned char)*--s2);
+	}
+	return ((unsigned char)*s1 - (unsigned char)*s2);
 }

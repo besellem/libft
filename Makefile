@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/11/05 15:05:40 by besellem         ###   ########.fr        #
+#    Updated: 2021/11/06 23:45:07 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -242,6 +242,6 @@ $(BUILD_DIR):
 $(OBJ_DIR)/%.o:$(SRCS_DIR)/%.c | $(BUILD_DIR)
 			@ echo "Compiling $(YELLOW)$< $(CLR_COLOR)..."
 			@ $(CC) $(CFLAGS) -c $< -o $@ $(INCS)
-# @ $(CC) $(CFLAGS) -c $< -o $@ $(INCS) -D LIBC_NO_CRASH_ON_NULL=0
+#@ $(CC) $(CFLAGS) -c $< -o $@ $(INCS) -D LIBC_NO_CRASH_ON_NULL=0
 
 .PHONY:		all bonus clean fclean re

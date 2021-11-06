@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 21:09:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/11/05 14:51:34 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/06 23:41:19 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,25 @@
 # ifndef PAGE_SIZE
 #  define PAGE_SIZE 4096
 # endif
+
+/*
+** Force compiler to do inlining even without the -O flags
+** Does not pass the norm...
+*/
+// # if defined(__has_attribute)
+// #  if __has_attribute(__always_inline__)
+// #   define __INLINE_ATTR__   __attribute__((__always_inline__))
+// #  elif __has_attribute(always_inline)
+// #   define __INLINE_ATTR__   __attribute__((always_inline))
+// #  else
+// #   define __INLINE_ATTR__
+// #  endif
+// # else
+// #  define __INLINE_ATTR__
+// # endif
+
+// # define __INLINE            __INLINE_ATTR__ inline
+
+# define __INLINE            inline
 
 #endif
