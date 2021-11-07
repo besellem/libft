@@ -6,23 +6,23 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:36 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/01 03:18:18 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/07 14:20:46 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
 #include "defs.h"
-#include <limits.h>
 
 /*
 ** 1GB in ~280 ms (the real one does it in ~100 ms)
+**
+** Uses a bit tricks found here:
+** https://graphics.stanford.edu/~seander/bithacks.html#ZeroInWord
 */
 size_t	ft_strlen(const char *s)
 {
-	const size_t	ones = (SIZE_T_MAX / UCHAR_MAX);
-	const size_t	highs = ones * (UCHAR_MAX / 2 + 1);
-	size_t			*l_str;
-	char			*c_str;
+	size_t	*l_str;
+	char	*c_str;
 
 	if (LIBC_NO_CRASH_ON_NULL && !s)
 		return (0);
@@ -34,7 +34,7 @@ size_t	ft_strlen(const char *s)
 		++c_str;
 	}
 	l_str = (size_t *)c_str;
-	while (!((*l_str) - ones & ~(*l_str) & highs))
+	while (!(((*l_str) - LOWS) & ~(*l_str) & HIGHS))
 		++l_str;
 	c_str = (char *)l_str;
 	while (*c_str)

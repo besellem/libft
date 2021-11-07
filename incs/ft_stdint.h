@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 13:42:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/11/05 14:28:01 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/07 14:52:21 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,17 @@ typedef __uint128_t				t_uwide_int;
 typedef intmax_t				t_wide_int;
 typedef uintmax_t				t_uwide_int;
 
+# endif
+
+/*
+** macros for bit tricks
+*/
+# if __SIZE_WIDTH__ == 64
+#  define LOWS  0x0101010101010101
+#  define HIGHS 0x8080808080808080
+# else
+#  define LOWS  0x01010101
+#  define HIGHS 0x80808080
 # endif
 
 #endif

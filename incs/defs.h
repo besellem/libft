@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 21:09:44 by besellem          #+#    #+#             */
-/*   Updated: 2021/11/06 23:41:19 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/07 14:50:28 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,13 +50,13 @@
 /*
 ** Most of syscalls return -1 on errors
 */
-# define SYSCALL_ERR  (-1)
+# define SYSCALL_ERR (-1)
 
 /*
 ** Memory page size
 */
 # ifndef PAGE_SIZE
-#  define PAGE_SIZE 4096
+#  define PAGE_SIZE  4096
 # endif
 
 /*

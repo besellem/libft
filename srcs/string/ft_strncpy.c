@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 18:13:58 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:49:51 by besellem         ###   ########.fr       */
+/*   Updated: 2021/11/07 14:51:28 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,10 @@
 
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
-	size_t	i;
+	const size_t	n = ft_strnlen(src, len);
 
-	i = 0;
-	while (src[i] && i < len)
-	{
-		dst[i] = src[i];
-		++i;
-	}
-	while (i < len)
-	{
-		dst[i] = '\0';
-		++i;
-	}
+	ft_memcpy(dst, src, n);
+	if (n < len)
+		ft_memset(dst + n, 0, len - n);
 	return (dst);
 }
