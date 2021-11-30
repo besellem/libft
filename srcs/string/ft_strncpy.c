@@ -16,8 +16,7 @@ char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	const size_t	n = ft_strnlen(src, len);
 
-	ft_memcpy(dst, src, n);
 	if (n < len)
-		ft_memset(dst + n, 0, len - n);
-	return (dst);
+		ft_bzero(dst + n, len - n);
+	return ((char *)ft_memcpy(dst, src, n));
 }

@@ -21,7 +21,7 @@ static int	ft_no_conversion_opti(const char *fmt, t_pft *pft)
 	else
 	{
 		fmt_len = ft_strlen(fmt);
-		pft->ret = (char *)malloc(sizeof(char) * (fmt_len + 1));
+		pft->ret = (char *)malloc(fmt_len + 1);
 		if (!pft->ret)
 			return (ft_error(pft));
 		else
@@ -50,7 +50,7 @@ static int	write2buf_vasprintf(t_pft *pft, char *fmt)
 		tmp_siz = PFT_BUFSIZ;
 		if (pft->ret)
 			tmp_siz += ret_siz;
-		new = (char *)malloc(sizeof(char) * (tmp_siz + 1));
+		new = (char *)malloc(tmp_siz + 1);
 		if (!new)
 			return (ft_error(pft));
 		if (pft->ret)
@@ -58,7 +58,7 @@ static int	write2buf_vasprintf(t_pft *pft, char *fmt)
 		ft_memcpy(new + ret_siz, pft->buffer, tmp_siz - ret_siz + 1);
 		pft->ret = (free(pft->ret), new);
 		pft->size = 0;
-		ft_bzero(pft->buffer, sizeof(char) * (PFT_BUFSIZ + 1));
+		ft_bzero(pft->buffer, PFT_BUFSIZ + 1);
 	}
 	return (TRUE);
 }
@@ -80,7 +80,7 @@ static int	write2buf_str_vasprintf(t_pft *pft, const char *str)
 	}
 	else
 	{
-		new = malloc(sizeof(char) * (pft->global_size + _size + 1));
+		new = malloc(pft->global_size + _size + 1);
 		if (!new)
 			return (ft_error(pft));
 		if (pft->ret)
@@ -88,7 +88,7 @@ static int	write2buf_str_vasprintf(t_pft *pft, const char *str)
 		ft_memcpy(new + _ret_size, pft->buffer, pft->size);
 		ft_memcpy(new + pft->global_size, str, _size);
 		new[pft->global_size + _size] = '\0';
-		ft_bzero(pft->buffer, sizeof(char) * (PFT_BUFSIZ + 1));
+		ft_bzero(pft->buffer, PFT_BUFSIZ + 1);
 		pft->size = 0;
 		(free(pft->ret), (pft->ret = new));
 	}
@@ -100,7 +100,7 @@ static int	vasprintf_last_alloc(t_pft *pft)
 	char			*new;
 	const size_t	size_ret = pft->global_size - pft->size;
 
-	new = (char *)malloc(sizeof(char) * (pft->global_size + 1));
+	new = (char *)malloc(pft->global_size + 1);
 	if (!new)
 		return (ft_error(pft));
 	if (pft->ret)

@@ -14,7 +14,5 @@
 
 char	**ft_split(char const *s, char c)
 {
-	const char	charset[2] = {c, '\0'};
-
-	return (ft_strsplit(s, charset));
+	return (ft_strsplit(s, (char [2]){c, '\0'}));
 }

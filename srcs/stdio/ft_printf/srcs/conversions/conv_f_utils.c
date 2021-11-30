@@ -71,7 +71,7 @@ void	ft_put_float(t_pft *pft, double nb, const char *base)
 	prec_tab = NULL;
 	if (pft->conversion.precision >= 0)
 	{
-		prec_tab = malloc(sizeof(char) * (pft->conversion.precision + 1));
+		prec_tab = malloc(pft->conversion.precision + 1);
 		if (!prec_tab)
 			return ((void)ft_error(pft));
 		ft_fill_float_precision(&nb, pft->conversion.precision, prec_tab);

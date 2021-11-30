@@ -13,12 +13,13 @@
 #include "ft_string.h"
 
 /*
-** Clean characters the first `n' chars from `charset' found in `s'
-** by modifying it.
+** Remove the `n' firsts `charset' characters found in `s' by modifying
+** the latter.
 **
 ** ex:
-** ft_strclean(";bonjour >to<i", ";<>", 1);
-**   => "bonjour >to<i"
+** char	s[] = ";hello >yo<u";
+** ft_strnclean(s, ";<>", 1);
+**   => s == "hello >yo<u"
 */
 char	*ft_strnclean(char *s, const char *charset, size_t n)
 {

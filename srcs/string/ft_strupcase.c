@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "ft_ctype.h"
 
 char	*ft_strupcase(char *str)
 {
@@ -21,8 +22,7 @@ char	*ft_strupcase(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 'a' && str[i] <= 'z')
-			str[i] -= 32;
+		str[i] = ft_toupper(str[i]);
 		++i;
 	}
 	return (str);

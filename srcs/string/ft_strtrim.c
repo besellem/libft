@@ -59,7 +59,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1[head])
 		return (ft_strdup("\0"));
 	tail = tail_index(s1, set);
-	new = (char *)malloc(sizeof(char) * (tail - head + 2));
+	new = (char *)malloc(tail - head + 2);
 	if (!new)
 		return (NULL);
 	i = 0;

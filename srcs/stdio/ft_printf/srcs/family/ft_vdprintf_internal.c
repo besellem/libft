@@ -42,7 +42,7 @@ static int	write2buf_vdprintf(t_pft *pft, char *str)
 	{
 		if (SYSCALL_ERR == write(pft->fd, pft->buffer, PFT_BUFSIZ))
 			return (ft_error(pft));
-		ft_bzero(pft->buffer, sizeof(char) * (PFT_BUFSIZ + 1));
+		ft_bzero(pft->buffer, PFT_BUFSIZ + 1);
 		pft->size = 0;
 	}
 	return (TRUE);
@@ -71,7 +71,7 @@ static int	write2buf_str_vdprintf(t_pft *pft, const char *str)
 		if (SYSCALL_ERR == write(pft->fd, pft->buffer, PFT_BUFSIZ))
 			return (ft_error(pft));
 		_size_res = _size - (PFT_BUFSIZ - pft->size);
-		ft_bzero(pft->buffer, sizeof(char) * (PFT_BUFSIZ + 1));
+		ft_bzero(pft->buffer, PFT_BUFSIZ + 1);
 		while (_size_res >= PFT_BUFSIZ)
 		{
 			if (write(pft->fd, str + (_size - _size_res), PFT_BUFSIZ) < 0)

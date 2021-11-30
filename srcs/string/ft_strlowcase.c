@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "ft_ctype.h"
 
 char	*ft_strlowcase(char *str)
 {
@@ -21,8 +22,7 @@ char	*ft_strlowcase(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] >= 'A' && str[i] <= 'Z')
-			str[i] += 32;
+		str[i] = ft_tolower(str[i]);
 		++i;
 	}
 	return (str);

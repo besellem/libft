@@ -20,7 +20,7 @@ char	*ft_strndup(const char *s1, size_t n)
 
 	if (LIBC_NO_CRASH_ON_NULL && !s1)
 		return (NULL);
-	cpy = (char *)malloc(sizeof(char) * (_sz + 1));
+	cpy = (char *)malloc(_sz + 1);
 	if (!cpy)
 		return (NULL);
 	cpy[_sz] = '\0';
