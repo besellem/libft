@@ -21,7 +21,6 @@ t_buffer	*ft_init_buff(const t_buffer_attr *attr)
 
 	if (buffer && attr && (attr->oflag & BUF_INIT))
 	{
-		ft_memset(buffer, 0, sizeof(t_buffer));
 		free(buffer);
 		buffer = NULL;
 	}
@@ -57,37 +56,51 @@ int	ft_buffaddc(char c)
 	{
 		if (SYSCALL_ERR == write(buffer->__fd, buffer->__buff, __BUFF_SIZE__))
 			return (SYSCALL_ERR);
+
 		buffer->__index = 0;
-		ft_memset(buffer->__buff, 0, sizeof(buffer->__buff));
+		ft_bzero(buffer->__buff, sizeof(buffer->__buff));
 	}
 	return (0);
 }
 
-int	ft_buffadd(char *s)
+int	ft_buffadd(const char *s)
 {
-	size_t	i;
+	const size_t	size = ft_strlen(s);
+	t_buffer		*buffer;
 
 	if (!s)
 		return (SYSCALL_ERR);
-	i = 0;
-	while (s[i])
+	buffer = ft_init_buff(NULL);
+	if (!buffer)
+		return (SYSCALL_ERR);
+	if (size < (__BUFF_SIZE__ - buffer->__index))
 	{
-		if (SYSCALL_ERR == ft_buffaddc(s[i]))
+		ft_memcpy(buffer->__buff + buffer->__index, s, size);
+		buffer->__index += size;
+	}
+	else
+	{
+		if (SYSCALL_ERR == write(buffer->__fd, buffer->__buff, buffer->__index))
 			return (SYSCALL_ERR);
-		++i;
+		if (SYSCALL_ERR == write(buffer->__fd, s, size))
+			return (SYSCALL_ERR);
+		buffer->__index = 0;
+		ft_bzero(buffer->__buff, sizeof(buffer->__buff));
 	}
 	return (0);
 }
 
 int	ft_flush_buff(void)
 {
-	t_buffer	*buffer;
+	const t_buffer	*buffer = ft_init_buff(NULL);
 
-	buffer = ft_init_buff(NULL);
 	if (!buffer)
 		return (SYSCALL_ERR);
-	if (SYSCALL_ERR == write(buffer->__fd, buffer->__buff, buffer->__index))
-		return (SYSCALL_ERR);
+	if (buffer->__index > 0)
+	{
+		if (SYSCALL_ERR == write(buffer->__fd, buffer->__buff, buffer->__index))
+			return (SYSCALL_ERR);
+	}
 	ft_destroy_buff();
 	return (0);
 }

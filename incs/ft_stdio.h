@@ -40,7 +40,7 @@ int				get_next_line(int fd, char **line);
 /* -- FT_BUFFER -- */
 
 /* size to bufferize in `ft_buff*' functions */
-# define __BUFF_SIZE__ 1024
+# define __BUFF_SIZE__ 4096
 
 /* flag used in `ft_init_buff' to reinit the buffer */
 # define BUF_INIT      0x1
@@ -88,9 +88,9 @@ int				ft_buffaddc(char c);
 /*
 ** -- ft_buffadd
 **
-** Add a string to the buffer (calling `ft_buffaddc' under the hood).
+** Add a string to the buffer.
 */
-int				ft_buffadd(char *s);
+int				ft_buffadd(const char *s);
 
 /*
 ** -- ft_flush_buff
