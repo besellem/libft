@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 21:53:35 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 14:40:43 by besellem         ###   ########.fr       */
+/*   Updated: 2021/12/02 11:26:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 		return (ft_strdup(s1));
 	head = head_index(s1, set);
 	if (!s1[head])
-		return (ft_strdup("\0"));
+		return (ft_strdup(""));
 	tail = tail_index(s1, set);
 	new = (char *)malloc(tail - head + 2);
 	if (!new)

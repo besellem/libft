@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:15:52 by besellem          #+#    #+#             */
-/*   Updated: 2021/11/06 21:41:34 by besellem         ###   ########.fr       */
+/*   Updated: 2021/12/02 11:25:42 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,8 +69,9 @@ char		*ft_strcapitalize(char *str);
 
 char		*ft_strdup(const char *s1);
 char		*ft_strndup(const char *s1, size_t n);
-char		*ft_strtrim(char const *s1, char const *set);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
+char		*ft_strtrim(char const *s1, char const *set);
+char		*ft_epur_str(const char *str);
 char		**ft_split(char const *s, char c);
 char		**ft_strsplit(const char *str, const char *charset);
 char		*ft_strjoin(char const *s1, char const *s2);

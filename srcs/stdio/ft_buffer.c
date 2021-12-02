@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 00:54:06 by besellem          #+#    #+#             */
-/*   Updated: 2021/10/29 01:01:43 by besellem         ###   ########.fr       */
+/*   Updated: 2021/12/02 11:38:15 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int	ft_buffaddc(char c)
 	{
 		if (SYSCALL_ERR == write(buffer->__fd, buffer->__buff, __BUFF_SIZE__))
 			return (SYSCALL_ERR);
-
 		buffer->__index = 0;
 		ft_bzero(buffer->__buff, sizeof(buffer->__buff));
 	}

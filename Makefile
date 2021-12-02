@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/11/07 00:03:56 by besellem         ###   ########.fr        #
+#    Updated: 2021/12/02 11:24:50 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -133,6 +133,7 @@ SRCS		+=	$(addprefix stdlib/, $(SUB_SRCS))
 SUB_SRCS	:=	ft_bcmp.c \
 				ft_bcopy.c \
 				ft_bzero.c \
+				ft_epur_str.c \
 				ft_incharset.c \
 				ft_index.c \
 				ft_memccpy.c \

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 23:42:12 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/03 18:13:27 by besellem         ###   ########.fr       */
+/*   Updated: 2021/12/02 11:49:29 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,8 +78,7 @@ static int	ft_get_conversion(t_pft *pft, char conv)
 		{'s', conv_s}, {'c', conv_c}, {'p', conv_p}, {'i', conv_i},
 		{'o', conv_o}, {'f', conv_f}, {'a', conv_a_min}, {'A', conv_a_max},
 		{'%', conv_perc}, {'n', conv_n}, {'D', conv_d_max}, {'U', conv_u_max},
-		{'O', conv_o_max},
-		// {'b', conv_b}, {'g', conv_g}, {'e', conv_e}, {'n', conv_n},
+		{'O', conv_o_max}, // {'b', conv_b}, {'g', conv_g}, {'e', conv_e},
 		{0, NULL}
 	};
 	int							i;
@@ -99,8 +98,8 @@ static int	ft_get_conversion(t_pft *pft, char conv)
 
 int	ft_parse_conversion(t_pft *pft, const char *fmt)
 {
-	int		check;
-	int		i;
+	int	check;
+	int	i;
 
 	ft_bzero(&pft->conversion, sizeof(t_conv));
 	pft->conversion.width = -1;
