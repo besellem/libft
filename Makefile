@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/12/02 11:24:50 by besellem         ###   ########.fr        #
+#    Updated: 2021/12/08 23:30:09 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,6 +83,7 @@ SUB_SRCS	:=	ft_abs.c \
 				ft_modf.c \
 				ft_pow.c \
 				ft_round.c \
+				ft_rsqrt.c \
 				ft_signbit.c \
 				ft_sqrt.c \
 				ft_trunc.c
