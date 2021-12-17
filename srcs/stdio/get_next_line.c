@@ -13,25 +13,6 @@
 #include "libft.h"
 #include "get_next_line.h"
 
-static char	*ft_mcat(char *s1, char *s2)
-{
-	char	*new;
-	int		i;
-	int		j;
-
-	new = (char *)malloc(ft_strlen(s1) + ft_strlen(s2) + 1);
-	if (!new)
-		return (NULL);
-	i = -1;
-	while (s1[++i])
-		new[i] = s1[i];
-	j = -1;
-	while (s2[++j])
-		new[i + j] = s2[j];
-	new[i + j] = '\0';
-	return (new);
-}
-
 static char	*ft_realloc_str(char *str, char **line, int *check)
 {
 	char			*new;
@@ -45,13 +26,13 @@ static char	*ft_realloc_str(char *str, char **line, int *check)
 			++i;
 		if (str[i] == '\n')
 		{
-			*check = 1;
+			*check = GNL_OK;
 			new = ft_strdup(str + i + 1);
 		}
 		else if (str[i])
 			new = ft_strdup(str + i);
-		*line = ft_substr(str, 0, i);
-		free(str);
+		*line = ft_strndup(str, i);
+		ft_memdel((void **)&str);
 	}
 	return (new);
 }
@@ -70,8 +51,8 @@ static char	*ft_read_line(int fd, char *str, char **line, int *check)
 			break ;
 		buffer[r] = '\0';
 		tmp = str;
-		str = ft_mcat(str, buffer);
-		free(tmp);
+		str = ft_strjoin(str, buffer);
+		ft_memdel((void **)&tmp);
 		if (ft_strchr(str, '\n'))
 			break ;
 	}
@@ -85,8 +66,8 @@ int	get_next_line(int fd, char **line)
 
 	if (fd < 0 || fd >= FD_LIMIT || read(fd, strs[fd], 0)
 		|| BUFFER_SIZE <= 0 || !line)
-		return (-1);
-	check = 0;
+		return (GNL_ERROR);
+	check = GNL_EOF;
 	if (strs[fd] && ft_strchr(strs[fd], '\n'))
 	{
 		strs[fd] = ft_realloc_str(strs[fd], line, &check);
@@ -96,7 +77,7 @@ int	get_next_line(int fd, char **line)
 	{
 		strs[fd] = ft_strdup("");
 		if (!strs[fd])
-			return (-1);
+			return (GNL_ERROR);
 	}
 	strs[fd] = ft_read_line(fd, strs[fd], line, &check);
 	return (check);
