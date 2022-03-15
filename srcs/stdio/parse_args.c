@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:35:30 by besellem          #+#    #+#             */
-/*   Updated: 2022/03/15 23:07:56 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/15 23:11:26 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,71 +26,25 @@ struct	s_options_internal
 
 static const struct s_options_internal	g_opts[] = {
 	// uppercase letters
-	{'A', OPT_A},
-	{'B', OPT_B},
-	{'C', OPT_C},
-	{'D', OPT_D},
-	{'E', OPT_E},
-	{'F', OPT_F},
-	{'G', OPT_G},
-	{'H', OPT_H},
-	{'I', OPT_I},
-	{'J', OPT_J},
-	{'K', OPT_K},
-	{'L', OPT_L},
-	{'M', OPT_M},
-	{'N', OPT_N},
-	{'O', OPT_O},
-	{'P', OPT_P},
-	{'Q', OPT_Q},
-	{'R', OPT_R},
-	{'S', OPT_S},
-	{'T', OPT_T},
-	{'U', OPT_U},
-	{'V', OPT_V},
-	{'W', OPT_W},
-	{'X', OPT_X},
-	{'Y', OPT_Y},
+	{'A', OPT_A}, {'B', OPT_B}, {'C', OPT_C}, {'D', OPT_D}, {'E', OPT_E},
+	{'F', OPT_F}, {'G', OPT_G}, {'H', OPT_H}, {'I', OPT_I}, {'J', OPT_J},
+	{'K', OPT_K}, {'L', OPT_L}, {'M', OPT_M}, {'N', OPT_N}, {'O', OPT_O},
+	{'P', OPT_P}, {'Q', OPT_Q}, {'R', OPT_R}, {'S', OPT_S}, {'T', OPT_T},
+	{'U', OPT_U}, {'V', OPT_V}, {'W', OPT_W}, {'X', OPT_X}, {'Y', OPT_Y},
 	{'Z', OPT_Z},
 	// lowercase letters
-	{'a', OPT_A_MIN},
-	{'b', OPT_B_MIN},
-	{'c', OPT_C_MIN},
-	{'d', OPT_D_MIN},
-	{'e', OPT_E_MIN},
-	{'f', OPT_F_MIN},
-	{'g', OPT_G_MIN},
-	{'h', OPT_H_MIN},
-	{'i', OPT_I_MIN},
-	{'j', OPT_J_MIN},
-	{'k', OPT_K_MIN},
-	{'l', OPT_L_MIN},
-	{'m', OPT_M_MIN},
-	{'n', OPT_N_MIN},
-	{'o', OPT_O_MIN},
-	{'p', OPT_P_MIN},
-	{'q', OPT_Q_MIN},
-	{'r', OPT_R_MIN},
-	{'s', OPT_S_MIN},
-	{'t', OPT_T_MIN},
-	{'u', OPT_U_MIN},
-	{'v', OPT_V_MIN},
-	{'w', OPT_W_MIN},
-	{'x', OPT_X_MIN},
-	{'y', OPT_Y_MIN},
-	{'z', OPT_Z_MIN},
+	{'a', OPT_A_MIN}, {'b', OPT_B_MIN}, {'c', OPT_C_MIN}, {'d', OPT_D_MIN},
+	{'e', OPT_E_MIN}, {'f', OPT_F_MIN}, {'g', OPT_G_MIN}, {'h', OPT_H_MIN},
+	{'i', OPT_I_MIN}, {'j', OPT_J_MIN}, {'k', OPT_K_MIN}, {'l', OPT_L_MIN},
+	{'m', OPT_M_MIN}, {'n', OPT_N_MIN}, {'o', OPT_O_MIN}, {'p', OPT_P_MIN},
+	{'q', OPT_Q_MIN}, {'r', OPT_R_MIN}, {'s', OPT_S_MIN}, {'t', OPT_T_MIN},
+	{'u', OPT_U_MIN}, {'v', OPT_V_MIN}, {'w', OPT_W_MIN}, {'x', OPT_X_MIN},
+	{'y', OPT_Y_MIN}, {'z', OPT_Z_MIN},
 	// numbers
-	{'0', OPT_0},
-	{'1', OPT_1},
-	{'2', OPT_2},
-	{'3', OPT_3},
-	{'4', OPT_4},
-	{'5', OPT_5},
-	{'6', OPT_6},
-	{'7', OPT_7},
-	{'8', OPT_8},
-	{'9', OPT_9},
-	{0, 0}};
+	{'0', OPT_0}, {'1', OPT_1}, {'2', OPT_2}, {'3', OPT_3}, {'4', OPT_4},
+	{'5', OPT_5}, {'6', OPT_6}, {'7', OPT_7}, {'8', OPT_8}, {'9', OPT_9},
+	{0, 0}
+};
 
 static bool			_option_needs_arg(const char *opts_to_search, char arg)
 {
