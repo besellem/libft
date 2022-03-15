@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:25:41 by besellem          #+#    #+#             */
-/*   Updated: 2021/10/29 01:31:30 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/15 22:01:59 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <unistd.h>
 
+# include "parse_args.h"
 # include "../srcs/stdio/ft_printf/incs/ft_printf.h"
 
 void			ft_putn(int c, int bytes);

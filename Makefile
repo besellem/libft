@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2021/12/08 23:30:09 by besellem         ###   ########.fr        #
+#    Updated: 2022/03/15 22:02:52 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -107,7 +107,8 @@ SUB_SRCS	:=	ft_buffer.c \
 				ft_putnstr.c \
 				ft_putstr_fd.c \
 				ft_putstr.c \
-				get_next_line.c
+				get_next_line.c \
+				parse_args.c
 SRCS		+=	$(addprefix stdio/, $(SUB_SRCS))
 
 # printf
