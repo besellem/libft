@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:41:19 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:14:47 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/15 22:53:26 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Check if each characters of the string are printable
 */
 
-int	ft_strisprint(char *str)
+int	ft_strisprint(const char *str)
 {
 	size_t	i;
 

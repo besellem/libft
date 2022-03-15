@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:57:27 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:43:13 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/15 22:53:10 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 ** ft_strisall("012345", ft_isdigit) == 1
 */
 
-int	ft_strisall(char *str, int (*f)(int))
+int	ft_strisall(const char *str, int (*f)(int))
 {
 	size_t	i;
 

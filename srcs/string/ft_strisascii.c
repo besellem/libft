@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:44:55 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:14:44 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/15 22:53:22 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Check if each characters of the string are ascii
 */
 
-int	ft_strisascii(char *str)
+int	ft_strisascii(const char *str)
 {
 	size_t	i;
 

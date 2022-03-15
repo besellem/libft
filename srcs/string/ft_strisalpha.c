@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:42:15 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:14:37 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/15 22:53:20 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Check if each characters of the string are alphabetic letters
 */
 
-int	ft_strisalpha(char *str)
+int	ft_strisalpha(const char *str)
 {
 	size_t	i;
 

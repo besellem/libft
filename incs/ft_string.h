@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:15:52 by besellem          #+#    #+#             */
-/*   Updated: 2021/12/02 11:25:42 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/15 22:52:42 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,12 @@ void		*ft_memdel(void **ptr);
 void		*ft_memmove(void *dst, const void *src, size_t len);
 void		*ft_memset(void *b, int c, size_t len);
 
-int			ft_strisall(char *str, int (*f)(int));
-int			ft_strisalnum(char *str);
-int			ft_strisalpha(char *str);
-int			ft_strisascii(char *str);
-int			ft_strisdigit(char *str);
-int			ft_strisprint(char *str);
+int			ft_strisall(const char *str, int (*f)(int));
+int			ft_strisalnum(const char *str);
+int			ft_strisalpha(const char *str);
+int			ft_strisascii(const char *str);
+int			ft_strisdigit(const char *str);
+int			ft_strisprint(const char *str);
 
 int			ft_incharset(const char *charset, int c);
 int			ft_stridx(const char *haystack, const char *needle);

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:32:32 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:14:41 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/15 22:53:24 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Check if each characters of the string are numbers
 */
 
-int	ft_strisdigit(char *str)
+int	ft_strisdigit(const char *str)
 {
 	size_t	i;
 

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/13 12:45:53 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:14:20 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/15 22:53:15 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** Check if each characters of the string are alphanumeric
 */
 
-int	ft_strisalnum(char *str)
+int	ft_strisalnum(const char *str)
 {
 	size_t	i;
 
