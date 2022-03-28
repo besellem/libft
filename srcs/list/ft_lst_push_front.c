@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstindex.c                                      :+:      :+:    :+:   */
+/*   ft_lst_push_front.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/29 17:35:08 by besellem          #+#    #+#             */
-/*   Updated: 2021/06/29 17:36:44 by besellem         ###   ########.fr       */
+/*   Created: 2022/03/28 22:13:14 by besellem          #+#    #+#             */
+/*   Updated: 2022/03/28 22:13:48 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-/*
-** Return the nth node of a list
-*/
-t_list	*ft_lstindex(t_list *lst, size_t index)
+t_list	*ft_lst_push_front(t_list **head, void *content)
 {
-	t_list	*tmp;
-	size_t	i;
+	t_list	*_p;
 
-	i = 0;
-	tmp = lst;
-	while (tmp)
-	{
-		if (i == index)
-			return (tmp);
-		++i;
-		tmp = tmp->next;
-	}
-	return (NULL);
+	if (!head)
+		return (NULL);
+	_p = ft_lstnew(content);
+	if (!_p)
+		return (NULL);
+	ft_lstadd_front(head, _p);
+	return (_p);
 }

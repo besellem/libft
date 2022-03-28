@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lst_at.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 23:17:25 by besellem          #+#    #+#             */
-/*   Updated: 2022/03/28 22:04:28 by besellem         ###   ########.fr       */
+/*   Created: 2021/06/29 17:35:08 by besellem          #+#    #+#             */
+/*   Updated: 2022/03/28 22:14:43 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_lstlast(t_list *lst)
+/*
+** Return the nth node of a list
+*/
+t_list	*ft_lst_at(t_list *lst, size_t index)
 {
-	if (lst)
+	size_t	i;
+
+	i = 0;
+	while (lst)
 	{
-		while (lst->next)
-			lst = lst->next;
+		if (i++ == index)
+			return (lst);
+		lst = lst->next;
 	}
-	return (lst);
+	return (NULL);
 }

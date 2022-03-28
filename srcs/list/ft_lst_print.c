@@ -1,23 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lst_print.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/09/13 23:17:25 by besellem          #+#    #+#             */
-/*   Updated: 2022/03/28 22:04:28 by besellem         ###   ########.fr       */
+/*   Created: 2022/03/28 23:00:31 by besellem          #+#    #+#             */
+/*   Updated: 2022/03/28 23:00:41 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_list.h"
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lst_print(t_list *lst, void (*f)())
 {
-	if (lst)
+	while (lst)
 	{
-		while (lst->next)
-			lst = lst->next;
+		(*f)(lst->content);
+		lst = lst->next;
 	}
-	return (lst);
 }

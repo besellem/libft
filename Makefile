@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2022/03/15 22:02:52 by besellem         ###   ########.fr        #
+#    Updated: 2022/03/28 23:02:43 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,14 +45,18 @@ SUB_SRCS	:=	ft_isalnum.c \
 SRCS		:=	$(addprefix ctype/, $(SUB_SRCS))
 
 # list
-SUB_SRCS	:=	ft_lst_qsort.c \
+SUB_SRCS	:=	ft_lst_at.c \
+				ft_lst_find.c \
+				ft_lst_print.c \
+				ft_lst_push_back.c \
+				ft_lst_push_front.c \
+				ft_lst_qsort.c \
 				ft_lst_sort.c \
 				ft_lst2strs.c \
 				ft_lstadd_back.c \
 				ft_lstadd_front.c \
 				ft_lstclear.c \
 				ft_lstdelone.c \
-				ft_lstindex.c \
 				ft_lstiter.c \
 				ft_lstlast.c \
 				ft_lstmap.c \
@@ -91,6 +95,7 @@ SRCS		+=	$(addprefix math/, $(SUB_SRCS))
 
 # stdio
 SUB_SRCS	:=	ft_buffer.c \
+				ft_convert_file.c \
 				ft_putaddr_fd.c \
 				ft_putaddr.c \
 				ft_putc_fd.c \

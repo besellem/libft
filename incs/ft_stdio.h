@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:25:41 by besellem          #+#    #+#             */
-/*   Updated: 2022/03/15 22:01:59 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/28 23:03:15 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void			ft_putnstr_fd(char *s, int fd, size_t n);
 void			ft_putendl(char *s);
 void			ft_putendl_fd(char *s, int fd);
 
+char			**ft_convert_file(int fd);
 int				get_next_line(int fd, char **line);
 
 /* -- FT_BUFFER -- */
