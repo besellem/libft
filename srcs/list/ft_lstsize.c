@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 23:17:12 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:30:41 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/31 15:46:31 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 int	ft_lstsize(t_list *lst)
 {
-	t_list	*tmp;
-	int		i;
+	int	i;
 
-	tmp = lst;
 	i = 0;
-	while (tmp)
+	while (lst)
 	{
-		tmp = tmp->next;
+		lst = lst->next;
 		++i;
 	}
 	return (i);

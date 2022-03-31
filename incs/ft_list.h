@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 13:26:20 by besellem          #+#    #+#             */
-/*   Updated: 2022/03/28 23:00:22 by besellem         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:01:09 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,9 @@ void	ft_lstadd_front(t_list **alst, t_list *new);
 void	ft_lstadd_back(t_list **alst, t_list *new);
 t_list	*ft_lst_push_front(t_list **head, void *content);
 t_list	*ft_lst_push_back(t_list **head, void *content);
+void	ft_lst_push_sorted(t_list **begin_list, void *data, int (*cmp)());
+
+void	ft_lst_merge(t_list **begin_list1, t_list *begin_list2);
 
 void	ft_lst_sort(t_list **lst, int (*cmp)());
 void	ft_lst_qsort(t_list **head, int (*cmp)());
