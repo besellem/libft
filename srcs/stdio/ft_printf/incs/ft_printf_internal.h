@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 00:10:51 by besellem          #+#    #+#             */
-/*   Updated: 2021/10/29 01:26:17 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/04 16:01:56 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -146,9 +146,9 @@ void			__dbl_padding__(t_pft *pft, t_padding *pad, double val,
 /*
 ** Parsing
 */
-int				check_wdt(const char *fmt, va_list ap, t_conv *conversion);
-int				check_zero(const char *fmt, va_list ap, t_conv *conversion);
-int				check_prec(const char *fmt, va_list ap, t_conv *conversion);
+int				check_wdt(const char *fmt, va_list *ap, t_conv *conversion);
+int				check_zero(const char *fmt, va_list *ap, t_conv *conversion);
+int				check_prec(const char *fmt, va_list *ap, t_conv *conversion);
 int				check_htag(t_conv *conversion);
 int				check_spce(t_conv *conversion);
 int				check_plus(t_conv *conversion);

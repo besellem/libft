@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 23:42:12 by besellem          #+#    #+#             */
-/*   Updated: 2021/12/02 11:49:29 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/04 15:56:51 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ static int	is_specifier(const char *fmt, t_conv *conversion)
 	return (-1);
 }
 
-static int	fill_indicators(const char *fmt, va_list ap, t_conv *conversion)
+static int	fill_indicators(const char *fmt, va_list *ap, t_conv *conversion)
 {
 	if ('-' == *fmt)
 		return (1 + check_min(conversion));
@@ -107,7 +107,7 @@ int	ft_parse_conversion(t_pft *pft, const char *fmt)
 	i = 0;
 	while (FALSE == ft_get_conversion(pft, fmt[i]))
 	{
-		check = fill_indicators(fmt + i, pft->ap, &pft->conversion);
+		check = fill_indicators(fmt + i, &pft->ap, &pft->conversion);
 		if (PFT_ERR == check)
 			return (PFT_ERR);
 		i += check;

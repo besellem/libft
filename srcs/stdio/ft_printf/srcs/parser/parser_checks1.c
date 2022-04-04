@@ -6,17 +6,17 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/01 00:33:51 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/01 21:21:40 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/04 15:55:48 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_internal.h"
 
-int	check_wdt(const char *fmt, va_list ap, t_conv *conversion)
+int	check_wdt(const char *fmt, va_list *ap, t_conv *conversion)
 {
 	if (*fmt && '*' == *fmt)
 	{
-		conversion->width = va_arg(ap, int);
+		conversion->width = va_arg(*ap, int);
 		if (conversion->width < 0)
 		{
 			conversion->flags |= FLAG_MINUS;
@@ -29,7 +29,7 @@ int	check_wdt(const char *fmt, va_list ap, t_conv *conversion)
 	return (ft_nblen_base(conversion->width, 10));
 }
 
-int	check_zero(const char *fmt, va_list ap, t_conv *conversion)
+int	check_zero(const char *fmt, va_list *ap, t_conv *conversion)
 {
 	conversion->flags |= FLAG_ZERO;
 	if (*fmt && '0' == *fmt)
@@ -38,7 +38,7 @@ int	check_zero(const char *fmt, va_list ap, t_conv *conversion)
 		return (check_plus(conversion) - 1);
 	if (*fmt && '*' == *fmt)
 	{
-		conversion->width = va_arg(ap, int);
+		conversion->width = va_arg(*ap, int);
 		if (conversion->width < 0)
 		{
 			conversion->width = -conversion->width;
@@ -57,7 +57,7 @@ int	check_zero(const char *fmt, va_list ap, t_conv *conversion)
 	return (ft_nblen_base(conversion->width, 10));
 }
 
-int	check_prec(const char *fmt, va_list ap, t_conv *conversion)
+int	check_prec(const char *fmt, va_list *ap, t_conv *conversion)
 {
 	int	i;
 	int	val;
@@ -65,7 +65,7 @@ int	check_prec(const char *fmt, va_list ap, t_conv *conversion)
 	conversion->precision = 0;
 	if (*fmt && '*' == *fmt)
 	{
-		conversion->precision = va_arg(ap, int);
+		conversion->precision = va_arg(*ap, int);
 		if (conversion->precision < 0)
 			conversion->precision = -1;
 		return (1);
