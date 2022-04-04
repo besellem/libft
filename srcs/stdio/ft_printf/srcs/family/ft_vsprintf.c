@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/03 02:27:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/03 04:01:25 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/04 16:02:11 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_vsprintf(char *str, const char *format, va_list ap)
 	int		size;
 
 	ret = NULL;
-	size = ft_vasprintf(&ret, format, ap);
+	size = ft_vasprintf_internal(&ret, format, ap);
 	if (!ret)
 		return (size);
 	else if ((LIBC_NO_CRASH_ON_NULL && !str) || PFT_ERR == size)
