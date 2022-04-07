@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:16:30 by besellem          #+#    #+#             */
-/*   Updated: 2021/05/10 00:29:02 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/08 01:53:59 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@
 # include "defs.h"
 # include "ft_ctype.h"
 # include "ft_list.h"
+# include "list_templates.h"
 # include "ft_math.h"
 # include "ft_stdint.h"
 # include "ft_stdio.h"
