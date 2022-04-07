@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2022/03/31 17:01:42 by besellem         ###   ########.fr        #
+#    Updated: 2022/04/07 22:36:58 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -139,7 +139,8 @@ SUB_SRCS	:=	ft_atod.c \
 SRCS		+=	$(addprefix stdlib/, $(SUB_SRCS))
 
 # string
-SUB_SRCS	:=	ft_bcmp.c \
+SUB_SRCS	:=	ft_basename.c \
+				ft_bcmp.c \
 				ft_bcopy.c \
 				ft_bzero.c \
 				ft_epur_str.c \

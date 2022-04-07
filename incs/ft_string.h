@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:15:52 by besellem          #+#    #+#             */
-/*   Updated: 2022/03/15 22:52:42 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/07 22:36:22 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int			ft_incharset(const char *charset, int c);
 int			ft_stridx(const char *haystack, const char *needle);
 size_t		ft_stroc(const char *haystack, char c);
 
+char		*ft_basename(const char *path);
 char		*ft_index(const char *s, int c);
 char		*ft_rindex(const char *s, int c);
 char		*ft_strchr(const char *s, int c);
