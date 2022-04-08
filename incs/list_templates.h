@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 22:48:02 by besellem          #+#    #+#             */
-/*   Updated: 2022/04/08 01:52:59 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/08 03:15:49 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 ** THIS ABI DOES PRETTY MUCH THE EQUIVALENT OF C++'S LIST TEMPLATES IN C
 */
 
-#include <stdlib.h>
+#include "ft_stdlib.h"
 
 
 /*
@@ -44,7 +44,7 @@
 */
 #define lst_add_front(__head, __val) {                                         \
 	if (__head) {                                                              \
-		typeof(**__head) *__x = calloc(1, sizeof(typeof(**__head)));           \
+		typeof(**__head) *__x = ft_calloc(1, sizeof(typeof(**__head)));        \
 		if (!__x)                                                              \
 			die();                                                             \
 		__x->content = (__val);                                                \
@@ -62,7 +62,7 @@
 */
 #define lst_add_back(__head, __val) {                                          \
 	if (__head) {                                                              \
-		typeof(**__head) *__x = calloc(1, sizeof(typeof(**__head)));           \
+		typeof(**__head) *__x = ft_calloc(1, sizeof(typeof(**__head)));        \
 		if (!__x)                                                              \
 			die();                                                             \
 		__x->content = (__val);                                                \
