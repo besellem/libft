@@ -6,13 +6,14 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:28:58 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/26 22:02:26 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:27:21 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "defs.h"
 
-void	ft_bzero(void *s, size_t n)
+__INLINE void	ft_bzero(void *s, size_t n)
 {
 	ft_memset(s, 0, n);
 }

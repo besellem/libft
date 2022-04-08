@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:00 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 13:13:42 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:31:14 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	void	*s;
+	const size_t	_sz = count * size;
+	void			*s;
 
-	s = (void *)malloc(count * size);
+	s = (void *)malloc(_sz);
 	if (!s)
 		return (NULL);
-	ft_bzero(s, count * size);
+	ft_memset(s, 0, _sz);
 	return (s);
 }

@@ -6,13 +6,14 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 22:05:21 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/26 22:10:10 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/08 14:31:49 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
+#include "defs.h"
 
-char	*ft_index(const char *s, int c)
+__INLINE char	*ft_index(const char *s, int c)
 {
 	return (ft_strchr(s, c));
 }

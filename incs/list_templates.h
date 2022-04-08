@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 22:48:02 by besellem          #+#    #+#             */
-/*   Updated: 2022/04/08 03:15:49 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/08 15:17:41 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 **   @param __val: the value to add
 **   @return: nothing
 */
-#define lst_add_front(__head, __val) {                                         \
+#define lst_push_front(__head, __val) {                                        \
 	if (__head) {                                                              \
 		typeof(**__head) *__x = ft_calloc(1, sizeof(typeof(**__head)));        \
 		if (!__x)                                                              \
@@ -60,7 +60,7 @@
 **   @param __val: the value to add
 **   @return: nothing
 */
-#define lst_add_back(__head, __val) {                                          \
+#define lst_push_back(__head, __val) {                                         \
 	if (__head) {                                                              \
 		typeof(**__head) *__x = ft_calloc(1, sizeof(typeof(**__head)));        \
 		if (!__x)                                                              \
@@ -75,6 +75,38 @@
 			__tmp->next = __x;                                                 \
 		}                                                                      \
 	}																		   \
+}
+
+
+/*
+** add a new element in a sorted list
+**   @param __head: a pointer on the head of the list (list **)
+**   @param __val: the value to add
+**   @param __cmp: the function to use to compare two nodes
+**   @return: nothing
+*/
+#define lst_push_sorted(__head, __val, __cmp) {                                \
+	if (__head && __val && (*__cmp)) {                                         \
+		typeof(**__head) *__lst = *__head;                                     \
+		typeof(**__head) *__next;                                              \
+		typeof(**__head) *__prev = NULL;                                       \
+		while (__lst && (*__cmp)(__lst->content, __val) <= 0) {                \
+			__prev = __lst;                                                    \
+			__lst = __lst->next;                                               \
+		}                                                                      \
+		if (!__lst) {                                                          \
+			lst_push_back(__head, __val);                                      \
+		} else if (!__prev) {                                                  \
+			lst_push_front(__head, __val);                                     \
+		} else {                                                               \
+			__next = __prev->next;                                             \
+			__prev->next = ft_calloc(1, sizeof(typeof(**__head)));             \
+			if (!__prev->next)                                                 \
+				die();                                                         \
+			__prev->next->content = __val;                                     \
+			__prev->next->next = __next;                                       \
+		}                                                                      \
+	}                                                                          \
 }
 
 
