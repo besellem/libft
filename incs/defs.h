@@ -6,12 +6,14 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 21:09:44 by besellem          #+#    #+#             */
-/*   Updated: 2022/04/08 14:30:05 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/08 18:00:01 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DEFS_H
 # define DEFS_H
+
+# include <sys/cdefs.h>
 
 /*
 ** When LIBC_NO_CRASH_ON_NULL is set to 1 (default), it is used to handle
@@ -78,5 +80,13 @@
 // # define __INLINE            __INLINE_ATTR__ inline
 
 # define __INLINE            inline
+
+# ifndef __constructor
+#  define __constructor       __attribute__((constructor))
+# endif
+
+# ifndef __destructor
+#  define __destructor        __attribute__((destructor))
+# endif
 
 #endif
