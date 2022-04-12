@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/13 00:54:06 by besellem          #+#    #+#             */
-/*   Updated: 2021/12/02 11:38:15 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/12 10:52:59 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_buffer	*ft_init_buff(const t_buffer_attr *attr)
 
 	if (buffer && attr && (attr->oflag & BUF_INIT))
 	{
+		free(buffer->__buff);
 		free(buffer);
 		buffer = NULL;
 	}
@@ -29,6 +30,7 @@ t_buffer	*ft_init_buff(const t_buffer_attr *attr)
 		buffer = (t_buffer *)ft_calloc(1, sizeof(t_buffer));
 		if (!buffer)
 			return (NULL);
+		buffer->__buff = (char *)ft_calloc(1, __BUFF_SIZE__);
 		if (attr)
 			buffer->__fd = attr->fd;
 		else
@@ -57,7 +59,7 @@ int	ft_buffaddc(char c)
 		if (SYSCALL_ERR == write(buffer->__fd, buffer->__buff, __BUFF_SIZE__))
 			return (SYSCALL_ERR);
 		buffer->__index = 0;
-		ft_bzero(buffer->__buff, sizeof(buffer->__buff));
+		ft_bzero(buffer->__buff, __BUFF_SIZE__);
 	}
 	return (0);
 }
@@ -84,7 +86,7 @@ int	ft_buffadd(const char *s)
 		if (SYSCALL_ERR == write(buffer->__fd, s, size))
 			return (SYSCALL_ERR);
 		buffer->__index = 0;
-		ft_bzero(buffer->__buff, sizeof(buffer->__buff));
+		ft_bzero(buffer->__buff, __BUFF_SIZE__);
 	}
 	return (0);
 }

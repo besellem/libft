@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:25:41 by besellem          #+#    #+#             */
-/*   Updated: 2022/03/28 23:03:15 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/12 10:54:49 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_buffer
 {
 	int			__fd;
 	size_t		__index;
-	char		__buff[__BUFF_SIZE__ + 1];
+	char		*__buff;
 }	t_buffer;
 
 typedef struct s_buffer_attr
