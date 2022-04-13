@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/31 16:59:26 by besellem          #+#    #+#             */
-/*   Updated: 2022/03/31 16:59:41 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:01:27 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 ** the api user must check if the list is sorted.
 ** if `data' is NULL, we do nothing
 */
+
 void	ft_lst_push_sorted(t_list **begin_list, void *data, int (*cmp)())
 {
 	t_list	*lst;
@@ -33,8 +34,8 @@ void	ft_lst_push_sorted(t_list **begin_list, void *data, int (*cmp)())
 		lst = lst->next;
 	}
 	if (!lst)
-		return ((void)ft_lst_push_back(begin_list, data));
-	if (!prev)
+		ft_lst_push_back(begin_list, data);
+	else if (!prev)
 		ft_lst_push_front(begin_list, data);
 	else
 	{

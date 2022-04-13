@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/06/21 22:27:10 by besellem          #+#    #+#             */
-/*   Updated: 2021/10/07 21:43:09 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:07:31 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,5 +105,5 @@ void	ft_lst_qsort(t_list **head, int (*cmp)())
 
 	if (!head || !*head || !(*cmp))
 		return ;
-	(*head) = __quick_sort_recurse__((struct s_list_qsort)data);
+	(*head) = __quick_sort_recurse__(data);
 }

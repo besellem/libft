@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/09/13 02:29:11 by besellem          #+#    #+#             */
-/*   Updated: 2021/04/19 11:45:53 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/13 12:03:06 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		*s1++ = *s2;
 		++i;
 		if (*s2++ == (unsigned char)c)
-			return (dst + i);
+			return ((unsigned char *)dst + i);
 	}
 	return (NULL);
 }
