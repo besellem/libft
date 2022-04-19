@@ -6,12 +6,17 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/07 22:23:34 by besellem          #+#    #+#             */
-/*   Updated: 2022/04/07 22:40:01 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/19 11:42:50 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_string.h"
-#include <limits.h>
+
+#ifdef __linux__
+# include <linux/limits.h>
+#else
+# include <limits.h>
+#endif
 
 static char	*__handle_basename_case__(const char *path,
 	char *_buf, size_t _size, char *ptr)
