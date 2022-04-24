@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/03 01:55:17 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/02 14:53:24 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/24 15:21:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	ft_printf_process(const char *fmt, t_pft *pft)
 			check = pft->write2buf(pft, (char *)fmt);
 		}
 		if (PFT_ERR == check || PFT_ERR == pft->global_size)
-			return ((void)ft_error(pft));
+			return ((void)_pft_error(pft));
 		fmt += check;
 	}
 }

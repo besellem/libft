@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/26 00:10:51 by besellem          #+#    #+#             */
-/*   Updated: 2022/04/04 16:01:56 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/24 15:21:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -129,7 +129,7 @@ typedef struct s_pft
 ** -- PROTOTYPES --
 ** Common
 */
-int				ft_error(t_pft *pft);
+int				_pft_error(t_pft *pft);
 int				ft_uint_base(uintmax_t n, int base);
 int				ft_dbl_base(t_pft *pft, double n, int base);
 void			ft_put_int(t_pft *pft, intmax_t nb, const char *base);

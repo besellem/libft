@@ -6,13 +6,13 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/17 23:50:16 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/03 16:11:49 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/24 15:21:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf_internal.h"
 
-int	ft_error(t_pft *pft)
+int	_pft_error(t_pft *pft)
 {
 	if (pft->ret)
 		ft_memdel((void **)&pft->ret);

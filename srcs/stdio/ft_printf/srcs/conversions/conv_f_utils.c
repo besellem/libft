@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:28:41 by besellem          #+#    #+#             */
-/*   Updated: 2021/09/05 02:49:17 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/24 15:21:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	ft_put_float(t_pft *pft, double nb, const char *base)
 	{
 		prec_tab = malloc(pft->conversion.precision + 1);
 		if (!prec_tab)
-			return ((void)ft_error(pft));
+			return ((void)_pft_error(pft));
 		ft_fill_float_precision(&nb, pft->conversion.precision, prec_tab);
 	}
 	ft_put_float_head(pft, nb, base);

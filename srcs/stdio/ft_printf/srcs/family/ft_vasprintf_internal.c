@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/11 23:40:13 by besellem          #+#    #+#             */
-/*   Updated: 2022/04/04 16:02:24 by besellem         ###   ########.fr       */
+/*   Updated: 2022/04/24 15:21:00 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	ft_no_conversion_opti(const char *fmt, t_pft *pft)
 		fmt_len = ft_strlen(fmt);
 		pft->ret = (char *)malloc(fmt_len + 1);
 		if (!pft->ret)
-			return (ft_error(pft));
+			return (_pft_error(pft));
 		else
 		{
 			ft_memcpy(pft->ret, fmt, fmt_len);
@@ -52,7 +52,7 @@ static int	write2buf_vasprintf(t_pft *pft, char *fmt)
 			tmp_siz += ret_siz;
 		new = (char *)malloc(tmp_siz + 1);
 		if (!new)
-			return (ft_error(pft));
+			return (_pft_error(pft));
 		if (pft->ret)
 			ft_memcpy(new, pft->ret, tmp_siz - PFT_BUFSIZ + 1);
 		ft_memcpy(new + ret_siz, pft->buffer, tmp_siz - ret_siz + 1);
@@ -82,7 +82,7 @@ static int	write2buf_str_vasprintf(t_pft *pft, const char *str)
 	{
 		new = malloc(pft->global_size + _size + 1);
 		if (!new)
-			return (ft_error(pft));
+			return (_pft_error(pft));
 		if (pft->ret)
 			ft_memcpy(new, pft->ret, _ret_size);
 		ft_memcpy(new + _ret_size, pft->buffer, pft->size);
@@ -102,7 +102,7 @@ static int	vasprintf_last_alloc(t_pft *pft)
 
 	new = (char *)malloc(pft->global_size + 1);
 	if (!new)
-		return (ft_error(pft));
+		return (_pft_error(pft));
 	if (pft->ret)
 		ft_memcpy(new, pft->ret, size_ret);
 	ft_memcpy(new + size_ret, pft->buffer, pft->size);
@@ -121,7 +121,7 @@ int	ft_vasprintf_internal(char **ret, const char *fmt, va_list ap)
 	pft.write2buf_s = &write2buf_str_vasprintf;
 	va_copy(pft.ap, ap);
 	if (!fmt || !ret)
-		return (ft_error(&pft));
+		return (_pft_error(&pft));
 	*ret = NULL;
 	if (ft_no_conversion_opti(fmt, &pft))
 	{
@@ -130,7 +130,7 @@ int	ft_vasprintf_internal(char **ret, const char *fmt, va_list ap)
 	}
 	ft_printf_process(fmt, &pft);
 	if (PFT_ERR == pft.global_size || SYSCALL_ERR == vasprintf_last_alloc(&pft))
-		return (ft_error(&pft));
+		return (_pft_error(&pft));
 	*ret = pft.ret;
 	return (pft.global_size);
 }
