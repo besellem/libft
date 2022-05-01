@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/01 22:20:59 by besellem          #+#    #+#             */
-/*   Updated: 2022/05/01 23:49:16 by besellem         ###   ########.fr       */
+/*   Updated: 2022/05/01 23:50:34 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,21 +55,6 @@ void	htabl_print(const t_htabl *ht, void (*print_val)())
 		if (newline)
 			ft_printf("[" B_YELLOW "#%4zu" CLR_COLOR "] {\n", i);
 		_htabl_print_lst(nodes[i], print_val);
-		// while (lst)
-		// {
-		// 	if (lst->content)
-		// 	{
-		// 		ft_printf("\t[" B_CYAN "ptr" CLR_COLOR ": %11p, "
-		// 			B_CYAN "key" CLR_COLOR ": '%s']",
-		// 			lst->content->value, lst->content->key);
-		// 		if ((*print_val))
-		// 			(*print_val)(lst->content->value);
-		// 		if (lst->next)
-		// 			ft_putstr(",");
-		// 		ft_putstr("\n");
-		// 	}
-		// 	lst = lst->next;
-		// }
 		if (newline)
 			ft_putstr("}\n");
 		++i;
