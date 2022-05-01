@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2022/05/01 22:59:32 by besellem         ###   ########.fr        #
+#    Updated: 2022/05/01 23:33:23 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ SRCS		:=	$(addprefix ctype/, $(SUB_SRCS))
 SUB_SRCS	:=	htabl_destroy.c \
 				htabl_hash.c \
 				htabl_insert.c \
+				htabl_new.c \
 				htabl_print.c \
 				htabl_search.c
 SRCS		+=	$(addprefix htable/, $(SUB_SRCS))
