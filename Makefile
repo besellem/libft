@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2022/05/01 23:33:23 by besellem         ###   ########.fr        #
+#    Updated: 2022/07/25 14:24:20 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -172,6 +172,7 @@ SUB_SRCS	:=	ft_basename.c \
 				ft_strclean.c \
 				ft_strcmp.c \
 				ft_strcpy.c \
+				ft_strcspn.c \
 				ft_strdup.c \
 				ft_stridx.c \
 				ft_strisall.c \
@@ -196,10 +197,12 @@ SUB_SRCS	:=	ft_basename.c \
 				ft_stroc.c \
 				ft_strpbrk.c \
 				ft_strrchr.c \
+				ft_strsep.c \
 				ft_strsfree.c \
 				ft_strsjoin.c \
 				ft_strslen.c \
 				ft_strsplit.c \
+				ft_strspn.c \
 				ft_strstr.c \
 				ft_strtrim.c \
 				ft_strupcase.c \
@@ -217,7 +220,7 @@ OBJS 		:=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
 
 ## Commands
 CC			:=	gcc
-CFLAGS		:=	-Wall -Wextra -Werror
+CFLAGS		:=	-Wall -Wextra# -Werror
 LIBC		:=	ar rcs
 RM			:=	rm -f
 

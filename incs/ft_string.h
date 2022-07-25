@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:15:52 by besellem          #+#    #+#             */
-/*   Updated: 2022/04/07 22:36:22 by besellem         ###   ########.fr       */
+/*   Updated: 2022/07/25 14:16:27 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,7 @@ char		*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char		*ft_strpbrk(const char *s, const char *charset);
 char		*ft_strcasestr(const char *haystack, const char *needle);
 
+char		*ft_strsep(char **stringp, const char *delim);
 char		*ft_strclean(char *s, const char *charset);
 char		*ft_strnclean(char *s, const char *charset, size_t n);
 
@@ -60,6 +61,8 @@ char		*ft_strncpy(char *dst, const char *src, size_t len);
 size_t		ft_strlcpy(char *dst, const char *src, size_t dstsize);
 size_t		ft_strlen(const char *s);
 size_t		ft_strnlen(const char *s, size_t maxlen);
+size_t		ft_strspn(const char *s, const char *accept);
+size_t		ft_strcspn(const char *s, const char *reject);
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 int			ft_strcmp(const char *s1, const char *s2);
 int			ft_strncmp(const char *s1, const char *s2, size_t n);
