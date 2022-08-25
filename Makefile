@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2022/08/25 17:44:45 by besellem         ###   ########.fr        #
+#    Updated: 2022/08/25 17:58:14 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,13 @@ SUB_DIR		:=	ctype \
 				string
 OBJ_DIR 	:=	$(BUILD_DIR)/obj
 DIRS		:=	$(OBJ_DIR) $(addprefix $(OBJ_DIR)/, $(SUB_DIR))
+
+
+## Commands
+CC			:=	gcc
+CFLAGS		:=	-Wall -Wextra# -Werror
+LIBC		:=	ar rcs
+RM			:=	rm -f
 
 
 ## Main srcs
@@ -213,13 +220,6 @@ SRCS		+=	$(addprefix string/, $(SUB_SRCS))
 ## Objects
 # PRINTF_OBJS	:=	$(PRINTF_SRCS:.c=.o)
 OBJS 		:=	$(SRCS:%.c=$(OBJ_DIR)/%.o)
-
-
-## Commands
-CC			:=	gcc
-CFLAGS		:=	-Wall -Wextra# -Werror
-LIBC		:=	ar rcs
-RM			:=	rm -f
 
 
 # Colors
