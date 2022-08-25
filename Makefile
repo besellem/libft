@@ -6,7 +6,7 @@
 #    By: besellem <besellem@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/09/13 02:01:30 by besellem          #+#    #+#              #
-#    Updated: 2022/07/25 14:24:20 by besellem         ###   ########.fr        #
+#    Updated: 2022/08/25 17:44:45 by besellem         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -206,10 +206,7 @@ SUB_SRCS	:=	ft_basename.c \
 				ft_strstr.c \
 				ft_strtrim.c \
 				ft_strupcase.c \
-				ft_substr.c \
-				ft_trn.c \
-				ft_trni.c \
-				ft_trnu.c
+				ft_substr.c
 SRCS		+=	$(addprefix string/, $(SUB_SRCS))
 
 

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/05/09 21:09:44 by besellem          #+#    #+#             */
-/*   Updated: 2022/04/08 18:00:01 by besellem         ###   ########.fr       */
+/*   Updated: 2022/08/25 17:50:23 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@
 // #  define __INLINE_ATTR__
 // # endif
 
-// # define __INLINE            __INLINE_ATTR__ inline
+// # define __INLINE            inline __INLINE_ATTR__
 
 # define __INLINE            inline
 

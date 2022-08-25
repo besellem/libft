@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 14:35:34 by besellem          #+#    #+#             */
-/*   Updated: 2022/03/15 23:05:13 by besellem         ###   ########.fr       */
+/*   Updated: 2022/08/25 17:52:14 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -132,10 +132,10 @@ bool			option_set(uint64_t, uint64_t);
 ** If not, the function will crash on purpose.
 */
 t_parsing_opts	parse_args(
-	int argc,
-	char **argv,
-	bool return_on_illegal,
-	const char *options_haystack,
-	...);
+					int argc,
+					char **argv,
+					bool return_on_illegal,
+					const char *options_haystack,
+					...);
 
 #endif /* !defined(PARSE_ARGS_H) */

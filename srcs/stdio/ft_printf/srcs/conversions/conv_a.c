@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/08/30 18:43:49 by besellem          #+#    #+#             */
-/*   Updated: 2022/07/25 14:25:53 by besellem         ###   ########.fr       */
+/*   Updated: 2022/08/25 17:47:29 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ static void	conv_a(t_pft *pft, const char *hex_prec, const char *charset,
 	if (ft_signbit(nb))
 		pft->write2buf_s(pft, "-");
 	else
-		pft->write2buf_s(pft, ft_trns(isflag(pft, FLAG_PLUS), "+",
-				ft_trns(isflag(pft, FLAG_SPACE), " ", NULL)));
+		pft->write2buf_s(pft, isflag(pft, FLAG_PLUS) ? "+" : (isflag(pft, FLAG_SPACE) ? " " : NULL));
 	pft->write2buf_s(pft, hex_prec);
 	ft_put_int(pft, 1, charset);
 	nb = ft_copysign(nb, 0.);
@@ -56,7 +55,7 @@ static void	conv_a(t_pft *pft, const char *hex_prec, const char *charset,
 		pft->write2buf_s(pft, ".");
 	__cut_precision__(pft, ft_itoa_base(mant, (char *)charset), &padding);
 	pft->write2buf(pft, &prec_char);
-	pft->write2buf_s(pft, ft_trns((exp - 1) < 0, "-", "+"));
+	pft->write2buf_s(pft, ((exp - 1) < 0 ? "-" : "+"));
 	ft_put_int(pft, exp - 1, DEC_CHARSET);
 }
 

@@ -6,7 +6,7 @@
 /*   By: besellem <besellem@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 11:15:52 by besellem          #+#    #+#             */
-/*   Updated: 2022/07/25 14:16:27 by besellem         ###   ########.fr       */
+/*   Updated: 2022/08/25 17:44:57 by besellem         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,18 +83,5 @@ char		*ft_strsjoin(size_t size, char **strs, char *sep);
 
 size_t		ft_strslen(char **s);
 void		*ft_strsfree(size_t size, char **s);
-
-/* Ternary operations */
-void		*ft_trn(int condition, void *if_true, void *if_false);
-char		*ft_trns(int condition, char *if_true, char *if_false);
-double		ft_trnd(int condition, double if_true, double if_false);
-long double	ft_trnld(int condition, long double if_true, long double if_false);
-int32_t		ft_trni(int condition, int32_t if_true, int32_t if_false);
-ssize_t		ft_trnl(int condition, ssize_t if_true, ssize_t if_false);
-int64_t		ft_trnll(int condition, int64_t if_true, int64_t if_false);
-uint32_t	ft_trnu(int condition, uint32_t if_true, uint32_t if_false);
-size_t		ft_trnul(int condition, size_t if_true, size_t if_false);
-uint64_t	ft_trnull(int condition, uint64_t if_true, uint64_t if_false);
-/* END Ternary operations */
 
 #endif
